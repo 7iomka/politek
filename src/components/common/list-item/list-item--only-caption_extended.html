@@ -1,0 +1,11 @@
+<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}">
+  {%- if caption -%}
+    <figure class="list-group__item-figure">
+      <figcaption class="list-group__item-caption">
+        <div class="list-group__item-caption-top">{{ caption.top }}</div>
+        <div class="list-group__item-caption-body">{{ caption.body }}</div>
+        <div class="list-group__item-caption-bottom">{{ caption.bottom }}</div>
+      </figcaption>
+    </figure>
+  {%- endif -%}
+</div>

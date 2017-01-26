@@ -1,0 +1,8 @@
+# Folders
+node_modules
+www
+tmp
+
+# Files
+.DS_Store
+.publish

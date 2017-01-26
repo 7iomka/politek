@@ -1,0 +1,152 @@
+.navigation {
+  @media (min-width: 1200px) {
+    z-index: $z-index-modal;
+  }
+  // background-color: $navigation-color--background;
+}
+@media (min-width: 1200px) {
+  .header-nav {
+    display: flex;
+    padding: 0 25px;
+    background-color: $navigation-color--background;
+    border-radius: 5px;
+
+    /**
+     * menu item
+     */
+     &__item {
+      position: relative;
+      &:not(:last-child):after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        top:0;
+        bottom: 0;
+        display: block;
+        width: 1px;
+        height: 50%;
+        margin: auto;
+        background-color: white;
+      }
+
+      &--has-subitems:hover .header-nav__sub {
+          visibility: visible;
+          transform: translate(0, 0);
+          opacity: 1;
+      }
+
+
+
+     }
+
+    /**
+     * menu label - link
+     */
+    &__label, &__sub-label {
+      color: $navigation-color;
+      padding: 10px 20px;
+      display: inline-block;
+      position: relative;
+      &:hover {
+        color: $navigation-color;
+      }
+
+      /**
+       * if link has submenu label has icon
+       */
+      &--expandable {
+        padding-right: 0;
+
+        // &:before {
+        //   content: "";
+        //   position: absolute;
+        //   right: 15px;
+        //   top: 0;
+        //   bottom: 0;
+        //   margin: auto;
+        //   display: block;
+        //
+        // }
+      }
+
+    }
+
+    /** expander icon **/
+    &__expander {
+      position: relative;
+      top: 0;
+      bottom: 0;
+      margin: auto 15px auto 10px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: $navigation-color--expand-icon transparent transparent transparent;
+      line-height: 0px;
+
+    }
+
+
+
+    /**
+     * submenu ul
+     */
+    &__sub {
+        position: absolute;
+        transform: translate(0, -25px);
+        top: 100%;
+        left: 0;
+        // z-index: 1;
+        float: left;
+        min-width: 270px;
+        width: 100%;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: $navigation-color--background-sub;
+        background-clip: padding-box;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+        display: block;
+        margin-top: 0;
+        visibility: hidden;
+        transition: 0.5s ease all;
+        opacity: 0;
+    }
+
+    &__sub-item:hover{
+        background-color: rgba(0,0,0,.1);
+    }
+  }
+
+}
+/** end media query **/
+/** advanced **/
+
+
+//Media Queries
+@media (min-width: 1200px) {
+  .navigation-toggler, .navigation--mobile, html.mm-blocking #mm-blocker {
+    display: none;
+  }
+
+  html.mm-opening .mm-slideout {
+    transform: translate(0px, 0px);
+  }
+}
+
+@media (max-width: 1200px) {
+  .navigation-toggler {
+    display: block;
+  }
+
+  .navigation--desktop {
+    display: none;
+  }
+  .header-nav__expander {
+    display: none!important;
+  }
+}

@@ -1,0 +1,98 @@
+.navigation-toggler-wrapper {
+    margin: 20px;
+}
+
+.navigation-toggler {
+  /**
+   * local variables
+   */
+  $color: red;
+  $height-icon: 18px;
+  $width-line: 26px;
+  $height-line: 2px;
+  $transition-time: 0.4s;
+  $rotation: 45deg;
+  $translateY: ($height-icon / 2);
+  $translateX: 0;
+
+/**
+ * styles
+ */
+  cursor: pointer;
+  width:$width-line;
+  height:$height-icon;
+  position:relative;
+  display:block;
+
+/**
+ * lines of hamburger - state default
+ */
+  &__line {
+   display:block;
+   background:$color;
+   width:$width-line;
+   height:$height-line;
+   position:absolute;
+   left:0;
+   //border-radius:($height-line / 2);
+   transition: all $transition-time;
+
+   &--1 {
+     top:0;
+     width:$width-line + 10px;
+   }
+   &--2 {
+     top:50%;
+   }
+   &--3 {
+     top:100%;
+   }
+ }
+
+ /**
+  * lines - state hover
+  */
+ &:hover, &:focus {
+  .navigation-toggler__line {
+     &--1 {
+       transform: translateY($height-line / 2 * -1);
+     }
+
+     &--3 {
+       transform: translateY($height-line / 2);
+     }
+   }
+
+ }
+
+ /**
+  * lines - state if toggler has active (expanded)
+  */
+ &.active {
+   .navigation-toggler__line {
+     &--1 {
+       transform: translateY($translateY) translateX($translateX) rotate($rotation);
+       width:$width-line;
+     }
+     &--2 {
+       opacity:0;
+     }
+     &--3 {
+       transform: translateY($translateY * -1) translateX($translateX) rotate($rotation * -1);
+
+     }
+   }
+
+ }
+
+
+/**
+ * hamburger label
+ */
+ &__label {
+    padding-left: 40px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+}

@@ -1,0 +1,87 @@
+// =========================================================
+//
+// General mixins
+//
+// =========================================================
+
+@mixin hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+@mixin ui-link($background: false) {
+  color: $navigation-color--text;
+
+  &:hover {
+    color: $color-ui-link--hover;
+
+    @if $background {
+      background-color: lighten($color-neutral--lightest, 1%);
+    }
+  }
+
+  &:active {
+    color: $color-ui-link--active;
+
+    @if $background {
+      background-color: darken($color-neutral--lightest, 1%);
+    }
+  }
+}
+/** Main mixins **/
+
+/**
+ * Make border gradient without need twice block
+ */
+@mixin border-gradient($from, $to, $width, $direction: horizontal) {
+
+  @if $direction == horizontal {
+    $startDirection: left;
+    border-left: $width solid $from;
+    border-right: $width solid $to;
+    border-top: none;
+    border-bottom: none;
+    background-image:
+      // both needed for top & bottom
+      linear-gradient($startDirection, $from, $to),
+      linear-gradient($startDirection, $from, $to);
+      // 100% left & right, $width px top & bottom
+      background-size: 100% $width;
+      background-position: 0 100%, 0 0;
+  }
+  @else {
+    $startDirection: top;
+    border-top: $width solid $from;
+    border-bottom: $width solid $to;
+    border-left: none;
+    border-right: none;
+    background-image:
+      // both needed for top & bottom
+      linear-gradient($startDirection, $from, $to),
+      linear-gradient($startDirection, $from, $to);
+      // 100% left & right, $width px top & bottom
+      background-size: $width 100%;
+      background-position: 0% 100%, 100% 0;
+  }
+
+  background-repeat: no-repeat;
+  background-clip: border-box;
+}
+
+/**
+ * Make text gradient with fallback of clean color text
+ * dir: left/top
+ */
+@mixin font-gradient($from, $to, $dir, $fallbackColor: $from) {
+  color: $fallbackColor;
+  background: -webkit-linear-gradient($dir, $from, $to);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

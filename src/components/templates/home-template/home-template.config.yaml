@@ -1,0 +1,8 @@
+context:
+  title: "About 24 ways"
+  section: about
+  sections:
+  - section: benefits
+  # - component: img-responsive
+  #   config:
+  #     src: /assets/images/pages/home/politek-banner.png

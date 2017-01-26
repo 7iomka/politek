@@ -1,0 +1,7 @@
+<figure class="img-responsive{% for mod in mods %} img-responsive--{{ mod }}{% endfor %}">
+  {% if link %}
+  <a href="{{ link }}" class="img-responsive__link"><img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item"></a>
+  {% else %}
+  <img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item">
+  {% endif %}
+</figure>

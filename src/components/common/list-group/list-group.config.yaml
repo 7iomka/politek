@@ -1,0 +1,15 @@
+collated: true
+variants:
+- name: default
+  context:
+    listItems:
+    - icon: /assets/images/icons/benefits/1.png
+      label: Более <strong>1 000 наименований</strong> в ассортименте
+    - icon: /assets/images/icons/benefits/2.png
+      label: Более <strong>1 000 наименований</strong> в ассортименте
+    - icon: /assets/images/icons/benefits/3.png
+      label: Более <strong>1 000 наименований</strong> в ассортименте
+    - icon: /assets/images/icons/benefits/4.png
+      label: Более <strong>1 000 наименований</strong> в ассортименте
+    bootstrap:
+      cols: col

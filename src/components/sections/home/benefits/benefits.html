@@ -1,0 +1,8 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+      {% render "@list-group", benefitsList %}
+      {% render "@img-responsive", homeBanner %}
+      {% render "@list-group", achievementsList %}
+  </div>
+{% endblock %}

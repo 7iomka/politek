@@ -1,0 +1,12 @@
+variants:
+- name: default
+  context:
+    icon: /assets/images/icons/benefits/1.png
+    label: Более <strong>1 000 наименований</strong> в ассортименте
+- name: only-caption_extended
+  context:
+    mods: [only-caption_extended]
+    caption:
+      top: 111
+      body: 222
+      bottom: 333

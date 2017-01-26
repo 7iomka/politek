@@ -1,0 +1,35 @@
+context:
+  mods: [benefits]
+  benefitsList:
+    listItems:
+    - icon: /assets/images/icons/benefits/1.png
+      label: Более <strong>1 000 наименований</strong> в ассортименте
+    - icon: /assets/images/icons/benefits/2.png
+      label: 3 000 тонн продукции всегда в наличии на складе.
+    - icon: /assets/images/icons/benefits/3.png
+      label: Отгружаем нужный объем в срок до 2 дней. Поможем организовать доставку продукции
+    - icon: /assets/images/icons/benefits/4.png
+      label: Срок службы инженерных систем - 50 лет. Продукция застрахована!
+    bootstrap:
+      cols: col col-xs-12 col-sm-6 col-md-3
+  homeBanner:
+    mods: [benefits-banner]
+    src: /assets/images/pages/home/politek-banner.png
+  achievementsList:
+    listItems:
+    - caption:
+        top: Наша продукция продается в
+        body: 123
+        bottom: городах России и СНГ
+    - caption:
+        top: Реализация осуществляется через
+        body: 243
+        bottom: дилера
+    - caption:
+        top: За все время мы произвели более
+        body: 300
+        bottom: тысяч  км. труб
+    - caption:
+        top: Нашу продукцию используют на
+        body: 15
+        bottom: тыс. объектах по всей России и СНГ

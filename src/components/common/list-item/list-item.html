@@ -1,0 +1,17 @@
+<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}">
+  {%- if icon or caption -%}
+    <figure class="list-group__item-figure">
+      {%- if icon -%}
+        <img src="{{ icon }}" class="list-group__item-image">
+      {%- endif -%}
+      {%- if caption -%}
+        <figcaption class="list-group__item-caption">{{ caption }}</figcaption>
+      {%- endif -%}
+    </figure>
+  {%- endif -%}
+  {%- if label -%}
+  <div class="list-group__item-label">
+    {{ label }}
+  </div>
+  {%- endif -%}
+</div>

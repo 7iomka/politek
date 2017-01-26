@@ -1,0 +1,11 @@
+<div class="list-group{% for mod in mods %} list-group--{{ mod }}{% endfor %}{% if bootstrap %} row {% endif %}">
+  {% for listItem in listItems %}
+    {% if bootstrap %}
+      <div class="{{ bootstrap.cols }}">
+        {% render "@list-item", listItem %}
+      </div>
+    {% else %}
+        {% render "@list-item", listItem %}
+    {% endif %}
+  {% endfor %}
+</div>

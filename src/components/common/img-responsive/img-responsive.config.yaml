@@ -1,0 +1,11 @@
+collated: true
+default: default
+variants:
+  - name: default
+    context:
+      src: /assets/images/pages/home/politek-banner.png
+  - name: with-link
+    context:
+      mods: [with-link]
+      src: /assets/images/pages/home/politek-banner.png
+      link: /

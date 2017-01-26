@@ -1,0 +1,21 @@
+<nav class="navigation navigation--{{ modifier }}" id="navigation--{{ modifier }}">
+  <div class="container">
+    <ul class="header-nav">
+    {%- for page in pages -%}
+      <li class="header-nav__item {% if page.subpages %} header-nav__item--has-subitems {% endif %}">
+        <a class="header-nav__label {% if page.subpages %} header-nav__label--expandable {% endif %}" href="{{ page.url }}"> {{ page.title }} </a>
+        {%- if page.subpages -%}
+        <span class="header-nav__expander"></span>
+        <ul class="header-nav__sub">
+          {%- for subpage in page.subpages -%}
+          <li class="header-nav__sub-item">
+            <a class="header-nav__sub-label" href="{{ subpage.url }}"> {{ subpage.title }} </a>
+          </li>
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+    </ul>
+  </div>
+</nav>

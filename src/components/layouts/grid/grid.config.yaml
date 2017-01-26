@@ -1,0 +1,36 @@
+variants:
+- name: default
+  context:
+    items:
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+    - "@summary"
+- name: countdown
+  context:
+    items:
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+    - "@summary--countdown"
+- name: authors
+  context:
+    items:
+    - author: Drew McLellan
+    - author: Brian Suda
+    - author: Anna Debenham
+    - author: Owen Gregory

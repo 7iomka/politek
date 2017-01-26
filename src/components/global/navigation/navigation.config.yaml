@@ -1,0 +1,65 @@
+name: navigation
+label: Менюшка в шапке
+collated: true
+default: desktop
+variants:
+- name: desktop
+  context:
+    modifier: desktop
+- name: mobile
+  context:
+    modifier: mobile
+context:
+  pages:
+  - title: Главная
+    url: /
+  - title: Каталог
+    url: /catalog
+    subpages:
+      - title: трубы и фитинги для внутренней канализации из пп
+        url: /catalog/page1
+      - title: двухслойные трубы и фитинги для двухслойных трубопроводов
+        url: /catalog/page2
+      - title: трубы и фитинги из пп для с улучшенным шумо-поглощенем
+        url: /catalog/page2
+      - title: двухслойные трубопроводы повышенной жесткости из пнд
+        url: /catalog/page2
+      - title: трубопроводы для водоснабжения из пнд
+        url: /catalog/page2
+      - title: трубы и фитинги для горячего/холодного водоснабжения
+        url: /catalog/page2
+      - title: компрессионные фитинги для холодного водоснабжения
+        url: /catalog/page2
+  - title: О компании
+    url: /o-kompanii
+    subpages:
+      - title: О нас
+        url: /catalog/page1
+      - title: Производство
+        url: /catalog/page2
+      - title: Новости
+        url: /catalog/page2
+      - title: Отзывы
+        url: /catalog/page2
+  - title: Для партнеров
+    url: /dlja-partnerov
+    subpages:
+      - title: Рекламные и информационные материалы
+        url: /catalog/page1
+      - title: Условия хранения продукции
+        url: /catalog/page2
+      - title: Сертификация
+        url: /catalog/page2
+  - title: Проектировщикам и монтажникам
+    url: /proektirovshhikam-i-montazhnikam
+    subpages:
+      - title: Чертежи
+        url: /catalog/page1
+      - title: Техническая информация
+        url: /catalog/page2
+      - title: Снипы и госты
+        url: /catalog/page2
+  - title: Карта дилеров
+    url: /karta-dilerov
+  - title: Контакты
+    url: /kontakty

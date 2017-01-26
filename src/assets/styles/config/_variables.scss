@@ -1,0 +1,107 @@
+// ========================================================
+//
+// Variables
+//
+// ========================================================
+
+// Import design tokens (from ./src/assets/tokens)
+@import 'borders.json';
+@import 'breakpoints.json';
+@import 'colors.json';
+@import 'fonts.json';
+@import 'layers.json';
+@import 'sizes.json';
+@import 'spaces.json';
+
+$base-color--primary: palette(primary);
+$base-color--secondary: palette(secondary);
+
+// Top Bar
+$top-bar-color--background: palette(primary);
+
+
+
+// Banner
+$banner-height--small: $size-large;
+$banner-height--large: $size-xlarge;
+$banner-duration: 0.1s;
+
+// Navigation
+$navigation-width--large: $size-xlarge;
+$navigation-duration: 0.2s;
+$navigation-color: white;
+$navigation-color--offset: palette(neutral, lightest);
+$navigation-color--text: palette(neutral, dark);
+$navigation-color--shadow: rgba(palette(neutral), 0.25);
+$navigation-color--background: palette(primary);
+$navigation-color--background-sub: palette(primary, light);
+$navigation-color--expand-icon: palette(secondary);
+$navigation-color--backdrop: rgba(palette(neutral, dark), 0.25);
+
+// Prose
+$prose-color--background: rgba(palette(neutral), 0.15);
+$prose-color--rule: rgba(palette(neutral), 0.25);
+$prose-color--shadow: rgba(palette(neutral), 0.25);
+
+// Color assignments
+$color-neutral: palette(neutral);
+$color-neutral--lightest: palette(neutral, lightest);
+$color-neutral--lighter: palette(neutral, lighter);
+$color-neutral--light: palette(neutral, light);
+$color-neutral--dark: palette(neutral, dark);
+$color-neutral--darker: palette(neutral, darker);
+$color-neutral--darkest: palette(neutral, darkest);
+
+$color-link: palette(primary);
+$color-link--hover: palette(primary, dark);
+$color-link--active: palette(primary, light);
+
+// Buttons background
+$button-background--primary: palette(primary);
+$button-background--primary_hover: palette(primary, dark);
+$button-background--primary_active: palette(primary, light);
+
+$button-background--secondary: palette(secondary);
+$button-background--secondary_hover: palette(secondary, dark);
+$button-background--secondary_active: palette(secondary, light);
+
+
+
+$color-ui-link: palette(primary);
+$color-ui-link--hover: palette(primary, light);
+$color-ui-link--active: palette(primary, dark);
+
+$color-focus: palette(primary, light);
+
+$color-text: $color-neutral--darker;
+
+// Fallback year colour
+$color-year: hsl(348, 100%, 16%);
+$color-year--dark: hsl(348, 100%, 8%);
+
+$color-days: (
+  day-24: adjust-hue(palette(secondary, light), 000),
+  day-23: adjust-hue(palette(secondary, light), 007),
+  day-22: adjust-hue(palette(secondary, light), 014),
+  day-21: adjust-hue(palette(secondary, light), 021),
+  day-20: adjust-hue(palette(secondary, light), 028),
+  day-19: adjust-hue(palette(secondary, light), 035),
+  day-18: adjust-hue(palette(secondary, light), 042),
+  day-17: adjust-hue(palette(secondary, light), 049),
+  day-16: adjust-hue(palette(secondary, light), 056),
+  day-15: adjust-hue(palette(secondary, light), 063),
+  day-14: adjust-hue(palette(secondary, light), 070),
+  day-13: adjust-hue(palette(secondary, light), 077),
+  day-12: adjust-hue(palette(secondary, light), 084),
+  day-11: adjust-hue(palette(secondary, light), 091),
+  day-10: adjust-hue(palette(secondary, light), 098),
+  day-09: adjust-hue(palette(secondary, light), 105),
+  day-08: adjust-hue(palette(secondary, light), 112),
+  day-07: adjust-hue(palette(secondary, light), 119),
+  day-06: adjust-hue(palette(secondary, light), 126),
+  day-05: adjust-hue(palette(secondary, light), 133),
+  day-04: adjust-hue(palette(secondary, light), 140),
+  day-03: adjust-hue(palette(secondary, light), 147),
+  day-02: adjust-hue(palette(secondary, light), 154),
+  day-01: adjust-hue(palette(secondary, light), 161)
+);

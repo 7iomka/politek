@@ -1,0 +1,56 @@
+{
+  "name": "Politek",
+  "version": "0.1",
+  "description": "Modular frontend",
+  "keywords": [
+    "styleguide",
+    "patterns",
+    "library"
+  ],
+  "homepage": "http://24ways.paulrobertlloyd.com",
+  "bugs": "https://github.com/24ways/frontend/issues",
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "7iomka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/24ways/frontend.git"
+  },
+  "main": "fractal.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node_modules/.bin/gulp start",
+    "build": "node_modules/.bin/gulp build",
+    "dev": "node_modules/.bin/gulp dev",
+    "publish": "node_modules/.bin/gulp publish"
+  },
+  "dependencies": {
+    "@frctl/fractal": "latest",
+    "@frctl/mandelbrot": "latest",
+    "@frctl/nunjucks": "latest",
+    "autoprefixer": "latest",
+    "del": "latest",
+    "fontfaceobserver": "latest",
+    "gulp-a11y": "latest",
+    "gulp-concat": "latest",
+    "gulp-gh-pages": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-postcss": "latest",
+    "gulp-sass": "latest",
+    "gulp-sass-glob": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-stylelint": "latest",
+    "gulp-uglify": "latest",
+    "markdown-it": "latest",
+    "markdown-it-abbr": "latest",
+    "markdown-it-prism": "latest",
+    "node-sass-json-importer": "latest",
+    "nunjucks-date": "latest",
+    "postcss-assets": "latest"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "node-sass": "^4.3.0",
+    "node-sass-json-importer": "^3.0.0"
+  },
+  "optionalDependencies": {}
+}

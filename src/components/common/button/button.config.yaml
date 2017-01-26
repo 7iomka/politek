@@ -1,0 +1,22 @@
+collated: true
+variants:
+- name: default
+  context:
+    label: Button
+- name: disabled
+  context:
+    label: Disabled button
+    disabled: true
+- name: more
+  context:
+    label: Show me another 24 ways…
+    href: ?page=2
+    mods: [more]
+- name: secondary
+  context:
+    label: Button with background secondary
+    mods: [secondary]
+- name: secondary-big
+  context:
+    label: Button with background secondary and BIG
+    mods: [secondary, big]

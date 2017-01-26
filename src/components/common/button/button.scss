@@ -1,0 +1,52 @@
+.c-button {
+  @include typeset(label, 2);
+  display: inline-block;
+  // padding: $space-medium $space-large;
+  padding: 8px 15px;
+  background-color: $button-background--primary;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $button-background--primary_hover;
+    color: white;
+  }
+
+  &:active {
+    background-color: $button-background--primary_active;
+    color: white;
+  }
+
+  @media print {
+    display: none;
+  }
+}
+
+.c-button--more {
+  width: 100%;
+}
+
+/** by color **/
+
+.c-button--secondary {
+  background-color: $button-background--secondary;
+
+  &:hover {
+    background-color: $button-background--secondary_hover;
+    color: white;
+  }
+
+  &:active {
+    background-color: $button-background--secondary_active;
+    color: white;
+  }
+}
+
+
+/** by size **/
+.c-button--big {
+  width: 500px;
+  font-size: 25px;
+}

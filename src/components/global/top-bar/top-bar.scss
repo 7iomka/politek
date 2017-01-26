@@ -1,0 +1,11 @@
+.top-bar {
+  background-color: $top-bar-color--background;
+  padding: 7px 0;
+  a {
+    color: white;
+    text-decoration: underline;
+    line-height: 30px;
+    display: block;
+    text-align: right;
+  }
+}

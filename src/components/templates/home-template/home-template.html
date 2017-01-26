@@ -1,0 +1,13 @@
+{% extends "@page" %}
+{% block main %}
+<section class="home">
+  {% render "@page-title", {"title": "Современные инженерные системы любой сложности от производителя оптом"} %}
+  {%- for section in sections -%}
+    {% if section.section %}
+      {% render "@" + section.section, section.config %}
+    {% else %}
+      {% render "@" + section.component, section.config %}
+    {% endif %}
+  {%- endfor -%}
+</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+<section class="p-section {% for mod in mods %} p-section--{{ mod }}{% endfor %}">
+  {% if title %}
+  <header class="p-section__header">
+    <h2 class="p-section__title">{{ title }}</h2>
+  </header>
+  {% endif %}
+
+  <div class="p-section__main">
+    {% block section %}
+    {% endblock %}
+  </div>
+
+</section>
