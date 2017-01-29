@@ -1,0 +1,30 @@
+<div class="list-group__item news-item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}{% for nestedMod in nestedMods %} list-group__item--{{ nestedMod }}{% endfor %}">
+
+  {%- if icon or link -%}
+    <div class="news-item__header">
+      <figure class="list-group__item-figure">
+        <a href="{{ link }}">
+          {%- if icon -%}
+            <img src="{{ icon }}" class="list-group__item-image" alt="{{ title }}">
+          {%- endif -%}
+        </a>
+      </figure>
+    </div>
+  {%- endif -%}
+  <div class="news-item__body">
+    {%- if title -%}
+    <a class="list-group__item-link news-item__title" href="{{ link }}">
+      <span class="list-group__item-label">{{ title }}</span>
+    </a>
+    {%- endif -%}
+    {%- if date -%}
+      <div class="news-item__date">{{ date }}</div>
+    {%- endif -%}
+    {%- if anonce -%}
+      <div class="news-item__anonce">{{ anonce }}</div>
+    {%- endif -%}
+
+    <a href="{{ link }}" class="news-item__readmore">Подробнее</a>
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+<div class="news-list
+{% for mod in mods %} news-list--{{ mod }}{% endfor %}
+{% if bootstrap %} row {{bootstrap.rowClass}}{% endif %}
+{% if inSlider %} news-list--slider swiper-container{% endif %}
+">
+{# For slider version necessary advanced layout parts #}
+{# slider version #}
+  {% if inSlider %}
+    <div class="swiper-wrapper">
+      {% for listItem in listItems %}
+          {% if listItem.nestedMods %}
+            {% set nestedMods = listItem.nestedMods %}
+          {% else %}
+            {% set nestedMods = nestedMods %}
+          {% endif %}
+          {% set mainProperties = {'nestedMods': nestedMods } %}
+
+          {% set config = mainProperties|objAssign(listItem) %}
+        <div class="swiper-slide">
+          {% render "@list-item--news", config %}
+        </div>
+      {% endfor %}
+    </div>
+    <!-- Add pagination -->
+     <div class="swiper-pagination"></div>
+     <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  {% endif %}
+
+  {# clean bootstrap version   #}
+  {% if bootstrap and not inSlider %}
+    {% for listItem in listItems %}
+        {% if listItem.nestedMods %}
+          {% set nestedMods = listItem.nestedMods %}
+        {% else %}
+          {% set nestedMods = nestedMods %}
+        {% endif %}
+        {% set mainProperties = {'nestedMods': nestedMods } %}
+
+        {% set config = mainProperties|objAssign(listItem) %}
+
+        <div class="{{ bootstrap.cols }}">
+          {% render "@list-item--news", config %}
+        </div>
+    {% endfor %}
+  {% endif %}
+
+</div>

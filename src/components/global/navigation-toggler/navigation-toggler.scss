@@ -1,5 +1,9 @@
 .navigation-toggler-wrapper {
-    margin: 20px;
+    margin: 20px 20px 20px 10px;
+    width: 120px;
+    position: relative;
+    z-index: 1;
+    background: white;
 }
 
 .navigation-toggler {

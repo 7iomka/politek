@@ -16,6 +16,15 @@ variants:
   context:
     label: Button with background secondary
     mods: [secondary]
+- name: dark
+  context:
+    label: Button dark
+    mods: [dark]
+- name: dark-custom
+  context:
+    label: Button dark with separately custom class
+    mods: [dark]
+    customClassList: myCustomClass1 topLeveleComponent__btn
 - name: secondary-big
   context:
     label: Button with background secondary and BIG

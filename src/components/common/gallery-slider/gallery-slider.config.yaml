@@ -1,0 +1,8 @@
+context:
+  galleryPath: /assets/images/about-slider/
+  thumbsPath: /assets/images/about-slider/thumbs/
+  slides:
+  - url: 1.png
+  - url: 2.png
+  - url: 3.png
+  - url: 4.png

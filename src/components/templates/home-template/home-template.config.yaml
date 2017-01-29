@@ -3,6 +3,10 @@ context:
   section: about
   sections:
   - section: benefits
+  - section: catalog
+  - section: about
+  - section: partners
+  - section: news
   # - component: img-responsive
   #   config:
   #     src: /assets/images/pages/home/politek-banner.png

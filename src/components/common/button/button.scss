@@ -8,6 +8,7 @@
   color: white;
   font-size: 15px;
   border-radius: 5px;
+  font-weight: bold;
 
   &:hover {
     background-color: $button-background--primary_hover;
@@ -40,6 +41,20 @@
 
   &:active {
     background-color: $button-background--secondary_active;
+    color: white;
+  }
+}
+
+.c-button--dark {
+  background-color: $button-background--dark;
+
+  &:hover {
+    background-color: $button-background--dark_hover;
+    color: white;
+  }
+
+  &:active {
+    background-color: $button-background--dark_active;
     color: white;
   }
 }

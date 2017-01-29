@@ -1,0 +1,18 @@
+.footer-navigation {
+    padding-top: 10px;
+}
+.site-footer__panel {
+    overflow: hidden;
+}
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -42px;
+    &__item {
+        margin-right: 40px;
+        font-size: 15px;
+    }
+    &__label {
+        text-decoration: underline;
+    }
+}

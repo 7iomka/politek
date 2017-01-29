@@ -1,11 +1,24 @@
-<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}">
+<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}{% for nestedMod in nestedMods %} list-group__item--{{ nestedMod }}{% endfor %}">
   {%- if caption -%}
     <figure class="list-group__item-figure">
       <figcaption class="list-group__item-caption">
-        <div class="list-group__item-caption-top">{{ caption.top }}</div>
-        <div class="list-group__item-caption-body">{{ caption.body }}</div>
-        <div class="list-group__item-caption-bottom">{{ caption.bottom }}</div>
+        {% if caption.top %}
+          <div class="list-group__item-caption-top">{{ caption.top }}</div>
+        {% endif %}
+        {% if caption.body %}
+          <div class="list-group__item-caption-body{% if bodyFontGradient %} list-group__item-caption-body--font-gradient{% endif %}">
+            {{ caption.body }}
+          </div>
+        {% endif %}
+        {% if caption.bottom %}
+          <div class="list-group__item-caption-bottom">{{ caption.bottom }}</div>
+        {% endif %}
       </figcaption>
     </figure>
+  {%- endif -%}
+  {%- if label -%}
+  <div class="list-group__item-label">
+    {{ label }}
+  </div>
   {%- endif -%}
 </div>

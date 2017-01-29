@@ -44,9 +44,24 @@ const nunjucks = require('@frctl/nunjucks')({
     },
     stringify: function () {
       return JSON.stringify(this, null, "\t");
+    },
+    // {% set modifiedArray = myArray|pushIn('myValue') %}
+    pushIn: function(array, value) {
+      array.push(value);
+      return array;
+    },
+    addToObj: function (obj, key, value) {
+      obj[key] = value;
+      return obj;
+    },
+    objAssign: function (obj, newObj) {
+      return Object.assign({}, obj, newObj);
     }
   },
-  paths: [paths.static + '/assets/vectors']
+  paths: [
+    paths.static + '/assets/vectors',
+    paths.src + '/components/_macros',
+  ]
 });
 
 // Project config
@@ -69,6 +84,12 @@ fractal.web.theme(mandelbrot);
 fractal.web.set('static.path', paths.static);
 fractal.web.set('builder.dest', paths.build);
 fractal.web.set('builder.urls.ext', null);
+// fractal.web.set('server.syncOptions', {
+//     injectChanges: true,
+//     // proxy: 'localhost:3000', // localhost served url
+//     notify: false,
+//     reloadDelay: 2000
+// });
 
 // Export config
 module.exports = fractal;

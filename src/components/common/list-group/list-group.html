@@ -1,11 +1,20 @@
-<div class="list-group{% for mod in mods %} list-group--{{ mod }}{% endfor %}{% if bootstrap %} row {% endif %}">
+<div class="list-group{% for mod in mods %} list-group--{{ mod }}{% endfor %}{% if bootstrap %} row {{bootstrap.rowClass}}{% endif %}">
   {% for listItem in listItems %}
+      {% if listItem.nestedMods %}
+        {% set nestedMods = listItem.nestedMods %}
+      {% else %}
+        {% set nestedMods = nestedMods %}
+      {% endif %}
+  {% set mainProperties = {'nestedMods': nestedMods, 'bodyFontGradient': bodyFontGradient } %}
+
+  {% set config = mainProperties|objAssign(listItem) %}
+
     {% if bootstrap %}
       <div class="{{ bootstrap.cols }}">
-        {% render "@list-item", listItem %}
+        {% render "@"+(listItem.component if listItem.component else component), config %}
       </div>
     {% else %}
-        {% render "@list-item", listItem %}
+          {% render "@"+(listItem.component if listItem.component else component), config %}
     {% endif %}
   {% endfor %}
 </div>

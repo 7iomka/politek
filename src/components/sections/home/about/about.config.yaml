@@ -1,0 +1,17 @@
+context:
+  mods: [about]
+  sectionConfig:
+    title: О Нас
+  aboutList:
+    component: "list-item--only-caption_extended"
+    nestedMods: [only-caption_extended,with-square-backdrop]
+    listItems:
+    - caption:
+        body: 1
+      label: место в России по производству компрессионных фитингов для труб ПНД
+    - caption:
+        body: 18
+      label: являемся лидером по производству полимерных трубопроводов
+    - caption:
+        body: 243
+      label: дилера по всей России и в странах СНГ

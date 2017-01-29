@@ -1,0 +1,12 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    <div class="row">
+      {% for contact in contactsList %}
+        <div class="col-xs-12 col-md-6">
+          {% render "@contacts-block", contact %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

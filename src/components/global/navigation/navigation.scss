@@ -128,7 +128,7 @@
 
 
 //Media Queries
-@media (min-width: 1200px) {
+@include media(">=xl") {
   .navigation-toggler, .navigation--mobile, html.mm-blocking #mm-blocker {
     display: none;
   }
@@ -136,9 +136,9 @@
   html.mm-opening .mm-slideout {
     transform: translate(0px, 0px);
   }
-}
+};
 
-@media (max-width: 1200px) {
+@include media("<xl") {
   .navigation-toggler {
     display: block;
   }
@@ -149,4 +149,4 @@
   .header-nav__expander {
     display: none!important;
   }
-}
+};

@@ -1,3 +1,24 @@
 .top-body {
-    padding: 20px 0;
+  padding: 20px 0;
+  &__separator {
+      position: absolute;
+      width: 100%;
+      &:after {
+          content: "";
+          width: 88%;
+          right: 0;
+          height: 2px;
+          display: block;
+          background: #194191;
+          top: 31px;
+          position: absolute;
+      }
+      @include media(">=xl") {
+        display: none;
+      };
+  }
+
+  &__relative-row {
+    position: relative;
+  }
 }

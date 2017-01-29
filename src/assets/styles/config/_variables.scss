@@ -65,6 +65,10 @@ $button-background--secondary: palette(secondary);
 $button-background--secondary_hover: palette(secondary, dark);
 $button-background--secondary_active: palette(secondary, light);
 
+$button-background--dark: #000;
+$button-background--dark_hover: #272727;
+$button-background--dark_active: #000;
+
 
 
 $color-ui-link: palette(primary);
@@ -73,7 +77,7 @@ $color-ui-link--active: palette(primary, dark);
 
 $color-focus: palette(primary, light);
 
-$color-text: $color-neutral--darker;
+$color-text: black;
 
 // Fallback year colour
 $color-year: hsl(348, 100%, 16%);

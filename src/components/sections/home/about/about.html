@@ -1,0 +1,18 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-lg-6">
+        {% render "@gallery-slider", aboutSlider, true %}
+      </div>
+      <div class="col-xs-12 col-md-auto col-lg-6">
+        {% render "@section-title", sectionConfig %}
+        {% render "@list-group", aboutList %}
+        <div class="btn-group">
+          <div class="btn-item">{% render "@button", { label: "Узнайте о нас больше", mods: ["secondary"], href: "/about"} %}</div>
+          <div class="btn-item">{% render "@button", { label: "Узнайте о производстве", mods: ["dark"], href: "/production" } %}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

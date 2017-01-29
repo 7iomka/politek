@@ -1,6 +1,9 @@
 context:
   mods: [benefits]
   benefitsList:
+    component: "list-item"
+    bootstrap:
+      cols: col-xs-12 col-sm-6 col-md-3
     listItems:
     - icon: /assets/images/icons/benefits/1.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
@@ -10,12 +13,15 @@ context:
       label: Отгружаем нужный объем в срок до 2 дней. Поможем организовать доставку продукции
     - icon: /assets/images/icons/benefits/4.png
       label: Срок службы инженерных систем - 50 лет. Продукция застрахована!
-    bootstrap:
-      cols: col col-xs-12 col-sm-6 col-md-3
   homeBanner:
     mods: [benefits-banner]
     src: /assets/images/pages/home/politek-banner.png
   achievementsList:
+    component: "list-item--only-caption_extended"
+    nestedMods: [only-caption_extended,with-border-gradient]
+    bootstrap:
+      cols: col-xs-12 col-sm-6 col-lg-3
+    bodyFontGradient: true
     listItems:
     - caption:
         top: Наша продукция продается в

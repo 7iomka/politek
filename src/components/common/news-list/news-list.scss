@@ -1,0 +1,66 @@
+/**
+ * General styles for news item
+*/
+/** news-item **/
+
+.news-item {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__header {
+      @include media(">=md") {
+        flex: 0 0 auto;
+      };
+  }
+  &__body {
+      @include media(">=md") {
+        padding-left: 28px;
+        flex: 1;
+      };
+  }
+
+  &__title {
+      font-weight: bold;
+      color: black;
+  }
+
+  &__date {
+      font-size: 11px;
+      line-height: 15px;
+      margin: 13px 0 20px;
+  }
+  &__anonce {
+      font-size: 15px;
+      line-height: 1;
+  }
+
+  &__readmore {
+      margin-top: 17px;
+      display: block;
+      text-decoration: underline;
+  }
+}
+
+/**
+ * Slider version
+ */
+
+ .news-list--slider {
+     padding-bottom: 50px;
+ }
+
+ .swiper-pagination-bullet {
+     width: 12px;
+     height: 12px;
+ }
+
+@include media(">=sm") {
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+};
+@include media(">=lg") {
+  .swiper-pagination {
+    display: none;
+  }
+};

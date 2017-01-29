@@ -1,12 +1,27 @@
 .logo {
     display: flex;
+    align-items: center;
+    @include media("<md") {
+      flex-wrap: wrap;
+    };
 }
 
 .logo__image {
-    margin-right: 30px;
+    margin: 0px auto 20px;
+    @include media(">=md") {
+      margin-right: 30px;
+    };
 }
 
 .logo__slogan {
     line-height: 20px;
     font-size: 20px;
+    @include media("<md") {
+      max-width: 320px;
+      padding: 0 10px;
+    };
+    @include media("<640px") {
+      max-width: 100%;
+      text-align: center;
+    };
 }

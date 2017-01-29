@@ -19,6 +19,7 @@ const stylelint = require('gulp-stylelint');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const logger = fractal.cli.console;
+// const browserSync = require('browser-sync').create();
 
 const paths = {
   build: __dirname + '/www',
@@ -33,6 +34,8 @@ const jsFiles = [
 
 /** vendors plugins for use in components **/
 jsVendors + 'jquery.mmenu.all.min.js',
+jsVendors + 'jquery.flexslider-min.js',
+jsVendors + 'swiper.min.js',
 
 /** components **/
 paths.src + '/components/**/*.js',
@@ -55,12 +58,21 @@ function build() {
 function serve() {
   const server = fractal.web.server({
     sync: true
+
   });
 
   server.on('error', err => logger.error(err.message));
 
   return server.start().then(() => {
     logger.success(`Fractal server is now running at ${server.url}`);
+    // browserSync.init({
+    //     injectChanges: true,
+    //     proxy: server.url, // localhost served url
+    //     notify: false,
+    //     reloadDelay: 2000
+    //
+    // });
+
   });
 };
 
@@ -148,6 +160,7 @@ function styles() {
     ]))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.dest + '/assets/styles'));
+    // .pipe(browserSync.stream({ match: '**/*.css' }));
 };
 
 // Scripts
@@ -184,6 +197,6 @@ const compile = gulp.series(clean, gulp.parallel(meta, fonts, icons, images, vec
 gulp.task('start', gulp.series(compile, serve));
 gulp.task('lint', gulp.series(lintstyles));
 gulp.task('build', gulp.series(compile, build));
-gulp.task('dev', gulp.series(compile, watch));
+gulp.task('dev', gulp.series(compile,watch));
 gulp.task('test', gulp.series(build, audit));
 gulp.task('publish', gulp.series(build, deploy));

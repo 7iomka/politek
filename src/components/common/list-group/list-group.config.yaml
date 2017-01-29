@@ -2,9 +2,14 @@ collated: true
 variants:
 - name: default
   context:
+    component: "list-item"
+    nestedMods: [with-border-gradient]
     listItems:
-    - icon: /assets/images/icons/benefits/1.png
-      label: Более <strong>1 000 наименований</strong> в ассортименте
+    - caption:
+        top: Наша продукция продается в
+        body: 123
+        bottom: городах России и СНГ
+      component: "list-item--only-caption_extended"
     - icon: /assets/images/icons/benefits/2.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
     - icon: /assets/images/icons/benefits/3.png

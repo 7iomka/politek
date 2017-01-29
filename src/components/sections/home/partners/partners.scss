@@ -1,0 +1,23 @@
+.p-section--partners {
+  padding-bottom: 50px;
+  .section-title {
+    padding: 28px 0;
+  }
+  .list-group__item--generalPartner {
+    margin-bottom: 25px;
+  }
+  .list-group__item--partner {
+      margin-bottom: 70px;
+  }
+
+  .dealers-link {
+    text-align: center;
+    display: block;
+    margin-top: -30px;
+    position: relative;
+    text-decoration: underline;
+  }
+  .partners-list {
+    // margin-bottom: -30px;
+  }
+}

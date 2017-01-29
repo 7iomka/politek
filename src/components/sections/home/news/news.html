@@ -1,0 +1,11 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+      <div class="col">{% render "@section-title", sectionConfig %}</div>
+      {% render "@news-list", newsList %}
+
+    <div class="row justify-content-center">
+      {% render "@button", { label: "Все новости", mods: ["primary"], href: "/news"} %}
+    </div>
+  </div>
+{% endblock %}

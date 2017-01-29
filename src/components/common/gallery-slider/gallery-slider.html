@@ -1,0 +1,22 @@
+<div class="gallery-slider">
+  {# gallery-scene #}
+  <div class="gallery-slider__scene swiper-container">
+    <div class="swiper-wrapper">
+      {% for slide in slides %}
+        <div class="swiper-slide gallery-slider__scene-item">
+          {% render "@img-responsive", {src: galleryPath+slide.url} %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {# gallery-thumbs #}
+  <div class="gallery-slider__thumbs swiper-container">
+    <div class="swiper-wrapper">
+      {% for slide in slides %}
+        <div class="swiper-slide gallery-slider__thumb">
+          {% render "@img-responsive", {src: thumbsPath+slide.url} %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

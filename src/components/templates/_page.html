@@ -1,7 +1,8 @@
-{% include "@site-header" %}
-<main class="c-main" role="main">
-{% block main %}
-{% endblock %}
-</main>
-
-{% include "@contentinfo" %}
+<div class="site-wrapper">
+  {% include "@site-header" %}
+  <main class="c-main" role="main">
+  {% block main %}
+  {% endblock %}
+  </main>
+  {% include "@site-footer" %}
+</div>

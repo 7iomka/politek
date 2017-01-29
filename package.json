@@ -1,6 +1,6 @@
 {
   "name": "Politek",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "Modular frontend",
   "keywords": [
     "styleguide",
@@ -48,6 +48,7 @@
     "postcss-assets": "latest"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.6",
     "gulp": "github:gulpjs/gulp#4.0",
     "node-sass": "^4.3.0",
     "node-sass-json-importer": "^3.0.0"

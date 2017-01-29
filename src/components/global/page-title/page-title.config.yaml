@@ -1,3 +1,10 @@
 title: page-title
-context:
-  title: Заголовок страницы
+collated: true
+variants:
+  - name: default
+    context:
+      title: Заголовок страницы
+  - name: home-title
+    context:
+      title: Заголовок не жирный (на главной)
+      mods: [home]

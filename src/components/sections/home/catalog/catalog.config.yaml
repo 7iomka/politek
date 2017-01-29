@@ -1,0 +1,49 @@
+context:
+  mods: [catalog]
+  sectionConfig:
+    title: Каталог продукции
+  productsList:
+    component: "list-item--product"
+    nestedMods: [product]
+    bootstrap:
+      cols: col col-xs-12 col-sm-6 col-md-3
+    listItems:
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги для внутренней канализации из полипропилена
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/2.png
+      label: Двухслойные гофрированные трубы и фитинги для двухслойных трубопроводов
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/3.png
+      label: Трубы для фитинги для наружной канализации
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/4.png
+      label: Трубы и фитинги для внутренней канализации из полипропилена <br/>с улучшенным <br/>шумо-поглощением
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/5.png
+      label: Дренажные трубы из ПНД
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/6.png
+      label: Трубопроводы для холодного водоснабжения из ПНД
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/7.png
+      label: Трубы и фитинги для горячего/холодного водоснабжения и отопления ППР
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+
+    - icon: /assets/images/catalog/8.png
+      label: Компрессионные фитинги для холодного водоснабжения
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist

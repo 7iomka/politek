@@ -1,0 +1,23 @@
+context:
+  mods: [footer-contacts]
+  contactsList:
+    - mapImg: /assets/images/maps/address1.png
+      address: "143000, Россия,<br/>
+                Mосковская обл.,<br/>
+                г. Одинцово,<br/>
+                ул. Транспортная д. 2"
+      phones:
+        - +7(495) 926-20-64
+        - +7(495) 926-20-65
+        - +7(495) 789-32-76
+        - +7(495) 789-36-34
+        - +7(495) 926-69-55
+
+
+    - mapImg: /assets/images/maps/address2.png
+      address: "143000, Россия,<br/>
+                Тульская обл.,г.Тула,<br/>
+                ул.Щегловская<br/>
+                засека, д.31"
+      phones:
+        - +7 (4872) 70-23-36 <br/>(многоканальный)

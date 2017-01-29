@@ -13,7 +13,7 @@
             toggler.toggleClass('active');
 
           });
-        
+
           mmenuApi.bind("closing", function () {
             toggler.removeClass('active');
           });

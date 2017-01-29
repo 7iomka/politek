@@ -1,5 +1,2 @@
-<div class="page-title-area">
-  <div class="container">
-    <h1 class="page-title">{{ title }}</h1>
-  </div>
-</div>
+{% from "blockTitle.html" import blockTitle %}
+{{ blockTitle(title, 'page', mods, true) }}

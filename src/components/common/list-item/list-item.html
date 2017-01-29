@@ -1,4 +1,4 @@
-<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}">
+<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}{% for nestedMod in nestedMods %} list-group__item--{{ nestedMod }}{% endfor %}">
   {%- if icon or caption -%}
     <figure class="list-group__item-figure">
       {%- if icon -%}

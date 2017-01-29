@@ -1,0 +1,6 @@
+title: section-title
+collated: true
+variants:
+  - name: default
+    context:
+      title: Заголовок секции

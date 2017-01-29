@@ -1,0 +1,25 @@
+.gallery-slider {
+    // width: 572px;
+    max-width: 572px;
+    margin: auto;
+
+    &__scene {
+      height: 80%;
+      width: 100%;
+    }
+
+    &__thumbs {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0 0;
+
+      .swiper-slide {
+        width: auto;
+        height: 100%;
+        opacity: 0.7;
+      }
+      .swiper-slide-active {
+        opacity: 1;
+      }
+    }
+}

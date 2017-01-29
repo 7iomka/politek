@@ -6,7 +6,7 @@
   }
 
   &-image {
-
+    max-width: 100%;
   }
 
   &-label {
@@ -14,36 +14,98 @@
     font-size: 18px;
     line-height: (20/18)+em;
   }
-  /** modifiactors **/
-  &--only-caption_extended {
-    .list-group__item {
-      &-caption {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-self: center;
-      // top
-        &-top {
-          color:  #282828;
-          font-size: 18px;
-          align-self: center;
-        }
-      // body
-        &-body {
-          @include font-gradient($base-color--primary,$base-color--secondary, 235deg);
-          font-size: 100px;
-          font-weight: 700;
-          line-height: 1;
-          margin: 16px 0;
-          align-self: center;
-        }
-      // bottom
-        &-bottom {
-          font-size: 18px;
-          font-weight: 700;
-          line-height: (20/18)+em;
+
+
+
+  /**
+   * with border-gradient
+   */
+   &--with-border-gradient {
+     @include border-gradient($base-color--secondary, $base-color--primary,6px,vertical);
+   }
+
+}
+/** modifiactors **/
+
+.list-group__item--only-caption_extended {
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  /**bem**/
+  .list-group__item {
+    &-figure {
+      margin: 32px;
+    }
+    &-caption {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-self: center;
+    // top
+    &-top {
+      color:  #282828;
+      font-size: 18px;
+      align-self: center;
+    }
+    // body
+    &-body {
+      &--font-gradient {
+        @include font-gradient($base-color--primary,$base-color--secondary, 235deg);
+      }
+      font-size: 100px;
+      font-weight: 700;
+      line-height: 1;
+      margin: 16px 0;
+      align-self: center;
+    }
+    // bottom
+      &-bottom {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: (20/18)+em;
+      }
+    }
+  }
+}
+
+/** product **/
+.list-group__item--product {
+  margin-bottom: 45px;
+  &:hover {
+    .list-group__item-link {
+      color: $color-link--hover;
+    }
+  }
+  /** bem **/
+  .list-group__item {
+
+      &-link {
+        display: block;
+        text-align: center;
+        font-weight: 700;
+        color: inherit;
+        &:hover {
+          color: $color-link--hover;
         }
       }
+
+      &-priceListLink {
+          text-align: center;
+          display: block;
+          margin-top: 15px;
+          font-size: 15px;
+          text-decoration: underline;
+      }
+  }
+}
+
+/** partner **/
+.list-group__item--partner {
+  /** bem **/
+  .list-group__item {
+    &-figure {
+      margin-bottom: 0;
     }
   }
 
