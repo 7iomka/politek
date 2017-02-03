@@ -1,0 +1,12 @@
+.product-group {
+
+  &__link {
+    font-size: 20px;
+    text-decoration: underline;
+    line-height: 1.5em;
+    margin-right: 1em;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
