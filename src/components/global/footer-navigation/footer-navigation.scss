@@ -7,10 +7,28 @@
 .footer-nav {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -42px;
+    justify-content: center;
+    @include media(">=425px") {
+      justify-content: flex-start;
+      margin-right: -15px;
+    };
+    @include media(">=xl") {
+      margin-right: -42px;
+    };
     &__item {
+      font-size: 15px;
+      padding: 0 15px;
+      font-size: 15px;
+
+      @include media(">=425px") {
+        width: 33.333%;
+      };
+      @include media(">=xl") {
         margin-right: 40px;
-        font-size: 15px;
+        width: auto;
+        padding:0;
+      };
+
     }
     &__label {
         text-decoration: underline;

@@ -1,12 +1,11 @@
 {% extends "@section" %}
 {% block section %}
   <div class="container">
-    <div class="row product-group">
-      <div class="col-12">{% render "@section-title", sectionConfig %}</div>
+    <div class="product-group">
       {# Тут будет компонент какой-нить #}
       <div class="product-group__links">
         {% for product in productList %}
-          <a class="product-group__link" href="#{{ product.id}}" rel="m_PageScroll2id">{{ product.title }}</a>
+          <a class="product-group__link" href="#{{ product.id}}">{{ product.title }}</a>
         {% endfor %}
       </div>
       {% for product in productList %}
@@ -14,4 +13,5 @@
       {% endfor %}
     </div>
   </div>
+  {% include "@goup" %}
 {% endblock %}

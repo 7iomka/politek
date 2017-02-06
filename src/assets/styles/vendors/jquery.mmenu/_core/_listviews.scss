@@ -1,4 +1,4 @@
-//	Listviews
+//	Listviews (modified!)
 
 .mm-listview,
 .mm-listview > li
@@ -35,7 +35,7 @@
 		> a,
 		> span
 		{
-			@include mm_ellipsis;
+			// @include mm_ellipsis;
 
 			color: inherit;
 			display: block;

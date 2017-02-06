@@ -1,5 +1,5 @@
 <p class="c-field c-field--combined">
   <label class="c-field__label c-field__label--icon" for="q">{% include "search.svg" %}</label>
-  <input class="c-field__input" type="search" name="q" placeholder="Поиск по сайту"/>
-  {% render "@button", { label: "Найти на сайте", mods: ["secondary"], submit: true } %}
+  <input class="c-field__input top-bar__search-input" type="search" name="q" placeholder="Поиск по сайту"/>
+  {% render "@button", { label: "Найти<span class='top-bar__search-text-long-part'> на сайте</span>", mods: ["secondary","small"], submit: true, customClassList: "top-bar__search-btn" } %}
 </p>

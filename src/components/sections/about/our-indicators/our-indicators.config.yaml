@@ -1,0 +1,21 @@
+context:
+  mods: [our-indicators]
+  indicatorsList:
+    component: "list-item--only-caption_extended"
+    nestedMods: [only-caption_extended,with-border-gradient]
+    bootstrap:
+      cols: col-xs-12 col-sm-6 col-lg-3 mb-3 mb-lg-0
+    bodyFontGradient: true
+    listItems:
+    - caption:
+        body: 1
+        bottom: место в России по производству компрессионных фитингов для труб ПНД
+    - caption:
+        body: 50
+        bottom: лет - срок службы инженерных систем
+    - caption:
+        body: 1000
+        bottom: наименований изделий в ассортименте
+    - caption:
+        body: 3000
+        bottom: тонн продукции на складе

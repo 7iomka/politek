@@ -1,4 +1,5 @@
-(function ($, window, document, undefined) {
+var $ = require('jquery');
+module.exports = function () {
 
   'use strict';
   $.fn.navigationToggler = function() {
@@ -14,9 +15,11 @@
 
           });
 
-          mmenuApi.bind("closing", function () {
-            toggler.removeClass('active');
-          });
+          if(mmenuApi) {
+            mmenuApi.bind("closing", function () {
+              toggler.removeClass('active');
+            });
+          }
       });
 
   };
@@ -25,4 +28,4 @@
     $('.navigation-toggler').navigationToggler();
   });
 
-})(jQuery, window, document);
+}();

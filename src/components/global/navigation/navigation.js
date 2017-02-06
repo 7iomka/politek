@@ -1,4 +1,6 @@
-(function ($, window, document, undefined) {
+var $ = require('jquery');
+require('jquery.mmenu');
+module.exports = function () {
 
   $(function () {
     $('.navigation--mobile').mmenu({
@@ -9,11 +11,4 @@
     });
   });
 
-})(jQuery, window, document);
-
-var
-x      = 5,
-y      = 8,
-x      = 99,
-r34343 = 22,
-z      = 1000;
+}();

@@ -33,15 +33,17 @@
           visibility: visible;
           transform: translate(0, 0);
           opacity: 1;
+          pointer-events: all;
+          z-index: 9;
       }
-
-
-
      }
 
     /**
-     * menu label - link
+     * menu header label - link
      */
+    &__label {
+      z-index: 10;
+    }
     &__label, &__sub-label {
       color: $navigation-color;
       padding: 10px 20px;
@@ -115,6 +117,8 @@
         visibility: hidden;
         transition: 0.5s ease all;
         opacity: 0;
+        pointer-events: none;
+        z-index: 8;
     }
 
     &__sub-item:hover{
@@ -129,7 +133,7 @@
 
 //Media Queries
 @include media(">=xl") {
-  .navigation-toggler, .navigation--mobile, html.mm-blocking #mm-blocker {
+  .navigation--mobile, html.mm-blocking #mm-blocker {
     display: none;
   }
 
@@ -139,14 +143,15 @@
 };
 
 @include media("<xl") {
-  .navigation-toggler {
-    display: block;
-  }
-
   .navigation--desktop {
     display: none;
   }
   .header-nav__expander {
     display: none!important;
+  }
+  .header-nav {
+    &__label, &__sub-label {
+      line-height: normal;
+    }
   }
 };

@@ -15,10 +15,18 @@ variants:
   context:
     mods: [product]
     handle: list-item--product
-    icon: /assets/images/catalog/truby_i_fitingi.png
-    label: Трубы и фитинги
+    icon: /assets/images/catalog/1.png
+    label: Трубы и фитинги 22
     link: /product/link-to-product
     priceListLink: /product/link-to-download-pricelist
+- name: product--without-pricelist
+  context:
+    mods: [product]
+    handle: list-item--product
+    icon: /assets/images/catalog/1.png
+    label: Трубы и фитинги 22
+    link: /product/link-to-product
+    priceListLink: false
 - name: news
   context:
     handle: list-item--news

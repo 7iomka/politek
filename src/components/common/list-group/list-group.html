@@ -5,7 +5,14 @@
       {% else %}
         {% set nestedMods = nestedMods %}
       {% endif %}
-  {% set mainProperties = {'nestedMods': nestedMods, 'bodyFontGradient': bodyFontGradient } %}
+  {%
+    set mainProperties = {
+    'nestedMods': nestedMods,
+    'bodyFontGradient': bodyFontGradient,
+    'labelMods': labelMods,
+    'linkMods': linkMods
+     }
+  %}
 
   {% set config = mainProperties|objAssign(listItem) %}
 

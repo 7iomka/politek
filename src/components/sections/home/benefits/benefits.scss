@@ -1,5 +1,13 @@
 .p-section--benefits {
 
+  /** max-width for list-items only for this section **/
+  .list-group__item--only-caption_extended {
+    max-width: 300px;
+    margin: auto;
+    @include media(">=680px") {
+      max-width: 100%;
+    };
+  }
 }
 .img-responsive--benefits-banner {
   margin: 40px 0;

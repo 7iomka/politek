@@ -1,10 +1,30 @@
 .product-group {
-
+  &__links {
+    margin-bottom: 20px;
+    @include media(">=sm") {
+      text-align: center;
+    }
+    @include media(">=lg") {
+      text-align: left;
+      margin-bottom: 60px;
+    };
+  }
   &__link {
-    font-size: 20px;
+    font-size: 16px;
+    display: block;
+    
+    text-align: center;
+    @include media(">=sm") {
+      display: inline-block;
+      text-align: left;
+      margin-right: 1em;
+    };
+    @include media(">=lg") {
+      font-size: 20px;
+    };
     text-decoration: underline;
     line-height: 1.5em;
-    margin-right: 1em;
+    font-weight: bold;
     &:hover {
       text-decoration: none;
     }

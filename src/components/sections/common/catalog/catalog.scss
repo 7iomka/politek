@@ -1,0 +1,11 @@
+.p-section--catalog {
+}
+
+/** only for homepage **/
+.home {
+  .p-section--catalog {
+    @include media(">=lg") {
+      margin-top: 120px;
+    };
+  }
+}

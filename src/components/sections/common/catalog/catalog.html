@@ -1,7 +1,9 @@
 {% extends "@section" %}
 {% block section %}
   <div class="container">
-      {% render "@section-title", sectionConfig %}
+      {% if sectionConfig.title %}
+        {% render "@section-title", sectionConfig %}
+      {% endif %}
       {% render "@list-group", productsList %}
   </div>
 {% endblock %}

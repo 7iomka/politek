@@ -3,7 +3,7 @@ context:
   benefitsList:
     component: "list-item"
     bootstrap:
-      cols: col-xs-12 col-sm-6 col-md-3
+      cols: col-xs-12 col-sm-6 col-md-3 mb-4 mb-lg-0
     listItems:
     - icon: /assets/images/icons/benefits/1.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
@@ -20,7 +20,7 @@ context:
     component: "list-item--only-caption_extended"
     nestedMods: [only-caption_extended,with-border-gradient]
     bootstrap:
-      cols: col-xs-12 col-sm-6 col-lg-3
+      cols: col-xs-12 col-sm-6 col-lg-3 mb-3 mb-lg-0
     bodyFontGradient: true
     listItems:
     - caption:

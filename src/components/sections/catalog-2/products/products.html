@@ -1,0 +1,9 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+      {% if sectionConfig.title %}
+        {% render "@section-title", sectionConfig %}
+      {% endif %}
+      {% render "@list-group--products--big-underlined", productsList, true %}
+  </div>
+{% endblock %}

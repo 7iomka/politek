@@ -1,0 +1,5 @@
+handle: catalog-2-template
+context:
+  sections:
+  - section: products-2
+  - section: catalog-2-description

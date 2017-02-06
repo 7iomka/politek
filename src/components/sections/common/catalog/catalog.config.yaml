@@ -6,7 +6,7 @@ context:
     component: "list-item--product"
     nestedMods: [product]
     bootstrap:
-      cols: col col-xs-12 col-sm-6 col-md-3
+      cols: col-12 col-sm-6 col-md-4 col-lg-3
     listItems:
     - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги для внутренней канализации из полипропилена

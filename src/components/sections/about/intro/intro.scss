@@ -1,0 +1,17 @@
+.about-intro {
+  &__description {
+    font-size: 18px;
+    line-height: 1.111em;
+    p {
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-bottom: 1rem;
+      li:before {
+        color: #25598b;
+        content: "•";
+        padding-right: 0.7em;
+      }
+    }
+  }
+}

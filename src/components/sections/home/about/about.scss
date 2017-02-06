@@ -89,10 +89,10 @@
     display: flex;
     flex-wrap: wrap;
     margin: 11px auto;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     @include media(">=lg") {
-      margin: -28px 0px -28px 11px;
+      margin: -28px -22px -28px 11px;
     };
   }
 
@@ -102,9 +102,6 @@
         margin: 8px 10px;
       };
   }
-  .c-button {
-    width: 215px;
-    padding: 11px 15px;
-  }
+
 
 }

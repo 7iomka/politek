@@ -10,7 +10,7 @@ context:
     component: "list-item"
     nestedMods: [partner]
     bootstrap:
-      cols: col-sm-6 col-md-4
+      cols: col-6 col-sm-4
       rowClass: align-items-center partners-list
     listItems:
       - icon: /assets/images/partners/1.png

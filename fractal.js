@@ -10,7 +10,7 @@ const paths = {
 
 const mandelbrot = require('@frctl/mandelbrot')({
   favicon: '/assets/icons/icon.ico',
-  lang: 'en-gb',
+  lang: 'ru-ru',
   styles: ['default', '/assets/styles/theme.css'],
   static: {
     mount: 'fractal'
@@ -56,7 +56,16 @@ const nunjucks = require('@frctl/nunjucks')({
     },
     objAssign: function (obj, newObj) {
       return Object.assign({}, obj, newObj);
-    }
+    },
+    isString: function(obj) {
+      return typeof obj == 'string';
+    },
+    isObject: function(obj) {
+      return typeof obj == 'object';
+    },
+    makePrice: function(str) {
+      return str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    },
   },
   paths: [
     paths.static + '/assets/vectors',

@@ -1,4 +1,5 @@
-(function ($, window, document, undefined) {
+var $ = require('jquery');
+module.exports = function () {
 
   $(function () {
     if(!$('.news-list--slider').length) return;
@@ -16,7 +17,7 @@
            1200: {
               slidesPerView: 2
            },
-           480: {
+           576: {
                slidesPerView: 1
            }
          }
@@ -24,4 +25,4 @@
     });
   });
 
-})(jQuery, window, document);
+}();

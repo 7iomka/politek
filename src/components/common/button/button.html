@@ -1,5 +1,13 @@
 {%- if href -%}
-<a class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}" href="{{ href }}">{{ label }}</a>
+<a class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}" href="{{ href }}">
+{% if image %}
+  <img class="c-button__image" src="{{ image }}" />
+{% endif %}
+  <span>{{ label }}</span></a>
 {%- else -%}
-<button class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}"{{ " type=\"submit\"" if submit }}{{ " disabled" if disabled }}>{{ label }}</button>
+<button class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}"{{ " type=\"submit\"" if submit }}{{ " disabled" if disabled }}>
+{% if image %}
+  <img class="c-button__image" src="{{ image }}" />
+{% endif %}
+  <span>{{ label }}</span></button>
 {%- endif -%}

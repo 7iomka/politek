@@ -1,4 +1,3 @@
-collated: true
 variants:
 - name: default
   context:
@@ -16,5 +15,66 @@ variants:
       label: Более <strong>1 000 наименований</strong> в ассортименте
     - icon: /assets/images/icons/benefits/4.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
+    bootstrap:
+      cols: col
+- name: products
+  handle: products
+  context:
+    component: "list-item--product"
+    nestedMods: [product]
+    listItems:
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+      priceListLink: /product/link-to-download-pricelist
+    bootstrap:
+      cols: col
+- name: products--big-underlined
+  handle: products--big-underlined
+  context:
+    component: "list-item--product--without-pricelist"
+    nestedMods: [product]
+    linkMods: [underlined,colored]
+    labelMods: [big]
+    bootstrap:
+      cols: col
+    listItems:
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги из list-group
+      link: /product/link-to-product
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+
+- name: products-category-horizontal
+  handle: products-category-horizontal
+  context:
+    component: "list-item--product"
+    nestedMods: [product,product-horizontal]
+    listItems:
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
+    - icon: /assets/images/catalog/1.png
+      label: Трубы и фитинги
+      link: /product/link-to-product
     bootstrap:
       cols: col

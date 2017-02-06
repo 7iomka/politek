@@ -3,15 +3,19 @@
 
   }
   .#{$prefix}-title {
-    color:  black;
-    font-size: 50px;
+    color: black;
     font-weight: 700;
-    line-height: 50px;
     text-align: center;
-    margin: 50px 0;
-    // @include media("<lg") {
-    //   font-size: 42px;
-    // };
+    font-size: 32px;
+    line-height: 1;
+    margin: 36px 0;
+    @include media(">=md") {
+      font-size: 36px;
+    };
+    @include media(">=lg") {
+      font-size: 50px;
+      margin: 50px 0;
+    };
   }
 }
 

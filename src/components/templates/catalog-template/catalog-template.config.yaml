@@ -1,0 +1,8 @@
+context:
+  title: "About 24 ways"
+  sections:
+  - section: catalog
+    config:
+      sectionConfig:
+        title: false
+  - section: catalog-description

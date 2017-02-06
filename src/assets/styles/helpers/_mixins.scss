@@ -79,9 +79,9 @@
  * Make text gradient with fallback of clean color text
  * dir: left/top
  */
-@mixin font-gradient($from, $to, $dir, $fallbackColor: $from) {
+@mixin font-gradient($from, $to, $dir, $fallbackColor: $from,  $fromPercent: 0%, $toPercent: 100%) {
   color: $fallbackColor;
-  background: -webkit-linear-gradient($dir, $from, $to);
+  background: -webkit-linear-gradient($dir, $from $fromPercent, $to $toPercent);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }

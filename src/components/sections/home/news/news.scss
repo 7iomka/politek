@@ -1,0 +1,11 @@
+.p-section--news {
+  .home & {
+    margin-bottom: 70px;
+  }
+}
+.news-list-row {
+  @include media("<xl") {
+    margin-right: 0;
+    margin-left: 0;
+  };
+}

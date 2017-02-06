@@ -9,8 +9,8 @@
     </figure>
   {%- endif -%}
   {%- if label -%}
-  <a class="list-group__item-link" href="{{ link }}">
-    <span class="list-group__item-label">{{ label }}</span>
+  <a class="list-group__item-link{% for mod in linkMods %} list-group__item-link--{{ mod }}{% endfor %}" href="{{ link }}">
+    <span class="list-group__item-label{% for mod in labelMods %} list-group__item-label--{{ mod }}{% endfor %}">{{ label }}</span>
   </a>
   {%- endif -%}
   {%- if priceListLink -%}

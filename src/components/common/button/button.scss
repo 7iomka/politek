@@ -2,7 +2,6 @@
   @include typeset(label, 2);
   display: inline-block;
   // padding: $space-medium $space-large;
-  padding: 8px 15px;
   background-color: $button-background--primary;
   text-align: center;
   color: white;
@@ -61,7 +60,29 @@
 
 
 /** by size **/
+/**
+ * standart
+ */
+.c-button {
+  min-width: 215px;
+  padding: 11px 15px;
+}
+.c-button--small {
+  min-width: 170px;
+  padding: 8px 15px;
+}
 .c-button--big {
   width: 500px;
   font-size: 25px;
+}
+
+
+/** with image-icon **/
+.c-button {
+  &.c-button--with-image {
+    min-width: 200px;
+    .c-button__image {
+      margin-right: 10px;
+    }
+  }
 }

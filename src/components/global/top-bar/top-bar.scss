@@ -1,11 +1,56 @@
 .top-bar {
   background-color: $top-bar-color--background;
   padding: 7px 0;
-  a {
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    @include media(">=sm") {
+      justify-content: flex-end;
+      text-align: left;
+    };
+  }
+  &__action-link {
     color: white;
     text-decoration: underline;
     line-height: 30px;
     display: block;
     text-align: right;
+    padding: 0 5px;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &__search-input {
+    padding: 0.35em;
+    width: 100% !important;
+    @include media(">=sm", "<md") {
+      width: auto !important;
+    };
+    @include media(">=md") {
+      max-width: 340px;
+    };
+  }
+  &__search-btn {
+    @include media("<md") {
+      min-width: auto;
+      margin-left: 10px !important;
+    };
+    @include media("<sm") {
+      position: absolute;
+      right: 3px;
+      padding: 5px 15px;
+      border-radius: 3px;
+    };
+  }
+  &__search-text-long-part {
+    display: none;
+    @include media(">=md") {
+      display: inline;
+    };
   }
 }

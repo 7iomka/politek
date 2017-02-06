@@ -1,0 +1,25 @@
+.p-section--our-indicators {
+  .list-group__item--only-caption_extended {
+    align-items: flex-start;
+    /**bem**/
+    .list-group__item {
+      &-figure {
+          margin: 24px;
+      }
+      &-caption-body {
+          margin: 0;
+          font-size: 90px;
+          @include media(">=lg") {
+            font-size: 80px;
+          };
+          @include media(">=xl") {
+              font-size: 90px;
+          };
+      }
+      &-caption-bottom {
+          margin-top: 10px;
+      }
+    }
+  }
+
+}

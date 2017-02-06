@@ -10,6 +10,6 @@
         <li class="contacts-block__phone">{{ phone }}</li>
       {% endfor %}
     </ul>
-    <div class="col">{% render "@button", { label: "Развернуть карту", mods: ["dark"], customClassList:"contacts-block__btn"} %}</div>
+    {% render "@button", { label: "Развернуть карту", mods: ["dark"], customClassList:"contacts-block__btn"} %}
   </div>
 </div>

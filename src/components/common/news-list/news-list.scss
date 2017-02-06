@@ -6,6 +6,10 @@
 .news-item {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 60px;
+  @include media(">=sm") {
+    margin: 0;
+  };
 
   &__header {
       @include media(">=md") {

@@ -1,12 +1,8 @@
-(function ($, window, document, undefined) {
+var $ = require('jquery');
+module.exports = function() {
+  $(function () {
+    if(!$('.gallery-slider__scene').length) return;
 
-  'use strict';
-
-
-})(jQuery, window, document);
-$(function () {
-  if(!$('.gallery-slider__scene').length) return;
-  
    var galleryTop = new Swiper('.gallery-slider__scene', {
         //  nextButton: '.swiper-button-next',
         //  prevButton: '.swiper-button-prev',
@@ -30,18 +26,17 @@ $(function () {
         // freeModeMomentumBounce: false,
         // freeModeSticky: true,
    });
-   galleryTop.params.control = galleryThumbs;
-   galleryThumbs.params.control = galleryTop;
-   galleryThumbs.disableTouchControl();
-  //  galleryTop.disableTouchControl();
+     galleryTop.params.control = galleryThumbs;
+     galleryThumbs.params.control = galleryTop;
+     galleryThumbs.disableTouchControl();
+     //  galleryTop.disableTouchControl();
 
-   $(".gallery-slider__thumb").on('click', function(){
-      // galleryThumbs.slideTo($(this).index(), 500);
-      $('.swiper-slide-active', '.gallery-slider__thumbs').removeClass('swiper-slide-active');
-      $(this).addClass('swiper-slide-active');
-       galleryTop.slideTo($(this).index(), 500);
-   });
+     $(".gallery-slider__thumb").on('click', function(){
+        // galleryThumbs.slideTo($(this).index(), 500);
+        $('.swiper-slide-active', '.gallery-slider__thumbs').removeClass('swiper-slide-active');
+        $(this).addClass('swiper-slide-active');
+         galleryTop.slideTo($(this).index(), 500);
+     });
 
-
-
-});
+  });
+}();

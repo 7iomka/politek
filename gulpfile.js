@@ -19,7 +19,19 @@ const stylelint = require('gulp-stylelint');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const logger = fractal.cli.console;
+const rename = require('gulp-rename');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const gulpIf = require('gulp-if');
+const gulplog = require('gulplog');
+
+const webpackStream = require('webpack-stream');
+const webpack = webpackStream.webpack;
+// const named = require('vinyl-named');
+
 // const browserSync = require('browser-sync').create();
+
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 const paths = {
   build: __dirname + '/www',
@@ -36,9 +48,19 @@ const jsFiles = [
 jsVendors + 'jquery.mmenu.all.min.js',
 jsVendors + 'jquery.flexslider-min.js',
 jsVendors + 'swiper.min.js',
+jsVendors + 'photoswipe.min.js',
+jsVendors + 'photoswipe-ui-default.min.js',
+jsVendors + 'jquery.spinner.min.js',
+/** GreenSock / gsap core and plugins **/
+jsVendors + 'greensock/minified/TweenMax.min.js',
+jsVendors + 'greensock/minified/plugins/ScrollToPlugin.min.js',
+
+/** ScrollMagic core and plugins **/
+jsVendors + 'scrollmagic/minified/ScrollMagic.min.js',
+jsVendors + 'scrollmagic/minified/plugins/animation.gsap.min.js',
 
 /** components **/
-paths.src + '/components/**/*.js',
+// paths.src + '/components/**/*.js',
 paths.src + '/assets/scripts/app.js'
 
 ];
@@ -150,35 +172,72 @@ function styles() {
       includePaths: [paths.src + '/tokens/'],
       importer: sassJson
     }).on('error', sass.logError))
-    .pipe(postcss([
+    .pipe(
+      postcss([
       postcssAssets({
         loadPaths: [paths.src + '/assets/vectors']
       }),
       autoprefixer({
         browsers: ['last 100 versions']
       })
-    ]))
+      ])
+     )
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.dest + '/assets/styles'));
     // .pipe(browserSync.stream({ match: '**/*.css' }));
 };
 
-// Scripts
-function scripts() {
-  return gulp.src(jsFiles)
-    .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(paths.dest + '/assets/scripts'));
-};
 
 // Accessibility audit
 function audit() {
   return gulp.src(paths.build + '/components/preview/**/*.html')
-    .pipe(a11y())
-    .pipe(a11y.reporter());
+  .pipe(a11y())
+  .pipe(a11y.reporter());
 };
+
+
+
+/** gulp task for webpack **/
+gulp.task('webpack', function(callback) {
+  let firstBuildReady = false;
+
+  function done(err, stats) {
+    firstBuildReady = true;
+
+    if (err) { // hard error, see https://webpack.github.io/docs/node.js-api.html#error-handling
+      return;  // emit('error', err) in webpack-stream
+    }
+
+    gulplog[stats.hasErrors() ? 'error' : 'info'](stats.toString({
+      colors: true
+    }));
+
+  }
+
+  /** Webpack options **/
+  let options = require('./webpack.config.js');
+
+  return gulp.src(`${paths.src}/app.js`)
+      .pipe(plumber({
+        errorHandler: notify.onError(err => ({
+          title:   'Webpack',
+          message: err.message
+        }))
+      }))
+      // .pipe(named()) //-- будем юзать если нужно будет несколько точек входа
+      .pipe(webpackStream(options, null, done))
+      .pipe(gulpIf(!isDevelopment, uglify()))
+      .pipe(gulp.dest(`${paths.dest}/assets/scripts`))
+      .on('data', function() {
+        gulplog.debug('callback is called'+ callback.called == true);
+        if (firstBuildReady && !callback.called) {
+          callback.called = true;
+          callback();
+        }
+      });
+
+});
+
 
 // Watch
 function watch(done) {
@@ -187,16 +246,21 @@ function watch(done) {
   gulp.watch(paths.src + '/assets/icons', icons);
   gulp.watch(paths.src + '/assets/images', images);
   gulp.watch(paths.src + '/assets/vectors', images);
-  gulp.watch(paths.src + '/**/*.js', scripts);
+  // gulp.watch(paths.src + '/**/*.js', scripts);
   gulp.watch(paths.src + '/**/*.scss', styles);
+
 };
 
+
+
 // Task sets
-const compile = gulp.series(clean, gulp.parallel(meta, fonts, icons, images, vectors, scripts, styles));
+const compile = gulp.series(clean, gulp.parallel(meta, fonts, icons, images, vectors, styles, 'webpack'));
+// const compile = gulp.series(clean, gulp.parallel( scripts));
+
 
 gulp.task('start', gulp.series(compile, serve));
 gulp.task('lint', gulp.series(lintstyles));
 gulp.task('build', gulp.series(compile, build));
-gulp.task('dev', gulp.series(compile,watch));
+gulp.task('dev', gulp.parallel(compile,watch));
 gulp.task('test', gulp.series(build, audit));
 gulp.task('publish', gulp.series(build, deploy));

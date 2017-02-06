@@ -1,0 +1,17 @@
+handle: products-2
+context:
+  procuctsConfig:
+    sectionConfig:
+      title: false
+  productsList:
+    component: "list-item--product--without-pricelist"
+    nestedMods: [product]
+    linkMods: [underlined,colored]
+    labelMods: [big]
+    listItems:
+    - icon: /assets/images/catalog/2/demo2.png
+      label: Трубы
+      link: /product/link-to-product
+    - icon: /assets/images/catalog/2/demo2.png
+      label: Фитинги
+      link: /product/link-to-product
