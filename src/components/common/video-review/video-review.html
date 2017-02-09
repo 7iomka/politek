@@ -1,0 +1,17 @@
+<div class="video-review{% for mod in mods %} video-review--{{ mod }}{% endfor %}">
+  {% if video %}
+    <div class="video-review__video-container">
+      {% if video.youtube %}
+        <div class="reviewYT" data-youtube-id="{{ video.youtube }}" data-ratio="16:9"></div>
+      {% else %}
+        <div class="reviewYT" data-youtube-id="tfpW6w8J21I" data-ratio="16:9"></div>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if author %}
+    <div class="video-review__author"> {{ author.name }}</div>
+    {% if author.role %}
+    <div class="video-review__author-role"> {{ author.role }}</div>
+    {% endif %}
+  {% endif %}
+</div>

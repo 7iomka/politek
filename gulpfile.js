@@ -24,10 +24,13 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const gulpIf = require('gulp-if');
 const gulplog = require('gulplog');
+const gutil = require('gulp-util');
 
 const webpackStream = require('webpack-stream');
-const webpack = webpackStream.webpack;
-// const named = require('vinyl-named');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config.js');
+const named = require('vinyl-named');
+
 
 // const browserSync = require('browser-sync').create();
 
@@ -40,30 +43,30 @@ const paths = {
   modules: __dirname + '/node_modules'
 };
 
-const jsVendors = paths.src + '/assets/scripts/vendors/';
-const jsFiles = [
-// paths.modules + '/fontfaceobserver/fontfaceobserver.js',
-
-/** vendors plugins for use in components **/
-jsVendors + 'jquery.mmenu.all.min.js',
-jsVendors + 'jquery.flexslider-min.js',
-jsVendors + 'swiper.min.js',
-jsVendors + 'photoswipe.min.js',
-jsVendors + 'photoswipe-ui-default.min.js',
-jsVendors + 'jquery.spinner.min.js',
-/** GreenSock / gsap core and plugins **/
-jsVendors + 'greensock/minified/TweenMax.min.js',
-jsVendors + 'greensock/minified/plugins/ScrollToPlugin.min.js',
-
-/** ScrollMagic core and plugins **/
-jsVendors + 'scrollmagic/minified/ScrollMagic.min.js',
-jsVendors + 'scrollmagic/minified/plugins/animation.gsap.min.js',
-
-/** components **/
-// paths.src + '/components/**/*.js',
-paths.src + '/assets/scripts/app.js'
-
-];
+// const jsVendors = paths.src + '/assets/scripts/vendors/';
+// const jsFiles = [
+// // paths.modules + '/fontfaceobserver/fontfaceobserver.js',
+//
+// /** vendors plugins for use in components **/
+// // jsVendors + 'jquery.mmenu.all.min.js',
+// // jsVendors + 'jquery.flexslider-min.js',
+// // jsVendors + 'swiper.min.js',
+// // jsVendors + 'photoswipe.min.js',
+// // jsVendors + 'photoswipe-ui-default.min.js',
+// // jsVendors + 'jquery.spinner.min.js',
+// // /** GreenSock / gsap core and plugins **/
+// // jsVendors + 'greensock/minified/TweenMax.min.js',
+// // jsVendors + 'greensock/minified/plugins/ScrollToPlugin.min.js',
+// //
+// // /** ScrollMagic core and plugins **/
+// // jsVendors + 'scrollmagic/minified/ScrollMagic.min.js',
+// // jsVendors + 'scrollmagic/minified/plugins/animation.gsap.min.js',
+// //
+// // /** components **/
+// // // paths.src + '/components/**/*.js',
+// // paths.src + '/assets/scripts/app.js'
+//
+// ];
 // Build static site (Fractal)
 function build() {
   const builder = fractal.web.builder();
@@ -80,21 +83,13 @@ function build() {
 function serve() {
   const server = fractal.web.server({
     sync: true
-
   });
 
   server.on('error', err => logger.error(err.message));
 
-  return server.start().then(() => {
+  return server.start().then((e) => {
+    // console.log(e)
     logger.success(`Fractal server is now running at ${server.url}`);
-    // browserSync.init({
-    //     injectChanges: true,
-    //     proxy: server.url, // localhost served url
-    //     notify: false,
-    //     reloadDelay: 2000
-    //
-    // });
-
   });
 };
 
@@ -132,16 +127,28 @@ function fonts() {
 // Icons
 function icons() {
   return gulp.src(paths.src + '/assets/icons/**/*')
-    .pipe(imagemin())
+    .pipe(plumber({
+          errorHandler: notify.onError(err => ({
+            title:   'Icons',
+            message: err.message
+          }))
+        }))
+    .pipe(gulpIf(!isDevelopment, imagemin()))
     .pipe(gulp.dest(paths.dest + '/assets/icons'));
 };
 
 // Images
 function images() {
   return gulp.src(paths.src + '/assets/images/**/*')
-    .pipe(imagemin({
-      progressive: true,
-    }))
+  .pipe(plumber({
+        errorHandler: notify.onError(err => ({
+          title:   'Images',
+          message: err.message
+        }))
+      }))
+  .pipe(gulpIf(!isDevelopment, imagemin({
+    progressive: true,
+  })))
     .pipe(gulp.dest(paths.dest + '/assets/images'));
 };
 
@@ -200,7 +207,7 @@ function audit() {
 /** gulp task for webpack **/
 gulp.task('webpack', function(callback) {
   let firstBuildReady = false;
-
+  //
   function done(err, stats) {
     firstBuildReady = true;
 
@@ -215,8 +222,7 @@ gulp.task('webpack', function(callback) {
   }
 
   /** Webpack options **/
-  let options = require('./webpack.config.js');
-
+  let options = Object.create(webpackConfig);
   return gulp.src(`${paths.src}/app.js`)
       .pipe(plumber({
         errorHandler: notify.onError(err => ({
@@ -225,7 +231,7 @@ gulp.task('webpack', function(callback) {
         }))
       }))
       // .pipe(named()) //-- будем юзать если нужно будет несколько точек входа
-      .pipe(webpackStream(options, null, done))
+      .pipe(webpackStream(options, webpack, done)) // вторым параметром идёт 2-ая версия установленного webpack
       .pipe(gulpIf(!isDevelopment, uglify()))
       .pipe(gulp.dest(`${paths.dest}/assets/scripts`))
       .on('data', function() {
@@ -242,25 +248,51 @@ gulp.task('webpack', function(callback) {
 // Watch
 function watch(done) {
   serve();
-  gulp.watch(paths.src + '/assets/fonts', fonts);
-  gulp.watch(paths.src + '/assets/icons', icons);
-  gulp.watch(paths.src + '/assets/images', images);
-  gulp.watch(paths.src + '/assets/vectors', images);
-  // gulp.watch(paths.src + '/**/*.js', scripts);
-  gulp.watch(paths.src + '/**/*.scss', styles);
+
+  gulp.watch(paths.src + '/assets/fonts', fonts).on('error', function(error) {
+      // silently catch 'ENOENT' error typically caused by renaming watched folders
+      if (error.code === 'ENOENT') {
+        return;
+      }
+    });
+  gulp.watch(paths.src + '/assets/icons', icons).on('error', function(error) {
+      // silently catch 'ENOENT' error typically caused by renaming watched folders
+      if (error.code === 'ENOENT') {
+        return;
+      }
+    });
+  gulp.watch(paths.src + '/assets/images', images).on('error', function(error) {
+      // silently catch 'ENOENT' error typically caused by renaming watched folders
+      if (error.code === 'ENOENT') {
+        return;
+      }
+    });
+  gulp.watch(paths.src + '/assets/vectors', vectors).on('error', function(error) {
+      // silently catch 'ENOENT' error typically caused by renaming watched folders
+      if (error.code === 'ENOENT') {
+        return;
+      }
+    });
+  // gulp.watch(paths.src + '/**/*.js', webpack);
+  gulp.watch(paths.src + '/**/*.scss', styles).on('error', function(error) {
+      // silently catch 'ENOENT' error typically caused by renaming watched folders
+      if (error.code === 'ENOENT') {
+        return;
+      }
+    });
 
 };
 
 
 
 // Task sets
-const compile = gulp.series(clean, gulp.parallel(meta, fonts, icons, images, vectors, styles, 'webpack'));
+const compile = gulp.series(clean, gulp.parallel('webpack', meta, fonts, icons, images, vectors, styles));
 // const compile = gulp.series(clean, gulp.parallel( scripts));
 
 
 gulp.task('start', gulp.series(compile, serve));
 gulp.task('lint', gulp.series(lintstyles));
 gulp.task('build', gulp.series(compile, build));
-gulp.task('dev', gulp.parallel(compile,watch));
+gulp.task('dev', gulp.series(compile, watch));
 gulp.task('test', gulp.series(build, audit));
 gulp.task('publish', gulp.series(build, deploy));

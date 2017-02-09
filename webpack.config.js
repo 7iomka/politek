@@ -1,4 +1,7 @@
 const path = require('path');
+const webpackStream = require('webpack-stream');
+const webpack = webpackStream.webpack;
+// const ComponentDirectoryPlugin = require("component-directory-webpack-plugin");
 
 let webpackConfig = {
     // click on the name of the option to get to the detailed documentation
@@ -29,24 +32,14 @@ let webpackConfig = {
 
       /* Advanced output configuration (click to show) */
     },
-
-
     module: {
-      rules: [
-        {
-          test: /\.(js)$/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              "presets": ["es2015", { "modules": false }]
-            }
-          },
-          exclude: [
-            path.resolve(__dirname, "node_modules/")
-          ]
-        }
-      ]
-    },
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            use: 'babel-loader',
+          }
+        ]
+      },
 
     resolve: {
       // options for resolving module requests
@@ -54,26 +47,29 @@ let webpackConfig = {
 
       modules: [
         "node_modules",
-        path.resolve(__dirname, "src/components")
+        path.resolve(__dirname, "src/components"),
+        path.resolve(__dirname, "node_modules")
       ],
       // directories where to look for modules
 
       // extensions: [".js"],
       // extensions that are used
 
-      // alias: {
-      //   // a list of module name aliases
-      //
-      //   "module": "new-module",
-      //   // alias "module" -> "new-module" and "module/path/file" -> "new-module/path/file"
-      //
-      //   "only-module$": "new-module",
-      //   // alias "only-module" -> "new-module", but not "module/path/file" -> "new-module/path/file"
-      //
-      //   "module": path.resolve(__dirname, "app/third/module.js"),
-      //   // alias "module" -> "./app/third/module.js" and "module/file" results in error
-      //   // modules aliases are imported relative to the current context
-      // },
+      alias: {
+        // a list of module name aliases
+        vendors: path.resolve(__dirname, 'src/vendors/'),
+        components: path.resolve(__dirname, 'src/components/')
+        // "module": "new-module",
+        // // alias "module" -> "new-module" and "module/path/file" -> "new-module/path/file"
+        //
+        // "only-module$": "new-module",
+        // // alias "only-module" -> "new-module", but not "module/path/file" -> "new-module/path/file"
+        //
+        // "module": path.resolve(__dirname, "app/third/module.js"),
+        // alias "module" -> "./app/third/module.js" and "module/file" results in error
+        // modules aliases are imported relative to the current context
+      },
+
       // /* alternative alias syntax (click to show) */
       // alias: [
       //   {
@@ -156,11 +152,17 @@ let webpackConfig = {
     // changes chunk loading behavior and available modules
 
     // externals: ["react", /^@angular\//],
+    externals: ['TweenLite'],
     // Don't follow/bundle these modules, but request them at runtime from the environment
 
 
     plugins: [
-      // ...
+       new webpack.NoErrorsPlugin(),
+       new webpack.ProvidePlugin({
+          $: "jquery",
+          "jQuery": "jquery"
+      })
+      //  new webpack.ResolverPlugin(new ComponentDirectoryPlugin(true)) // resolve require('components/demo') as components/demo/demo.js || index.js
     ],
     // list of additional plugins
   };

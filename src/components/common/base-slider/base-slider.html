@@ -1,0 +1,24 @@
+<div class="base-slider" >
+  {# base-scene #}
+  <div class="base-slider__instance base-slider__instance_{{ instance }} swiper-container">
+    <div class="swiper-wrapper">
+      {% for slide in slides %}
+        <div class="swiper-slide base-slider__scene-item">
+          {% set cmp = slide.component.name if slide.component else component.name %}
+          {% set cmpConfig = slide.component.config if slide.component else component.config %}
+          {% set slideConfig = cmpConfig | objAssign(slide) %}
+          {% if cmp %}
+            {% set handle = "@"+cmp %}
+            {% render handle, slideConfig, true %}
+          {% endif %}
+
+        </div>
+      {% endfor %}
+    </div>
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+     <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>

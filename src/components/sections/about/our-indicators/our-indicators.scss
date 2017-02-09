@@ -22,4 +22,17 @@
     }
   }
 
+  .our-indicators__link {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+    line-height: 1.125em;
+    margin: 20px;
+    @include media(">=md") {
+      font-size: 25px;
+      line-height: 20px;
+      margin: 40px 0;
+    };
+  }
+
 }

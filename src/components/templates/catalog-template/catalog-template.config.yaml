@@ -1,5 +1,4 @@
 context:
-  title: "About 24 ways"
   sections:
   - section: catalog
     config:

@@ -1,0 +1,21 @@
+.base-slider__instance {
+  @include media("<md") {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  };
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+  @include media(">=md") {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+  };
+}

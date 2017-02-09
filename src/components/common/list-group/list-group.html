@@ -17,7 +17,7 @@
   {% set config = mainProperties|objAssign(listItem) %}
 
     {% if bootstrap %}
-      <div class="{{ bootstrap.cols }}">
+      <div class="{{ bootstrap.last if bootstrap.last and loop.last else bootstrap.cols }}">
         {% render "@"+(listItem.component if listItem.component else component), config %}
       </div>
     {% else %}

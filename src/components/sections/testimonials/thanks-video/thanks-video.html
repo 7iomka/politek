@@ -1,0 +1,15 @@
+{% block section %}
+  <div class="container">
+    <div class="row">
+        <div class="col">{% render "@section-title--filled_primary", sectionConfig, true %}</div>
+    </div>
+    <div class="row">
+      {% for videoReview in videoReviews %}
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          {% render "@video-review", videoReview %}
+        </div>
+      {% endfor %}
+    </div>
+    {% include "@hr" %}
+  </div>
+{% endblock %}

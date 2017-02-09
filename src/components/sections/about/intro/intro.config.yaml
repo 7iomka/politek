@@ -1,3 +1,4 @@
+handle: about-intro
 context:
   mods: [about-intro]
   sectionConfig:

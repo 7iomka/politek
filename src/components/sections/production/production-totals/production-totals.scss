@@ -1,0 +1,46 @@
+.p-section--production-totals {
+
+  .list-group__item--only-caption_extended {
+    padding: 10px 15px;
+    align-items: flex-start;
+    /** bem **/
+    .list-group__item {
+      &-figure {
+        margin: 10px;
+      }
+      &-caption-body {
+        font-size: 70px;
+        margin: 0;
+      }
+      &-caption-bottom {
+        font-size: 30px;
+        line-height: 1;
+        @include font-gradient($base-color--primary,$base-color--secondary,235deg,$base-color--primary,0%,73%);
+      }
+    }
+
+
+  }
+
+}
+
+
+.list-group.trademarks-list {
+    justify-content: center;
+    align-items: center;
+}
+
+
+.list-group__item.list-group__item--trademark {
+    height: 78px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+    
+    .list-group__item-figure {
+        margin-bottom: 0;
+    }
+}

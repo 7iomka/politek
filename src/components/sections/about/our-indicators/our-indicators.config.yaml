@@ -1,3 +1,4 @@
+handle: our-indicators
 context:
   mods: [our-indicators]
   indicatorsList:

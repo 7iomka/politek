@@ -1,5 +1,5 @@
 {% macro blockTitle(title, prefix, mods, isPageTitle) %}
-  <div class="{{ prefix }}-title-area">
+  <div class="{{ prefix }}-title-area{% for mod in mods %} {{ prefix }}-title-area--{{ mod }}{% endfor %}">
       {% if isPageTitle %}
       <h1 class="{{ prefix }}-title{% for mod in mods %} {{ prefix }}-title--{{ mod }}{% endfor %}">{{ title }}</h1>
       {% else %}

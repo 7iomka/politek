@@ -20,3 +20,18 @@
 }
 
 @include blockTitle('section');
+
+/** mods **/
+
+// Filled primary
+
+.section-title-area--filled_primary {
+  text-align: center;
+}
+.section-title--filled_primary {
+  font-size: 35px;
+  color: white;
+  background-color: palette(primary);
+  padding: 10px 15px;
+  display: inline-block;
+}

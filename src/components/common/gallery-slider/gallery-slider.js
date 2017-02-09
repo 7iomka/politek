@@ -1,4 +1,5 @@
-var $ = require('jquery');
+import 'swiper';
+
 module.exports = function() {
   $(function () {
     if(!$('.gallery-slider__scene').length) return;

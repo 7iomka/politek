@@ -1,0 +1,9 @@
+handle: about-template
+context:
+  sections:
+  - section: about-intro
+  - section: we-produce
+  - section: our-indicators
+  - section: partners
+  - section: about-list
+  - section: about-reviews

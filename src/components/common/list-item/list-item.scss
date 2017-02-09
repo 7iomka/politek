@@ -22,6 +22,10 @@
    */
    &--with-border-gradient {
      @include border-gradient($base-color--secondary, $base-color--primary,6px,vertical);
+     /**
+      * need flex-wrap
+      */
+      flex-wrap: wrap;
    }
 
 }
@@ -124,39 +128,115 @@
   }
 }
 
+/**
+ * with square backdrop *
+ */
+.list-group__item--with-square-backdrop {
+  .list-group__item-caption {
+    justify-content: flex-start;
+    align-items: flex-start;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      background: url(/assets/images/icons/square-black.png);
+    }
+  }
+  /** if this has layout with only caption extended **/
+  &.list-group__item--only-caption_extended {
+    justify-content: flex-start;
+    margin: 30px 0;
+    /**bem**/
+    .list-group__item {
+      &-caption {
+        display: block;
+        position: relative;
+      }
+      &-figure {
+        width: 140px;
+        margin: 0 18px 0 0;
+      }
+      &-caption-body {
+        text-align: center;
+        width: 140px;
+        font-size: 80px;
+        position: relative;
+      }
+      &-label {
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+
+  }
+
+}
+
 /** product horizontal **/
 
 .list-group__item--product-horizontal {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
+
     @include media(">=sm") {
       flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
     };
+    @include media(">=md", "<lg") {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+
+
     /** bem **/
     .list-group__item {
       &-figure {
-        flex: 0 0 auto;
+        flex: 0 0 100%;
         @include media(">=sm") {
           margin-bottom: 0;
+          flex: 0 0 auto;
         };
         @include media(">=lg") {
           max-width: 100px;
         };
+
       }
       &-link {
-        text-align: left;
-        @include media(">=sm") {
-          margin-left: 15px;
-        };
-      }
-      &-label {
+        text-align: center;
+        color: $color-link;
         font-size: 16px;
         line-height: 1.125em;
+        &:hover {
+          text-decoration: underline;
+        }
+        @include media(">=sm") {
+          margin-left: 15px;
+          text-align: left;
+        };
+        @include media(">=md", "<lg") {
+          margin-left: 0;
+          margin-top: 15px;
+          text-align: center;
+        }
+
+      }
+      &-label {
+        font-size: inherit;
         font-weight: normal;
       }
     }
+
+
 }
 
 /** partner **/

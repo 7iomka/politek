@@ -1,16 +1,29 @@
-.p-section--about-intro {
+.p-section--we-produce {
   position: relative;
-  padding-top: 170px;
+  @include media(">=md") {
+      padding-top: 70px;
+  };
+  @include media(">=xl") {
+      padding-top: 170px;
+  };
+  overflow: hidden;
 
   &:before {
     content: "производим";
     text-transform: uppercase;
     position: absolute;
     top: 0;
-    right: 0;
     margin: auto;
-    left: 0;
-    font-size: 200px;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: none;
+    @include media(">=md") {
+      display: block;
+      font-size: 150px;
+    };
+    @include media(">=xl") {
+      font-size: 200px;
+    };
     font-weight: bold;
     color: rgba(244, 244, 244, 0.66);
     text-align: center;

@@ -1,0 +1,11 @@
+context:
+  instance: default
+  component:
+    name: img-responsive--with-overlay
+  slides:
+    - src: /assets/images/reviews/thumbs/demo-photo-review.png
+      link: /assets/images/reviews/demo-photo-review.png
+    - src: /assets/images/reviews/thumbs/demo-photo-review.png
+      link: /assets/images/reviews/demo-photo-review.png
+    - src: /assets/images/reviews/thumbs/demo-photo-review.png
+      link: /assets/images/reviews/demo-photo-review.png

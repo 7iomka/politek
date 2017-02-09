@@ -1,0 +1,14 @@
+context:
+  sectionConfig:
+    title: Что говорят о нас наши клиенты
+  videoReviews:
+    - video:
+        yotube: tfpW6w8J21I
+      author:
+        name: Виктор Сухоруков
+        role: Владелец строительного магазина "Труба мира" г. Омск
+    - video:
+        yotube: tfpW6w8J21I
+      author:
+        name: Виктор Сухоруков
+        role: Владелец строительного магазина "Труба мира" г. Омск

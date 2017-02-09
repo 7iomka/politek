@@ -1,4 +1,3 @@
-collated: true
 default: default
 variants:
   - name: default
@@ -9,3 +8,9 @@ variants:
       mods: [with-link]
       src: /assets/images/pages/home/politek-banner.png
       link: /
+  - name: with-overlay
+    context:
+      mods: [with-link, with-overlay]
+      src: /assets/images/pages/home/politek-banner.png
+      link: '#'
+      overlay: true

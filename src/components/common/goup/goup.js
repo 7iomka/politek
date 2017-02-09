@@ -1,5 +1,6 @@
-var $ = require('jquery');
-import {TweenMax} from "gsap";
+import "gsap";
+require('gsap/src/uncompressed/plugins/ScrollToPlugin.js');
+
 module.exports = function () {
 
   'use strict';

@@ -1,4 +1,3 @@
-var $ = require('jquery');
 var ScrollMagic = require('scrollmagic');
 module.exports = function () {
 

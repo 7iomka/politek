@@ -1,0 +1,13 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    {% if sectionConfig.title %}
+        {% render "@section-title", sectionConfig %}
+      {% endif %}
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 col-md-10">
+        {% render "@video-review", videoPresentation %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

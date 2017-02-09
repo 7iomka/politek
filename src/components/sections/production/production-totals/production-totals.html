@@ -1,0 +1,23 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6">
+          {% render "@list-group", totalsList %}
+          <p class="text-center mt-4 mb-3" style="font-size:18px;">
+            {{ trademarks.introText }}
+          </p>
+          {% render "@list-group", trademarks.items %}
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row justify-content-center">
+          {% for image in productionImages %}
+            <div class="col-auto mr-2 mb-2">
+              {% render "@img-responsive", image %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% block section %}
+  <div class="container">
+    <div class="row">
+        <div class="col">{% render "@section-title--filled_primary", sectionConfig, true %}</div>
+    </div>
+    <div class="row">
+      {% for review in photoReviews %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          {% render "@img-responsive--with-overlay", review, true %}
+        </div>
+      {% endfor %}
+    </div>
+    {% include "@hr" %}
+  </div>
+{% endblock %}

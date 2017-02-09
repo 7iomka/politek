@@ -1,0 +1,22 @@
+context:
+  sectionConfig:
+    title: Что говорят о нас наши клиенты
+  mods: [about-reviews]
+  videoReview:
+    video:
+      yotube: tfpW6w8J21I
+    author:
+      name: Виктор Сухоруков
+      role: Владелец строительного магазина "Труба мира" г. Омск
+
+  photoReviews:
+    instance: default
+    component:
+      name: img-responsive--with-overlay
+    slides:
+      - src: /assets/images/reviews/thumbs/demo-photo-review.png
+        link: /assets/images/reviews/demo-photo-review.png
+      - src: /assets/images/reviews/thumbs/demo-photo-review.png
+        link: /assets/images/reviews/demo-photo-review.png
+      - src: /assets/images/reviews/thumbs/demo-photo-review.png
+        link: /assets/images/reviews/demo-photo-review.png

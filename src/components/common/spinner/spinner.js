@@ -1,14 +1,2 @@
-// (function ($, window, document, undefined) {
-//
-//   'use strict';
-//
-//   $(function () {
-//
-//   });
-//
-// })(jQuery, window, document);
-
-function lol() {
-  console.log('lol');
-}
-module.exports = lol;
+var spinner = require("vendors/jquery.spinner.min");
+module.exports = spinner;

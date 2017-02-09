@@ -1,0 +1,19 @@
+.video-review {
+
+  &__video-container {
+
+  }
+  &__author {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.111em;
+    margin-top: 15px;
+    text-align: center;
+  }
+  &__author-role {
+    font-size: 18px;
+    line-height: 1.111em;
+    margin-top: 5px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,6 @@
+context:
+  sections:
+  - section: production-intro
+  - section: production-advantages
+  - section: production-totals
+  - section: production-presentation

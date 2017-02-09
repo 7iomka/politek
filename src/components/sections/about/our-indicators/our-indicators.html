@@ -2,5 +2,11 @@
 {% block section %}
   <div class="container">
     {% render "@list-group", indicatorsList %}
+    <div class="row justify-content-center">
+      <a class="our-indicators__link" href="/news">
+        Подробнее о производстве
+      </a>
+    </div>
+    {% render "@hr", {customClassList: 'mb-0'} %}
   </div>
 {% endblock %}

@@ -1,5 +1,6 @@
+handle: we-produce
 context:
-  mods: [about-intro]
+  mods: [we-produce]
   sectionConfig:
     title: Что мы производим
   productCategories:

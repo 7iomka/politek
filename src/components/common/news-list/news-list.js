@@ -1,11 +1,9 @@
-var $ = require('jquery');
 module.exports = function () {
 
   $(function () {
     if(!$('.news-list--slider').length) return;
     var newsListSlider = new Swiper('.news-list--slider', {
-         pagination: '.news-list--slider .swiper-pagination',
-
+         pagination: '.news-list--slider .swiper-pagination', 
          nextButton: '.news-list--slider .swiper-button-next',
          prevButton: '.news-list--slider .swiper-button-prev',
 

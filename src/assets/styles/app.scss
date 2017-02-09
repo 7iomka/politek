@@ -25,9 +25,13 @@
 @import 'base/**/*.scss';
 
 // Vendors
+// Bootstrap custom settings
+@import 'vendors/bootstrap/custom.scss';
+
 @import 'vendors/jquery.mmenu/jquery.mmenu.oncanvas.scss';
 @import 'vendors/swiper/swiper.min.scss';
 @import 'vendors/PhotoSwipe/main.scss';
+@import 'vendors/lazyYT/lazyYT.custom.scss';
 // @import 'https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.5.3/core/css/jquery.mmenu.all.css';
 
 

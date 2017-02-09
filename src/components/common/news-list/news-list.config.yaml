@@ -41,10 +41,11 @@ variants:
       link: /news/demo1.html
 
 
-- name: bootstrap-version (vertical)
+- name: vertical
   context:
+    mods: [vertical]
     bootstrap:
-      cols: col-xs-12
+      cols: col-12
     listItems:
     - icon: /assets/images/news/thumbs/demo1.png
       title: Константин Хрюкин арестован за растрату миллиона долларов
@@ -61,10 +62,12 @@ variants:
       date: 18.04.2016
       anonce: Российский гроссмейстер заявил, что добиться такого результата против действующего чемпиона — уже подвиг. Но останавливаться на достигнутом он не собирается и приложит все усилия, чтобы победить.
       link: /news/demo1.html
+
+
 - name: bootstrap-version (with cols)
   context:
     bootstrap:
-      cols: col-xs-12 col-sm-4
+      cols: col-12 col-sm-4
     listItems:
     - icon: /assets/images/news/thumbs/demo1.png
       title: Константин Хрюкин арестован за растрату миллиона долларов

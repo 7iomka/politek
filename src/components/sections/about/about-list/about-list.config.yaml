@@ -1,0 +1,15 @@
+context:
+  mods: [about-list]
+  aboutList:
+    bootstrap:
+      cols: col-12 col-md-5
+      rowClass: justify-content-center
+    component: "list-item--only-caption_extended"
+    nestedMods: [only-caption_extended,with-square-backdrop]
+    listItems:
+    - caption:
+        body: 243
+      label: дилера, через чью сеть <br>продается наша продукция
+    - caption:
+        body: 123
+      label: города России в которых продается наша продукция

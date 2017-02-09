@@ -1,0 +1,15 @@
+{% extends "@page" %}
+{% block main %}
+<section class="catalog">
+  <div class="container">
+    {% render "@page-title", {"title": "Производство", mods: ["production"]} %}
+  </div>
+  {%- for section in sections -%}
+    {% if section.section %}
+      {% render "@" + section.section, section.config, true %}
+    {% else %}
+      {% render "@" + section.component, section.config, true %}
+    {% endif %}
+  {%- endfor -%}
+</section>
+{% endblock %}

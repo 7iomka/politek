@@ -1,0 +1,24 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    {% if sectionConfig.title %}
+        {% render "@section-title", sectionConfig %}
+    {% endif %}
+    <div class="row">
+      <div class="col-12 col-md-5">
+        {% render "@video-review", videoReview %}
+      </div>
+      <div class="col-12 col-md-7">
+        {% render "@base-slider", photoReviews %}
+        {# <div class="row mt-2 mt-md-0">
+          {% for review in photoReviews %}
+            <div class="col-12 col-sm-4 px-2">
+              {% render "@img-responsive--with-overlay", review, true %}
+            </div>
+          {% endfor %}
+        </div> #}
+      </div>
+    </div>
+    {% include "@hr" %}
+  </div>
+{% endblock %}

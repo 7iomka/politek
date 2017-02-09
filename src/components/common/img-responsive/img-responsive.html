@@ -1,6 +1,15 @@
 <figure class="img-responsive{% for mod in mods %} img-responsive--{{ mod }}{% endfor %}">
   {% if link %}
-  <a href="{{ link }}" class="img-responsive__link"><img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item"></a>
+  <a href="{{ link }}" class="img-responsive__link">
+    <img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item">
+    {% if overlay %}
+      <span class="img-responsive__overlay">
+        <span class="img-responsive__overlay-icon">
+          <img class="img-responsive__overlay-icon-img" src="/assets/images/icons/zoom-icon.png">
+        </span>
+      </span>
+    {% endif %}
+  </a>
   {% else %}
   <img src="{{ src }}" alt="{{ alt }}" class="img-responsive__item">
   {% endif %}
