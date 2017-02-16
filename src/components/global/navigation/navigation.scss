@@ -157,4 +157,8 @@
       font-size: 18px;
     }
   }
+  /** hack - because this merged in outside **/
+  .navigation--desktop + .navigation--mobile {
+    display: none;
+  }
 };

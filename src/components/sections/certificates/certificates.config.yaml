@@ -1,0 +1,179 @@
+context:
+  certificates:
+    accordionItems:
+    - title: Внутренняя канализация
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Двухслойные трубопроводы для канализации и дренажа
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Наружная канализация
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Бесшумная канализация
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Дренажные трубы из ПНД
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Компрессионные фитинги
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Трубы из ПНД для холодного водоснабжения
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Трубы и фитинги для горяче-холодного водоснабжения и отопления ППР
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2 mb-4 mb-xl-0
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR

@@ -7,7 +7,7 @@
 {%- else -%}
 <button class="c-button{% for mod in mods %} c-button--{{ mod }}{% endfor %} {{ customClassList }}"{{ " type=\"submit\"" if submit }}{{ " disabled" if disabled }}>
 {% if image %}
-  <img class="c-button__image" src="{{ image }}" />
+  <img class="c-button__image  " src="{{ image }}" />
 {% endif %}
   <span>{{ label }}</span></button>
-{%- endif -%}
+{%- endif -%} 

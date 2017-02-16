@@ -1,0 +1,111 @@
+.accordion {
+  &__item {
+    overflow: hidden;
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    padding: 12px 20px;
+    background-color: #f2f2f2;
+    transition: all 0.25s;
+    margin: 10px 0;
+    font-size: 16px;
+    @include media(">=lg") {
+      font-size: 18px;
+    };
+    @include media(">=xl") {
+      font-size: 20px;
+    };
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__toggler {
+    color: palette(primary);
+    position: relative;
+    margin-left: 15px;
+    white-space: nowrap;
+
+    @include media("<sm") {
+      width: 18px;
+      text-indent: 9999px;
+    };
+
+    &:after {
+      content:"";
+    margin-left: 16px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 9.5px 0 9.5px;
+    border-color: palette(primary) transparent transparent transparent;
+    -webkit-transform:rotate(360deg);
+    @include media("<sm") {
+      position: absolute;
+      right: 0px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    };
+    }
+  }
+
+  &__panel {
+    display: none;
+  }
+
+  &__content {
+    padding: 10px 0;
+    @include media(">=md") {
+        padding: 20px 0;
+    };
+    @include media(">=lg") {
+        padding: 30px 0;
+    };
+    @include media(">=xl") {
+        padding: 40px 0;
+    };
+    opacity: 0;
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+
+  &__item.active {
+    /**
+     * bem
+     */
+     .accordion {
+       &__heading {
+         background-color: palette(primary);
+         color: white;
+       }
+       &__toggler{
+         color: white;
+       }
+       &__toggler:after{
+         border-width: 0 9.5px 12px 9.5px;
+         border-color: transparent transparent white transparent;
+       }
+       &__panel {
+       }
+       &__content {
+         opacity: 1;
+         -webkit-transform: translate3d(0, 0, 0);
+         transform: translate3d(0, 0, 0);
+       }
+     }
+  }
+
+
+
+}

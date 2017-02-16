@@ -1,0 +1,21 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+
+    {% for gost in gostList %}
+    <div class="row justify-content-center mb-3 mb-xl-0">
+      <div class="col-12 col-md-9 mb-2">
+        <span class="gost-id"><strong>{{ gost.id }}</strong></span> <span class="gost-title">{{ gost.title }}</span>
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="doc-links">
+          <a class="doc-link" href="#">Скачать .docx</a>
+          <a class="doc-link" href="#">Скачать .pdf</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <br>
+    <br>
+  </div>
+{% endblock %}

@@ -33,10 +33,19 @@ let webpackConfig = {
       /* Advanced output configuration (click to show) */
     },
     module: {
-        rules: [
+        rules : [
           {
             test: /\.(js|jsx)$/,
-            use: 'babel-loader',
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env'],
+                    plugins: ['transform-remove-strict-mode', 'transform-object-assign']
+                }
+              },
+            ]
           }
         ]
       },
@@ -52,7 +61,7 @@ let webpackConfig = {
       ],
       // directories where to look for modules
 
-      // extensions: [".js"],
+      extensions: ['.js', '.jsx'],
       // extensions that are used
 
       alias: {
@@ -152,7 +161,9 @@ let webpackConfig = {
     // changes chunk loading behavior and available modules
 
     // externals: ["react", /^@angular\//],
-    externals: ['TweenLite'],
+    externals: ['TweenLite', {
+      jquery: "jQuery"
+    }],
     // Don't follow/bundle these modules, but request them at runtime from the environment
 
 
@@ -160,7 +171,8 @@ let webpackConfig = {
        new webpack.NoErrorsPlugin(),
        new webpack.ProvidePlugin({
           $: "jquery",
-          "jQuery": "jquery"
+          "jQuery": "jquery",
+          "_": "underscore"
       })
       //  new webpack.ResolverPlugin(new ComponentDirectoryPlugin(true)) // resolve require('components/demo') as components/demo/demo.js || index.js
     ],

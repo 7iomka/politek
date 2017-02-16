@@ -19,6 +19,7 @@ variants:
     label: Трубы и фитинги 22
     link: /product/link-to-product
     priceListLink: /product/link-to-download-pricelist
+    priceLabel: " прайс"
 - name: product--without-pricelist
   context:
     mods: [product]
@@ -35,3 +36,12 @@ variants:
     date: 18.04.2016
     anonce: Российский гроссмейстер заявил, что добиться такого результата против действующего чемпиона — уже подвиг. Но останавливаться на достигнутом он не собирается и приложит все усилия, чтобы победить.
     link: /news/demo1.html
+
+- name: certificat
+  context:
+    mods: [certificat]
+    handle: list-item--certificat
+    icon: /assets/images/catalog/1.png
+    label: Трубы и фитинги 22
+    link: /product/link-to-product
+    priceListLink: /product/link-to-download-pricelist

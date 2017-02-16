@@ -1,0 +1,10 @@
+.cart__group {
+  margin-bottom: 70px;
+  &-title {
+    font-size: 22px;
+    font-weight: bold;
+    @include media(">=lg") {
+      font-size: 25px;
+    };
+  }
+}

@@ -74,7 +74,7 @@ const nunjucks = require('@frctl/nunjucks')({
 });
 
 // Project config
-fractal.set('project.title', '24 ways component library');
+fractal.set('project.title', 'Политек');
 
 // Components config
 fractal.components.engine(nunjucks);

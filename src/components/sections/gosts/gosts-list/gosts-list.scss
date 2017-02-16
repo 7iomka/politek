@@ -1,0 +1,26 @@
+.p-section--gosts {
+  font-size: 17px;
+}
+.doc-link {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+    @include media("<sm") {
+      display: block;
+
+    };
+    @include media("<lg") {
+      margin-bottom: 10px;
+      display: inline-block;
+    };
+    &:first-child {
+
+      @include media(">=sm") {
+        margin-right: 25px;
+      };
+    }
+
+}

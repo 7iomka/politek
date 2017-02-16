@@ -8,16 +8,19 @@
   font-size: 15px;
   border-radius: 5px;
   font-weight: bold;
+  vertical-align: middle;
+  user-select: none;
+  outline: none;
 
   &:hover {
     background-color: $button-background--primary_hover;
     color: white;
   }
 
-  &:active {
-    background-color: $button-background--primary_active;
-    color: white;
-  }
+  // &:active {
+  //   background-color: $button-background--primary_active;
+  //   color: white;
+  // }
 
   @media print {
     display: none;
@@ -26,6 +29,13 @@
 
 .c-button--more {
   width: 100%;
+}
+
+/** by state **/
+
+.c-button[disabled] {
+    background: #c4c4c4;
+    color: black;
 }
 
 /** by color **/
@@ -38,10 +48,10 @@
     color: white;
   }
 
-  &:active {
-    background-color: $button-background--secondary_active;
-    color: white;
-  }
+  // &:active {
+  //   background-color: $button-background--secondary_active;
+  //   color: white;
+  // }
 }
 
 .c-button--dark {
@@ -52,10 +62,10 @@
     color: white;
   }
 
-  &:active {
-    background-color: $button-background--dark_active;
-    color: white;
-  }
+  // &:active {
+  //   background-color: $button-background--dark_active;
+  //   color: white;
+  // }
 }
 
 
@@ -72,7 +82,8 @@
   padding: 8px 15px;
 }
 .c-button--big {
-  width: 500px;
+  width: 372px;
+  max-width: 100%;
   font-size: 25px;
 }
 

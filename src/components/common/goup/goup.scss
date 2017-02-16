@@ -8,7 +8,7 @@
   backface-visibility: hidden;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 0px) {
   .goup {
     height: 52px;
     bottom: 90px;
@@ -21,7 +21,7 @@
       top: 50%;
       left: 50%;
       margin: -26px 0 0 -26px;
-      opacity: .5;
+      opacity: 0.4;
       transition: all 0.2s linear;
 
       width: 52px;
@@ -67,7 +67,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 575px) {
   .goup {
     width: 110px;
     height: auto;
@@ -93,38 +93,51 @@
   }
 }
 
-@media (max-width: 899px) {
-  .goup {
-    width: 100%;
-    height: 54px;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    &:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30px;
-      height: 17px;
-      background: url(/assets/vectors/up.svg) 0 0 no-repeat;
-      content: "";
-    }
-  }
-}
 
-@media (min-width: 900px) {
+
   .goup.dark {
     &:before {
-      border-color: rgba(0, 0, 0, 0.5);
+      border-color: #c3c8d1;
     }
     i {
       &:after, &:before {
-        background: #000;
+        background: #606c84;
       }
     }
     &:hover:before {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(28, 72, 160, 0.16);
       border-color: transparent;
     }
   }
-}
+
+
+  @media screen and (max-width: 1200px) {
+    .goup i {
+        width: 24px;
+        height: 24px;
+        margin: -14px 0 0 -10px;
+    }
+
+    .goup:before {
+        width: 28px;
+        height: 28px;
+    }
+
+    .goup {
+        height: 36px;
+        width: 36px;
+    }
+
+    .goup i:after, .goup i:before {
+        width: 9px;
+        height: 4px;
+        margin: 3px 0 0 -7px;
+        width: 10px;
+        height: 3px;
+        margin: 4px 0 0 -8px;
+    }
+
+    .goup i:before {
+        margin-left: calc(-10px / 2);
+    }
+  }

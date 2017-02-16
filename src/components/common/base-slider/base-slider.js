@@ -1,6 +1,10 @@
 import 'swiper';
+// import PhotoSwipe from 'vendors/photoswipe.min.js';
+// import PhotoSwipeUI_Default from 'vendors/photoswipe-ui-default.min.js';
+import { PhotoSwipe, initPhotoSwipeFromDOM } from 'vendors/photoswipe-init.js';
 
 module.exports = function(){
+
   var baseSlider;
   $(function () {
     if(!$('.base-slider__instance_default').length) return;
@@ -24,8 +28,16 @@ module.exports = function(){
 
        });
 
+    // if swiper wrapper hasClass site-gallery - init that
+    var $baseSliderinstance = $('.base-slider__instance_default');
+    // console.log($('.site-gallery',$baseSliderinstance).length);
+  // console.log(PhotoSwipe);
+    if($('.site-gallery',$baseSliderinstance).length) {
+      initPhotoSwipeFromDOM('.site-gallery');
+    }
+
   });
 
   return baseSlider;
 
-}
+}()

@@ -204,7 +204,7 @@ function audit() {
 
 
 
-/** gulp task for webpack **/
+/** gulp task for webpack - js files **/
 gulp.task('webpack', function(callback) {
   let firstBuildReady = false;
   //
@@ -243,6 +243,12 @@ gulp.task('webpack', function(callback) {
       });
 
 });
+
+// separate js files (vendors)
+function vendorsScripts() {
+  return gulp.src(paths.src + '/assets/scripts/vendors/**/*.js')
+  .pipe(gulp.dest(paths.dest + '/assets/scripts/vendors'));
+};
 
 
 // Watch
@@ -286,7 +292,7 @@ function watch(done) {
 
 
 // Task sets
-const compile = gulp.series(clean, gulp.parallel('webpack', meta, fonts, icons, images, vectors, styles));
+const compile = gulp.series(clean, gulp.parallel('webpack', meta, fonts, icons, images, vectors, styles, vendorsScripts));
 // const compile = gulp.series(clean, gulp.parallel( scripts));
 
 

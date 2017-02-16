@@ -1,0 +1,4 @@
+context:
+  sections:
+    - section: cart-items
+    - section: cart-totals

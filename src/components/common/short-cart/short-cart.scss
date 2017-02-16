@@ -1,0 +1,64 @@
+.short-cart {
+  &__link {
+    &, &:hover, &:active {
+      color: white;
+    }
+    font-size: 18px;
+  }
+
+  &__label {
+    padding-left: 30px;
+    background: url(/assets/images/icons/cart.png) 0 44% no-repeat;
+    vertical-align: middle;
+  }
+
+  &__count {
+    margin: 0 10px;
+    margin: 0 calc(15px - 0.24em);
+    border-radius: 5px;
+    width: 60px;
+    text-align: center;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: bold;
+    background: palette(secondary);
+    color: white;
+  }
+  &--empty &__count {
+    background: #c5c5c5;
+    color: #000000;
+  }
+
+  &__sum {
+    vertical-align: middle;
+  }
+}
+
+
+
+@include media("<640px") {
+  .short-cart {
+    margin-bottom: 0.5rem;
+  }
+  .short-cart__count {
+    font-size: 13px;
+    height: auto;
+    line-height: 14px;
+    padding: 4px;
+    margin-left: 0;
+  }
+
+  .short-cart__label {
+      font-size: 14px;
+      line-height: 14px;
+  }
+
+  .short-cart__sum {
+      font-size: 16px;
+      text-align: center;
+  }
+
+};

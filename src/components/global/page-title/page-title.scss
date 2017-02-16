@@ -17,3 +17,9 @@
 .page-title--home {
   font-weight: normal;
 }
+.page-title--dealers {
+  margin-bottom: 10px;
+  @include media(">=lg"){
+    margin-bottom: 0;
+  };
+}

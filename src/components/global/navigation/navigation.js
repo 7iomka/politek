@@ -1,4 +1,5 @@
-import 'jquery.mmenu';
+var mmenu = require('vendors/jquery.mmenu.all.min.js');
+// var jqueryMmenu = require("jquery.mmenu");
 module.exports = function () {
 
     $.fn.navigationToggler = function() {
@@ -21,15 +22,21 @@ module.exports = function () {
         });
 
     };
-  $(function () {
-    $('.navigation--mobile').mmenu({
-    	extensions		: ['theme-dark', 'effect-menu-slide', 'pagedim-black' ],
-    	navbar: {
-    		title: "Меню"
-    	}
-    });
 
-    $('.navigation-toggler').navigationToggler();
+
+
+  $(function () {
+
+    if($('.navigation--mobile').length) {
+      $('.navigation--mobile').mmenu({
+      	extensions		: ['theme-dark', 'effect-menu-slide', 'pagedim-black' ],
+      	navbar: {
+      		title: "Меню"
+      	}
+      });
+
+      $('.navigation-toggler').navigationToggler();
+    }
 
   });
 

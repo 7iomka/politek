@@ -1,0 +1,24 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+
+    <div class="cart__group">
+      <h3 class="cart__group-title">Фитинги из ПП для внутренней канализации</h3>
+      {% render "@hr", {customClassList: "my-2 ml-auto mr-0 cart__group-hr"} %}
+      <div class="cart__group-items">
+        {% render "@responsive-table--cart" %}
+      </div>
+    </div>
+    <div class="cart__group">
+      <h3 class="cart__group-title">Трубы для наружной канализации</h3>
+      {% render "@hr", { customClassList: "my-2 ml-auto mr-0 cart__group-hr"} %}
+      <div class="cart__group-items">
+        {% render "@responsive-table--cart" %}
+      </div>
+    </div>
+
+    <div class="row">
+    </div>
+
+  </div>
+{% endblock %}

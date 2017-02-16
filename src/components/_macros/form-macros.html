@@ -1,37 +1,7 @@
-{# Макрос для добавления bootstrap-style элементов формы #}
-{#
-  config:
-    label: true
-    name:
-    value:
-    title:
-    type: text
-    addon:
-      type: component
-      content:
-      config: ...
-      ...
-      type: text
-      content:
-      config:
-#}
-{% macro form_input(config) %}
-	
-{% endmacro %}
+{% macro getComponentFromHandle(config) %}
 
-{% macro form_textarea(name, value='', title=name) %}
-<div class="form-group">
-	<label class="form-label" for="{{ name }}_id">{{ title }}</label>
-	<textarea class="form-control" name="{{ name }}" id="{{ name }}_id" cols="20" rows="5"></textarea>
-</div>
-{% endmacro %}
+		{# {% render "@"+config.component, config.component.config %} #}
+		{% set handle = "@"+config.component %}
+		{% render handle, config.component.config %}
 
-{# Макрос для создания формы обратной связи #}
-{% macro feedback_form(action="", method="POST") %}
-<form class="form" action="{{ action }}" method="{{ method }}">
-	{{ form_input("Name", '', "Имя") }}
-	{{ form_input("Email", '', "Email", 'email') }}
-	{{ form_textarea("Message", '', 'Сообщение') }}
-	<button type="submit" class="btn btn-primary">Отправить</button>
-</form>
 {% endmacro %}

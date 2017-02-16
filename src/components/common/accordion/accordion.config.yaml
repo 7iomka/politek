@@ -1,0 +1,68 @@
+context:
+  accordionItems:
+    - title: Василий Пупкин3
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Василий Пупкин3
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+    - title: Василий Пупкин3
+      bootstrap:
+        cols: col-6 col-md-5th col-lg-3 col-xl-2
+      components:
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR
+      - name: list-item--certificat
+        config:
+          label: Сертификат на трубу и фитинги PPR

@@ -1,0 +1,17 @@
+<div class="bottom-bar fixed-bottom">
+  <div class="container">
+    <div class="row no-gutters justify-content-center align-items-center">
+      <div class="col-auto">
+        {% render "@short-cart--full"  %}
+        <div style="display:none">{% render "@short-cart--empty" %}</div>
+      </div>
+      <div class="col-auto">
+        <div class="bottom-bar__actions">
+            {% render "@button--secondary", orderBtn, true %}
+
+            {% render "@button", callbackBtn, true %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

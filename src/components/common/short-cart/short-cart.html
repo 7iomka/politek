@@ -1,0 +1,7 @@
+<div class="short-cart {% for mod in mods %} short-cart--{{ mod }} {% endfor %} mr-3">
+  <a href="/cart" class="short-cart__link">
+    <span class="short-cart__label">Корзина</span>
+    <span class="short-cart__count">{{ count }}</span>
+    <span class="short-cart__sum"><span id="cart-total">{{ sum }}</span> руб</span>
+  </a>
+</div>

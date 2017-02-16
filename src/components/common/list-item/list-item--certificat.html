@@ -1,0 +1,21 @@
+<div class="list-group__item{% for mod in mods %} list-group__item--{{ mod }}{% endfor %}{% for nestedMod in nestedMods %} list-group__item--{{ nestedMod }}{% endfor %}">
+  {%- if icon or link -%}
+    <figure class="list-group__item-figure">
+      <a href="{{ link }}">
+        {%- if icon -%}
+          <img src="{{ icon }}" class="list-group__item-image">
+        {%- endif -%}
+      </a>
+    </figure>
+  {%- endif -%}
+  {%- if label -%}
+  <a class="list-group__item-link{% for mod in linkMods %} list-group__item-link--{{ mod }}{% endfor %}" href="{{ link }}">
+    <span class="list-group__item-label{% for mod in labelMods %} list-group__item-label--{{ mod }}{% endfor %}">{{ label }}</span>
+  </a>
+  {%- endif -%}
+  {%- if priceListLink -%}
+    <a class="list-group__item-priceListLink" href="{{ priceListLink }}">
+      <span class="list-group__item-priceListLabel">Скачать</span>
+    </a>
+  {%- endif -%}
+</div>

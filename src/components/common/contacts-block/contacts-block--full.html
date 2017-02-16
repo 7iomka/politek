@@ -1,0 +1,20 @@
+<div class="contacts-block {{ customClassList }}">
+  <div class="contacts-block__map-preview">
+    <div class="contacts-block__map-container" {% if id %} id="{{id}}" {% endif %}></div>
+  </div>
+  <div class="contacts-block__sidebar">
+    <div class="contacts-block__address">{{ address }}</div>
+    <hr class="contacts-block__sep" />
+    <ul class="contacts-block__phones">
+      {% for phone in phones %}
+        <li class="contacts-block__phone">{{ phone }}</li>
+      {% endfor %}
+    </ul>
+      <hr class="contacts-block__sep" />
+      <ul class="contacts-block__another">
+        {% for contact in anotherContacts %}
+          <li class="contacts-block__another-item">{{ contact }}</li>
+        {% endfor %}
+      </ul>
+  </div>
+</div>

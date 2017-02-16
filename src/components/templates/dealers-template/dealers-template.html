@@ -1,0 +1,16 @@
+{% extends "@page" %}
+{% block main %}
+<section class="dealers">
+  <div class="container">
+    {% render "@page-title", {"title": "Сеть дилеров в России", mods: ['dealers']} %}
+    <div class="page-subtitle mb-4">Нашу продукцию распространянют уже более 214 дилеров по всей России!</div>
+  </div>
+  {%- for section in sections -%}
+    {% if section.section %}
+      {% render "@" + section.section, section.config %}
+    {% else %}
+      {% render "@" + section.component, section.config %}
+    {% endif %}
+  {%- endfor -%}
+</section>
+{% endblock %}

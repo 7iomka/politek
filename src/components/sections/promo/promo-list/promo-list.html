@@ -1,0 +1,12 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    <div class="row">
+      {% for promo in promoMaterials %} 
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          {% render "@list-item--certificat", promo, true %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

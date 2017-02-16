@@ -1,0 +1,21 @@
+.bottom-bar {
+    background-color: #393738;
+    padding: 12px 0;
+}
+
+@include media("<md") {
+  .bottom-bar__actions .c-button {
+      min-width: auto;
+  }
+};
+
+@include media("<640px") {
+
+    .bottom-bar {
+        padding: 8px 0;
+    }
+    .bottom-bar__actions .c-button {
+        padding: 5px 15px;
+    }
+
+};

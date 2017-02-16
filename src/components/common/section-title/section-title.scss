@@ -29,7 +29,16 @@
   text-align: center;
 }
 .section-title--filled_primary {
-  font-size: 35px;
+  font-size: 25px;
+  margin: 10px 0;
+  @include media(">=md") {
+    font-size: 29px;
+    margin: 12px 0;
+  };
+  @include media(">=lg") {
+    font-size: 35px;
+    margin: 35px 0;
+  };
   color: white;
   background-color: palette(primary);
   padding: 10px 15px;

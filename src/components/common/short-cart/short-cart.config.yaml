@@ -1,0 +1,12 @@
+default: empty
+variants:
+- name: empty
+  context:
+    mods: [empty]
+    count: 0
+    sum: 0
+- name: full
+  context:
+    mods: []
+    count: 1000
+    sum: 15750

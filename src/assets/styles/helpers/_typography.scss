@@ -17,7 +17,7 @@
   @if $family == 'serif' {
     font-family: serif;
     font-family: $font-family-serif, sans-serif;
-    
+
     .fonts-loaded & {
       font-family: $font-family-serif;
 

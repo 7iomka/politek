@@ -9,3 +9,8 @@ context:
       link: /assets/images/reviews/demo-photo-review.png
     - src: /assets/images/reviews/thumbs/demo-photo-review.png
       link: /assets/images/reviews/demo-photo-review.png
+
+variants:
+  - name: demo
+    context:
+      demo: true

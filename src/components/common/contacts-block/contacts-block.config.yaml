@@ -1,0 +1,30 @@
+variants:
+  - name: default
+    context:
+      mapImg: /assets/images/maps/address1.png
+      address: "143000, Россия,<br/>
+                Mосковская обл.,<br/>
+                г. Одинцово,<br/>
+                ул. Транспортная д. 2"
+      phones:
+        - +7(495) 926-20-64
+        - +7(495) 926-20-65
+        - +7(495) 789-32-76
+        - +7(495) 789-36-34
+        - +7(495) 926-69-55
+  - name: full
+    context:
+      mapImg: /assets/images/maps/address1.png
+      address: "143000, Россия,<br/>
+                Mосковская обл.,<br/>
+                г. Одинцово,<br/>
+                ул. Транспортная д. 2"
+      phones:
+        - +7(495) 926-20-64
+        - +7(495) 926-20-65
+        - +7(495) 789-32-76
+        - +7(495) 789-36-34
+        - +7(495) 926-69-55
+      anotherContacts:
+        - 'info@politek-ptk.ru'
+        - 'Время работы: с 8 до 17'

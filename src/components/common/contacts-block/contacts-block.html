@@ -1,0 +1,15 @@
+<div class="contacts-block">
+  <div class="contacts-block__map-preview">
+    <img src="{{ mapImg }}" alt="{{ address }}" class="contacts-block__map-img">
+  </div>
+  <div class="contacts-block__sidebar">
+    <div class="contacts-block__address">{{ address }}</div>
+    <hr class="contacts-block__sep" />
+    <ul class="contacts-block__phones">
+      {% for phone in phones %}
+        <li class="contacts-block__phone">{{ phone }}</li>
+      {% endfor %}
+    </ul>
+    {% render "@button", { label: "Посмотреть на карте", mods: ["dark"], href: "/contacts", customClassList:"contacts-block__btn"} %}
+  </div>
+</div>

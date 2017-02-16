@@ -1,0 +1,11 @@
+{% extends "@section" %}
+{% block section %}
+  <div class="container">
+    {% for contactsBlock in contactsBlocks %}
+      {% render "@contacts-block--full", contactsBlock %}
+    {% endfor %}
+  </div>
+  <!-- Загружаем API -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+{% endblock %}

@@ -1,7 +1,7 @@
 <div class="base-slider" >
   {# base-scene #}
   <div class="base-slider__instance base-slider__instance_{{ instance }} swiper-container">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper site-gallery">
       {% for slide in slides %}
         <div class="swiper-slide base-slider__scene-item">
           {% set cmp = slide.component.name if slide.component else component.name %}
@@ -22,3 +22,59 @@
     <div class="swiper-button-prev"></div>
   </div>
 </div>
+{% if demo %}
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+{# new version #}
+<div class="pswp pswp--micro" tabindex="-1" role="dialog" aria-hidden="true">
+
+	<div class="pswp__bg"></div>
+
+	<div class="pswp__scroll-wrap">
+
+		<div class="pswp__container">
+
+		</div>
+
+		<button class="pswp__button pswp__button--arrow--right pswp__hide-on-close" title="Следующее фото"><svg class="pswp__icn" aria-hidden="true" version="1.1" viewBox="0 0 60 60" width="60" height="60">
+	<g transform="translate(12, 0)">
+		<rect fill="#FFFFFF" x="0" y="0" width="35" height="60" rx="2"></rect>
+		<polygon points="9 30 23 16 24 17 11 30 24 43 23 44"></polygon>
+	</g>
+</svg></button>
+		<button class="pswp__button pswp__button--arrow--left pswp__hide-on-close" title="Предыдущее фото"><svg class="pswp__icn" aria-hidden="true" version="1.1" viewBox="0 0 60 60" width="60" height="60">
+	<g transform="translate(12, 0)">
+		<rect fill="#FFFFFF" x="0" y="0" width="35" height="60" rx="2"></rect>
+		<polygon points="9 30 23 16 24 17 11 30 24 43 23 44"></polygon>
+	</g>
+</svg></button>
+
+		<div class="pswp__preloader pswp__hide-on-close"></div>
+
+		<div class="pswp__top-bar pswp__hide-on-close">
+
+			<div class="pswp__counter"></div>
+
+			<button class="pswp__button pswp__button--close" title="Закрыть (Esc)"><svg class="pswp__icn" aria-hidden="true" version="1.1" viewBox="0 0 32 32" width="32" height="32">
+	<polygon points="10 23 9 22 15 16 9 10 10 9 16 15 22 9 23 10 17 16 23 22 22 23 16 17"></polygon>
+</svg></button>
+
+			<button class="pswp__button pswp__button--share" title="Share"><svg class="pswp__icn" viewBox="0 0 32 32" width="32" height="32">
+	<path d="M18.142 19.597l-5.545-3.228c.04-.18.07-.36.07-.545 0-.187-.03-.366-.07-.545l5.483-3.197c.42.39.972.63 1.587.63 1.29 0 2.333-1.042 2.333-2.333 0-1.29-1.042-2.333-2.333-2.333-1.29 0-2.334 1.042-2.334 2.333 0 .187.03.366.07.545L11.92 14.12c-.42-.388-.972-.63-1.587-.63C9.043 13.49 8 14.534 8 15.826c0 1.29 1.042 2.333 2.333 2.333.615 0 1.167-.24 1.587-.63l5.538 3.235c-.04.164-.125.335-.125.506 0 1.25 1.08 2.332 2.334 2.332 1.252 0 2.333-1.08 2.333-2.333 0-1.253-1.08-2.334-2.333-2.334-.59 0-1.12.295-1.525.66z"/>
+</svg></button>
+
+			<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"><svg class="pswp__icn" aria-hidden="true" version="1.1" viewBox="0 0 32 32" width="32" height="32">
+	<path class="pswp-svg__fs" d="M11,18 L9,18 L9,23 L14,23 L14,21 L11,21 L11,18 L11,18 Z M9,14 L11,14 L11,11 L14,11 L14,9 L9,9 L9,14 L9,14 Z M21,21 L18,21 L18,23 L23,23 L23,18 L21,18 L21,21 L21,21 Z M18,9 L18,11 L21,11 L21,14 L23,14 L23,9 L18,9 L18,9 Z"></path>
+	<path class="pswp-svg__fs-exit" display="none" d="M9,20 L12,20 L12,23 L14,23 L14,18 L9,18 L9,20 L9,20 Z M12,12 L9,12 L9,14 L14,14 L14,9 L12,9 L12,12 L12,12 Z M18,23 L20,23 L20,20 L23,20 L23,18 L18,18 L18,23 L18,23 Z M20,12 L20,9 L18,9 L18,14 L23,14 L23,12 L20,12 L20,12 Z"></path>
+</svg></button>
+
+		</div>
+
+		<div class="pswp__caption  pswp__hide-on-close"></div>
+
+		<div class="pswp__thumbs pswp__hide-on-close"></div>
+
+	</div>
+
+</div>
+
+{% endif %}
