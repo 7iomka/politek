@@ -62,6 +62,10 @@
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
-    <script src="/assets/scripts/app.js" charset="utf-8"></script>
+    <script src="{{ '/assets/scripts/app.js' | path }}" charset="utf-8"></script>
+    <!--<script type="text/javascript">
+    console.log("$('.accordion').data()", $('.accordion').data());
+      $('.accordion').data().plugin_accordion.opts.onOpen = function(){ console.log('я раскрылся')}
+    </script>-->
   </body>
 </html>

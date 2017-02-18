@@ -42,7 +42,7 @@ let webpackConfig = {
                 loader: 'babel-loader',
                 options: {
                     presets: ['env'],
-                    plugins: ['transform-remove-strict-mode', 'transform-object-assign']
+                    plugins: ['transform-remove-strict-mode', 'transform-object-assign', 'transform-object-rest-spread']
                 }
               },
             ]
@@ -172,7 +172,8 @@ let webpackConfig = {
        new webpack.ProvidePlugin({
           $: "jquery",
           "jQuery": "jquery",
-          "_": "underscore"
+          "_": "underscore",
+          "domready": "domready"
       })
       //  new webpack.ResolverPlugin(new ComponentDirectoryPlugin(true)) // resolve require('components/demo') as components/demo/demo.js || index.js
     ],

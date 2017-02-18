@@ -1,4 +1,4 @@
-import { PhotoSwipe, initPhotoSwipeFromDOM } from 'vendors/photoswipe-init.js';
+// import { PhotoSwipe, PhotoSwipe_init } from 'vendors/photoswipe-init.js';
 
 module.exports = function(){
 
@@ -8,10 +8,10 @@ $(function () {
 
 });
 
-if (!$('.product-group__item-photos').length) return;
-$('.product-group__item').each(function () {
-  var $self = $(this);
-  initPhotoSwipeFromDOM($('.product-group__item-photos', $self));
-})
+// if (!$('.product-group__item-photos').length) return;
+// $('.product-group__item').each(function () {
+//   var $self = $(this);
+//     PhotoSwipe_init($('.product-group__item-photos', $self));
+// })
 
 }()

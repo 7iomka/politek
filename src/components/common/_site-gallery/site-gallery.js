@@ -1,7 +1,12 @@
-import { PhotoSwipe, initPhotoSwipeFromDOM } from 'vendors/photoswipe-init.js';
+import { PhotoSwipe_init } from 'vendors/photoswipe-init.js';
 
-module.exports = function () {
-  if($('.site-gallery').length) {
-    initPhotoSwipeFromDOM('.site-gallery');
-  };
-}()
+
+domready(function () {
+  exports.init = function () {
+      var galleryInstance;
+      if($('.site-gallery').length) {
+        galleryInstance = PhotoSwipe_init('.site-gallery');
+      };
+      return galleryInstance;
+  }
+})
