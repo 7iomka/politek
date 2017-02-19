@@ -8,13 +8,14 @@ const paths = {
   static: __dirname + '/tmp'
 };
 
-const mandelbrot = require('@frctl/mandelbrot')({
+const mandelbrotCustom = require('@frctl/mandelbrot')({
   favicon: '/assets/icons/icon.ico',
   lang: 'ru-ru',
-  styles: ['default', '/assets/styles/theme.css'],
+  styles: ['default'/**, '/assets/styles/theme.css'*/],
   static: {
     mount: 'fractal'
-  }
+  },
+  skin: 'maroon'
 });
 
 const md_abbr = require('markdown-it-abbr');
@@ -66,6 +67,12 @@ const nunjucks = require('@frctl/nunjucks')({
     makePrice: function(str) {
       return str.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     },
+    pathImg: function(str) {
+      return '../../' + str.toString();
+    },
+    pathlink: function(str) {
+      return '/components/preview/' + str.toString();
+    },
   },
   paths: [
     paths.static + '/assets/vectors',
@@ -88,8 +95,11 @@ fractal.docs.engine(nunjucks);
 fractal.docs.set('ext', '.md');
 fractal.docs.set('path', paths.src + '/docs');
 
+// specify a directory to hold the theme override templates
+mandelbrotCustom.addLoadPath(__dirname + '/mandelbrot-custom');
+
 // Web UI config
-fractal.web.theme(mandelbrot);
+fractal.web.theme(mandelbrotCustom);
 fractal.web.set('static.path', paths.static);
 fractal.web.set('builder.dest', paths.build);
 fractal.web.set('builder.urls.ext', 'html');

@@ -79,18 +79,30 @@ function build() {
   });
 };
 
+gulp.task('fractal:exportComponents', function(){
+    fractal.components.load().then(() => {
+        for (let item of fractal.components.flatten()) {
+            if (item.status.label === 'Ready') {
+                item.render().then(function(html){
+                    fs.writeFile('./completed-templates/' + item.handle + '.html', html);
+                });
+            }
+        }
+    });
+});
 // Serve dynamic site (Fractal)
 function serve() {
   const server = fractal.web.server({
     sync: true
   });
+  const logError = err => logger.error(err.message)
+  const logRunning = () => logger.success(`Fractal server is now running at ${server.url}`)
 
-  server.on('error', err => logger.error(err.message));
 
-  return server.start().then((e) => {
-    // console.log(e)
-    logger.success(`Fractal server is now running at ${server.url}`);
-  });
+  server.on('error', logError)
+        .start()
+        .then(logRunning)
+
 };
 
 // Clean

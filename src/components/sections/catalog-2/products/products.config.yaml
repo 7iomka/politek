@@ -11,7 +11,7 @@ context:
     listItems:
     - icon: /assets/images/catalog/2/demo2.png
       label: Трубы
-      link: /product/link-to-product
+      link: /components/preview/catalog-3
     - icon: /assets/images/catalog/2/demo2.png
       label: Фитинги
-      link: /product/link-to-product
+      link: /components/preview/catalog-3

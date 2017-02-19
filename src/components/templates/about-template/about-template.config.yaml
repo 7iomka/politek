@@ -1,3 +1,4 @@
+status: ready
 handle: about-template
 context:
   sections:
