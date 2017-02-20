@@ -7,12 +7,12 @@ context:
     id: fiting_dlya_vnutrennei_kanalizatii
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-1/product-photo1.png
-      link: /assets/images/catalog/3/product-1/product-photo1.png
+      src: assets/images/catalog/3/product-1/product-photo1.png
+      link: assets/images/catalog/3/product-1/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-1/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-1/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-1/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-1/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -21,7 +21,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-2
@@ -29,12 +29,12 @@ context:
     id: krestoviny
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -43,7 +43,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-3
@@ -51,12 +51,12 @@ context:
     id: mufty_dvuhtrubnye
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -65,7 +65,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-4
@@ -73,12 +73,12 @@ context:
     id: mufty_remontnye
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -87,7 +87,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-5
@@ -95,12 +95,12 @@ context:
     id: otvody
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -109,7 +109,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-6
@@ -117,12 +117,12 @@ context:
     id: otvody_11_s_vyhodom_na_50
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -131,7 +131,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-7
@@ -139,12 +139,12 @@ context:
     id: patrubki_compensationnye
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -153,7 +153,7 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]
 # product-8
@@ -161,12 +161,12 @@ context:
     id: perehody_na_chugun
     productPhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-photo1.png
-      link: /assets/images/catalog/3/product-2/product-photo1.png
+      src: assets/images/catalog/3/product-2/product-photo1.png
+      link: assets/images/catalog/3/product-2/product-photo1.png
     productSchemePhoto:
       mods: [with-link]
-      src: /assets/images/catalog/3/product-2/product-scheme-photo1.png
-      link: /assets/images/catalog/3/product-2/product-scheme-photo1.png
+      src: assets/images/catalog/3/product-2/product-scheme-photo1.png
+      link: assets/images/catalog/3/product-2/product-scheme-photo1.png
     textDescription: "Полипропиленовая заглушка <strong>«Политэк»</strong> — соединительный фитинг для пластиковых труб. С этой заглушкой вы сможете закрыть и загерметизировать трубы на любой срок. Изделие используется в работе с водопроводом или системой отопления."
     advantages:
     - Экологичная
@@ -175,6 +175,6 @@ context:
     - Влагоустойчивая;
     - Стойкая к воздействию коррозии и агрессивных химических соединений.
     addToCart:
-      image: /assets/images/icons/addToCart.png
+      image: assets/images/icons/addToCart.png
       label: Добавить в корзину
       mods: [with-image, secondary]

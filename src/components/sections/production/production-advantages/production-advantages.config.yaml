@@ -5,13 +5,13 @@ context:
       cols: col col-12 col-sm-6 col-md-4 col-xl-5ths mb-4 mb-xl-0
       rowClass: my-5
     listItems:
-    - icon: /assets/images/icons/benefits/1.png
+    - icon: assets/images/icons/benefits/1.png
       label: Мы изготавливаем ее только из первичного сырья.
-    - icon: /assets/images/icons/benefits/2.png
+    - icon: assets/images/icons/benefits/2.png
       label: Сырье от крупнейшего российского поставщика нефтехимии - компании "СИБУР”
-    - icon: /assets/images/icons/benefits/3.png
+    - icon: assets/images/icons/benefits/3.png
       label: Изготавливаем продукцию на современном европейском оборудовании.
-    - icon: /assets/images/icons/benefits/4.png
+    - icon: assets/images/icons/benefits/4.png
       label: Вся продукция проходит необходимые испытания в собственной лаборатории.
-    - icon: /assets/images/icons/benefits/4.png
+    - icon: assets/images/icons/benefits/4.png
       label: Наши специалисты постоянно обучаются и стажируются в зарубежных компаниях.

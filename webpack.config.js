@@ -1,7 +1,9 @@
 const path = require('path');
 const webpackStream = require('webpack-stream');
 const webpack = webpackStream.webpack;
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 // const ComponentDirectoryPlugin = require("component-directory-webpack-plugin");
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 let webpackConfig = {
     // click on the name of the option to get to the detailed documentation
@@ -144,7 +146,7 @@ let webpackConfig = {
     },*/
 
     devtool: "source-map", // enum
-    watch: true,
+    watch: isDevelopment,
   	watchOptions: {
   		aggregateTimeout: 100
   	},
@@ -174,7 +176,8 @@ let webpackConfig = {
           "jQuery": "jquery",
           "_": "underscore",
           "domready": "domready"
-      })
+      }),
+      new UglifyJSPlugin()
       //  new webpack.ResolverPlugin(new ComponentDirectoryPlugin(true)) // resolve require('components/demo') as components/demo/demo.js || index.js
     ],
     // list of additional plugins

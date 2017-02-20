@@ -5,17 +5,17 @@ context:
     bootstrap:
       cols: col-xs-12 col-sm-6 col-md-3 mb-4 mb-lg-0
     listItems:
-    - icon: /assets/images/icons/benefits/1.png
+    - icon: assets/images/icons/benefits/1.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
-    - icon: /assets/images/icons/benefits/2.png
+    - icon: assets/images/icons/benefits/2.png
       label: 3 000 тонн продукции всегда в наличии на складе.
-    - icon: /assets/images/icons/benefits/3.png
+    - icon: assets/images/icons/benefits/3.png
       label: Отгружаем нужный объем в срок до 2 дней. Поможем организовать доставку продукции
-    - icon: /assets/images/icons/benefits/4.png
+    - icon: assets/images/icons/benefits/4.png
       label: Срок службы инженерных систем - 50 лет. Продукция застрахована!
   homeBanner:
     mods: [benefits-banner]
-    src: /assets/images/pages/home/politek-banner.png
+    src: assets/images/pages/home/politek-banner.png
   achievementsList:
     component: "list-item--only-caption_extended"
     nestedMods: [only-caption_extended,with-border-gradient]

@@ -6,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const concat = require('gulp-concat');
 const del = require('del');
 const fs = require('fs');
+const path = require('path');
 const gulp = require('gulp');
 const a11y = require('gulp-a11y');
 const ghPages = require('gulp-gh-pages');
@@ -30,66 +31,37 @@ const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const named = require('vinyl-named');
-
-
+const mkdirp = require('mkdirp');
+const cleanDest = require('gulp-clean-dest');
 // const browserSync = require('browser-sync').create();
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
-const paths = {
-  build: __dirname + '/www',
-  dest: __dirname + '/tmp',
+let paths = {
+  // build: __dirname + '/www',
+  dest: __dirname + (isDevelopment ? '/tmp' : '/www'),
   src: __dirname + '/src',
   modules: __dirname + '/node_modules'
 };
 
-// const jsVendors = paths.src + '/assets/scripts/vendors/';
-// const jsFiles = [
-// // paths.modules + '/fontfaceobserver/fontfaceobserver.js',
-//
-// /** vendors plugins for use in components **/
-// // jsVendors + 'jquery.mmenu.all.min.js',
-// // jsVendors + 'jquery.flexslider-min.js',
-// // jsVendors + 'swiper.min.js',
-// // jsVendors + 'photoswipe.min.js',
-// // jsVendors + 'photoswipe-ui-default.min.js',
-// // jsVendors + 'jquery.spinner.min.js',
-// // /** GreenSock / gsap core and plugins **/
-// // jsVendors + 'greensock/minified/TweenMax.min.js',
-// // jsVendors + 'greensock/minified/plugins/ScrollToPlugin.min.js',
-// //
-// // /** ScrollMagic core and plugins **/
-// // jsVendors + 'scrollmagic/minified/ScrollMagic.min.js',
-// // jsVendors + 'scrollmagic/minified/plugins/animation.gsap.min.js',
-// //
-// // /** components **/
-// // // paths.src + '/components/**/*.js',
-// // paths.src + '/assets/scripts/app.js'
-//
-// ];
+// if is production
+// if (!isDevelopment) {
+//   paths.dest = __dirname + '/www'
+// }
+
 // Build static site (Fractal)
-function build() {
-  const builder = fractal.web.builder();
+// function build() {
+//   const builder = fractal.web.builder();
+//
+//   builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
+//   builder.on('error', err => logger.error(err.message));
+//
+//   return builder.build().then(() => {
+//     logger.success('Fractal build completed!');
+//   });
+// };
 
-  builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
-  builder.on('error', err => logger.error(err.message));
 
-  return builder.build().then(() => {
-    logger.success('Fractal build completed!');
-  });
-};
-
-gulp.task('fractal:exportComponents', function(){
-    fractal.components.load().then(() => {
-        for (let item of fractal.components.flatten()) {
-            if (item.status.label === 'Ready') {
-                item.render().then(function(html){
-                    fs.writeFile('./completed-templates/' + item.handle + '.html', html);
-                });
-            }
-        }
-    });
-});
 // Serve dynamic site (Fractal)
 function serve() {
   const server = fractal.web.server({
@@ -244,7 +216,7 @@ gulp.task('webpack', function(callback) {
       }))
       // .pipe(named()) //-- будем юзать если нужно будет несколько точек входа
       .pipe(webpackStream(options, webpack, done)) // вторым параметром идёт 2-ая версия установленного webpack
-      .pipe(gulpIf(!isDevelopment, uglify()))
+      // .pipe(gulpIf(!isDevelopment, uglify()))
       .pipe(gulp.dest(`${paths.dest}/assets/scripts`))
       .on('data', function() {
         gulplog.debug('callback is called'+ callback.called == true);
@@ -310,7 +282,67 @@ const compile = gulp.series(clean, gulp.parallel('webpack', meta, fonts, icons, 
 
 gulp.task('start', gulp.series(compile, serve));
 gulp.task('lint', gulp.series(lintstyles));
-gulp.task('build', gulp.series(compile, build));
 gulp.task('dev', gulp.series(compile, watch));
-gulp.task('test', gulp.series(build, audit));
-gulp.task('publish', gulp.series(build, deploy));
+// gulp.task('test', gulp.series(build, audit));
+// gulp.task('publish', gulp.series(build, deploy));
+
+
+// Clean build dirrectory
+function cleanBuild(cb) {
+  return gulp.src('www/**/*')
+        .pipe(cleanDest('www'));
+      cb();
+}
+
+const compileBuildAssets = gulp.parallel('webpack', meta, fonts, icons, images, vectors, styles, vendorsScripts);
+gulp.task('cleanBuild', cleanBuild);
+gulp.task('compileBuildAssets', compileBuildAssets);
+gulp.task('customBuild', customBuild);
+
+function renderComponent(args, done){
+   const app = fractal;
+   const target = app.components.find(args.component);
+   if (target) {
+       app.components.render(target, null, null, {
+           preview: args.options.layout
+       }).then(function(html){
+           const filePath = path.join('./', args.options.output || '', `${target.handle}.html`);
+           fs.writeFile(filePath, html, function(err){
+               if (err) {
+                   app.cli.console.error(`Error rendering ${args.component} - ${err.message}`);
+               } else {
+                   app.cli.console.success(`Component ${args.component} rendered to ${filePath}`);
+               }
+               done();
+           });
+       });
+   } else {
+       app.cli.console.error(`Component ${args.component} not found`);
+   }
+};
+
+function customBuild(cb){
+
+    const destdir = 'www/';
+    fractal.components.load().then(() => {
+        for (let item of fractal.components.flatten()) {
+        
+            if (item.relViewPath.startsWith('templates')) {
+              renderComponent({
+                component: `@${item.handle}`,
+                options: {
+                  output: destdir,
+                  layout: true
+                }
+              }, function () {
+                 fractal.cli.log(`@${item.handle} render completed`);
+              })
+            }
+        }
+    });
+
+cb();
+
+}
+
+gulp.task('build', gulp.series(cleanBuild,compileBuildAssets,customBuild));

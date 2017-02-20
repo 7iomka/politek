@@ -12,7 +12,7 @@
 
       function downloadJSAtOnload() {
         var element = document.createElement("script");
-        element.src = "{{ '/assets/scripts/app.js' | path }}";
+        element.src = "{{ 'assets//scripts/app.js' | path }}";
         document.body.appendChild(element);
         document.body.dataset.menuExpanded = 'false';
       }
@@ -56,8 +56,8 @@
   <body>
     {{ yield }}
 
-    {# <script src="/assets/scripts/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
-    <script src="/assets/scripts/vendors/jquery-migrate-3.0.0.js" charset="utf-8"></script> #}
+    {# <script src="assets//scripts/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <script src="assets//scripts/vendors/jquery-migrate-3.0.0.js" charset="utf-8"></script> #}
     <script
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="

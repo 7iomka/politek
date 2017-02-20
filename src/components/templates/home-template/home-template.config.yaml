@@ -10,4 +10,4 @@ context:
   - section: news
   # - component: img-responsive
   #   config:
-  #     src: /assets/images/pages/home/politek-banner.png
+  #     src: assets/images/pages/home/politek-banner.png
