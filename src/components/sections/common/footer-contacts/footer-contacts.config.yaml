@@ -1,7 +1,7 @@
 context:
   mods: [footer-contacts]
   contactsList:
-    - mapImg: assets/images/maps/address1.png
+    - mapImg: /assets/images/maps/address1.png
       address: "143000, Россия,<br/>
                 Mосковская обл.,<br/>
                 г. Одинцово,<br/>
@@ -14,7 +14,7 @@ context:
         - +7(495) 926-69-55
 
 
-    - mapImg: assets/images/maps/address2.png
+    - mapImg: /assets/images/maps/address2.png
       address: "143000, Россия,<br/>
                 Тульская обл.,г.Тула,<br/>
                 ул.Щегловская<br/>

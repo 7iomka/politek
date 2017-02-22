@@ -2,15 +2,15 @@ default: default
 variants:
   - name: default
     context:
-      src: assets/images/pages/home/politek-banner.png
+      src: /assets/images/pages/home/politek-banner.png
   - name: with-link
     context:
       mods: [with-link]
-      src: assets/images/pages/home/politek-banner.png
+      src: /assets/images/pages/home/politek-banner.png
       link: /
   - name: with-overlay
     context:
       mods: [with-link, with-overlay]
-      src: assets/images/pages/home/politek-banner.png
+      src: /assets/images/pages/home/politek-banner.png
       link: '#'
       overlay: true

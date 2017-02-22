@@ -1,6 +1,6 @@
 context:
-  galleryPath: assets/images/about-slider/
-  thumbsPath: assets/images/about-slider/thumbs/
+  galleryPath: /assets/images/about-slider/
+  thumbsPath: /assets/images/about-slider/thumbs/
   slides:
   - url: 1.png
   - url: 2.png

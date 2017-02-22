@@ -1,7 +1,7 @@
 variants:
   - name: default
     context:
-      mapImg: assets/images/maps/address1.png
+      mapImg: /assets/images/maps/address1.png
       address: "143000, Россия,<br/>
                 Mосковская обл.,<br/>
                 г. Одинцово,<br/>
@@ -14,7 +14,7 @@ variants:
         - +7(495) 926-69-55
   - name: full
     context:
-      mapImg: assets/images/maps/address1.png
+      mapImg: /assets/images/maps/address1.png
       address: "143000, Россия,<br/>
                 Mосковская обл.,<br/>
                 г. Одинцово,<br/>

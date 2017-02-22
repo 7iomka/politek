@@ -3,7 +3,7 @@ var rx = require('vendors/ripple.min.js');
 module.exports = function () {
 
   var rippleBtns = $.ripple(".c-button", {
-      debug: true, // Turn Ripple.js logging on/off
+      debug: false, // Turn Ripple.js logging on/off
       on: 'mousedown', // The event to trigger a ripple effect
 
       opacity: 0.4, // The opacity of the ripple

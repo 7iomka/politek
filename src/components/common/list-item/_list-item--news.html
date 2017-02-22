@@ -5,7 +5,7 @@
       <figure class="list-group__item-figure">
         <a href="{{ link }}">
           {%- if icon -%}
-            <img src="{{ icon }}" class="list-group__item-image" alt="{{ title }}">
+            <img src="{{ icon | path }}" class="list-group__item-image" alt="{{ title }}">
           {%- endif -%}
         </a>
       </figure>

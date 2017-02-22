@@ -32,7 +32,7 @@ module.exports = function() {
       }
     }, {
       iconLayout: 'default#image',
-      iconImageHref: 'assets/icons/pin.png',
+      iconImageHref: '/assets/icons/pin.png',
       iconImageSize: [
         30, 30
       ],
@@ -81,7 +81,7 @@ module.exports = function() {
       }
     }, {
       iconLayout: 'default#image',
-      iconImageHref: 'assets/icons/pin.png',
+      iconImageHref: '/assets/icons/pin.png',
       iconImageSize: [
         30, 30
       ],

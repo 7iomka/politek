@@ -1,7 +1,7 @@
 context:
   orderBtn:
     label: Оформить заказ
-    href: /cart
+    href: cart-template
     customClassList: mr-3
   callbackBtn:
     label: Заказать звонок

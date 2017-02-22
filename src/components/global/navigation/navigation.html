@@ -3,7 +3,8 @@
     <ul class="header-nav">
     {%- for page in pages -%}
       <li class="header-nav__item {% if page.subpages %} header-nav__item--has-subitems {% endif %}">
-        <a class="header-nav__label {% if page.subpages %} header-nav__label--expandable {% endif %}" href="{{ page.url+'-template' | path  }}"> {{ page.title }} </a>
+        <a class="header-nav__label {% if page.subpages %} header-nav__label--expandable {% endif %}"
+        href="{{ page.url+'-template' | path  }}"> {{ page.title }} </a>
         {%- if page.subpages -%}
         <span class="header-nav__expander"></span>
         <ul class="header-nav__sub">

@@ -3,8 +3,8 @@ variants:
 - name: empty
   context:
     mods: [empty]
-    count: 0
-    sum: 0
+    count: '0'
+    sum: '0'
 - name: full
   context:
     mods: []

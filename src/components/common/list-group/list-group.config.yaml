@@ -9,11 +9,11 @@ variants:
         body: 123
         bottom: городах России и СНГ
       component: "list-item--only-caption_extended"
-    - icon: assets/images/icons/benefits/2.png
+    - icon: /assets/images/icons/benefits/2.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
-    - icon: assets/images/icons/benefits/3.png
+    - icon: /assets/images/icons/benefits/3.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
-    - icon: assets/images/icons/benefits/4.png
+    - icon: /assets/images/icons/benefits/4.png
       label: Более <strong>1 000 наименований</strong> в ассортименте
     bootstrap:
       cols: col
@@ -23,19 +23,19 @@ variants:
     component: "list-item--product"
     nestedMods: [product]
     listItems:
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
       priceListLink: /product/link-to-download-pricelist
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
       priceListLink: /product/link-to-download-pricelist
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
       priceListLink: /product/link-to-download-pricelist
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
       priceListLink: /product/link-to-download-pricelist
@@ -51,10 +51,10 @@ variants:
     bootstrap:
       cols: col
     listItems:
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги из list-group
       link: /product/link-to-product
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
 
@@ -64,16 +64,16 @@ variants:
     component: "list-item--product"
     nestedMods: [product,product-horizontal]
     listItems:
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
-    - icon: assets/images/catalog/1.png
+    - icon: /assets/images/catalog/1.png
       label: Трубы и фитинги
       link: /product/link-to-product
     bootstrap:

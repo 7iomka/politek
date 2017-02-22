@@ -1,7 +1,7 @@
 import 'swiper';
 // import PhotoSwipe from 'vendors/photoswipe.min.js';
 // import PhotoSwipeUI_Default from 'vendors/photoswipe-ui-default.min.js';
-import { PhotoSwipe, PhotoSwipe_init } from 'vendors/photoswipe-init.js';
+// import { PhotoSwipe, PhotoSwipe_init } from 'vendors/photoswipe-init.js';
 
 module.exports = function(){
 

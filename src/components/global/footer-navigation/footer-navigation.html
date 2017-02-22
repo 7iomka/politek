@@ -2,7 +2,7 @@
   <ul class="footer-nav">
     {% for page in pages %}
       <li class="footer-nav__item">
-        <a class="footer-nav__label" href="{{ page.url }}"> {{ page.title }} </a>
+        <a class="footer-nav__label" href="{{ page.url+'-template' | path  }}"> {{ page.title }} </a>
       </li>
     {% endfor %}
   </ul>

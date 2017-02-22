@@ -10,6 +10,7 @@
 
 
   import siteGallery from './components/common/_site-gallery/site-gallery.js';
+  import productsGallery from './components/common/product-group-item/product-group-item.js';
 
 	import './components/common/accordion/accordion.js';
 	import './components/common/base-slider/base-slider.js';
@@ -18,7 +19,7 @@
 	import './components/common/gallery-slider/gallery-slider.js';
 	import './components/common/goup/goup.js';
 	import './components/common/news-list/news-list.js';
-	import './components/common/product-group-item/product-group-item.js';
+
 	import './components/common/responsive-table/responsive-table.js';
 	import './components/common/spinner/spinner.js';
 	import './components/common/video-review/video-review.js';
@@ -43,7 +44,8 @@
 // init actions
 domready(function () {
   const publicApi = {
-    siteGallery: siteGallery.init()
+    siteGallery: siteGallery.init(),
+    productsGallery: productsGallery.init()
   }
 
   exports.publicApi =  {

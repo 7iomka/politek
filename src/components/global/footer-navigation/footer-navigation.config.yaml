@@ -1,7 +1,7 @@
 context:
   pages:
   - title: Главная
-    url: /
+    url: /home
   - title: Каталог
     url: /catalog
   - title: О компании

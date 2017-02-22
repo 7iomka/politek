@@ -156,7 +156,12 @@ var PhotoSwipe_init = function(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect();
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
+            },
+            shareButtons: [
+              {id:'download', label:'Скачать', url:'{{raw_image_url}}', download:true}
+            ],
+            fullscreenEl: false,
+            history: false
 
         };
 
@@ -194,12 +199,16 @@ var PhotoSwipe_init = function(gallerySelector) {
     };
 
     // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll( gallerySelector );
-
-    for(var i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i+1);
-        galleryElements[i].onclick = onThumbnailsClick;
-    }
+    var galleryElements = $(gallerySelector);
+    galleryElements.each(function (i) {
+      var $el = $(this);
+      $el.attr('data-pswp-uid', i+1);
+      $el.on('click', onThumbnailsClick);
+    })
+    // for(var i = 0, l = galleryElements.length; i < l; i++) {
+    //     galleryElements[i].setAttribute('data-pswp-uid', i+1);
+    //     galleryElements[i].onclick = onThumbnailsClick;
+    // }
 
     // Parse URL and open gallery if it contains #&pid=3&gid=1
     var hashData = photoswipeParseHash();

@@ -8,7 +8,7 @@ variants:
     disabled: true
 - name: with-image
   context:
-    image: assets/images/icons/addToCart.png
+    image: /assets/images/icons/addToCart.png
     label: Button with image
     mods: [with-image]
 - name: more

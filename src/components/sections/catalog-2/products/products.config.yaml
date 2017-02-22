@@ -9,9 +9,9 @@ context:
     linkMods: [underlined,colored]
     labelMods: [big]
     listItems:
-    - icon: assets/images/catalog/2/demo2.png
+    - icon: /assets/images/catalog/2/demo2.png
       label: Трубы
-      link: /components/preview/catalog-3
-    - icon: assets/images/catalog/2/demo2.png
+      link: catalog-3
+    - icon: /assets/images/catalog/2/demo2.png
       label: Фитинги
-      link: /components/preview/catalog-3
+      link: catalog-3

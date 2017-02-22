@@ -6,6 +6,7 @@
 * Contributors: https://github.com/tylerpearson/lazyYT/graphs/contributors || https://github.com/daugilas/lazyYT/graphs/contributors
 */
 
+$yt_playbutton-bg: url('../images/YT_play_btn.png') 50% no-repeat;
 $yt_playbutton-width: 117px;
 $yt_playbutton-height: 84px;
 
@@ -153,7 +154,8 @@ $yt_playbutton-height: 84px;
   text-align: center;
   background-color: black;
   opacity: .5
-}@keyframes ytp-spinner-dot-fade{0%{opacity:.5;-moz-transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);transform:scale(1.2,1.2)}50%{opacity:.15;-moz-transform:scale(.9,.9);-ms-transform:scale(.9,.9);-webkit-transform:scale(.9,.9);transform:scale(.9,.9)}
+}
+@keyframes ytp-spinner-dot-fade{0%{opacity:.5;-moz-transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);transform:scale(1.2,1.2)}50%{opacity:.15;-moz-transform:scale(.9,.9);-ms-transform:scale(.9,.9);-webkit-transform:scale(.9,.9);transform:scale(.9,.9)}
 
 to {
   opacity: .15;
@@ -161,7 +163,8 @@ to {
   -ms-transform: scale(.85,.85);
   -webkit-transform: scale(.85,.85);
   transform: scale(.85,.85)
-}}@-moz-keyframes ytp-spinner-dot-fade{0%{opacity:.5;-moz-transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);transform:scale(1.2,1.2)}50%{opacity:.15;-moz-transform:scale(.9,.9);-ms-transform:scale(.9,.9);-webkit-transform:scale(.9,.9);transform:scale(.9,.9)}
+}}
+@-moz-keyframes ytp-spinner-dot-fade{0%{opacity:.5;-moz-transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);transform:scale(1.2,1.2)}50%{opacity:.15;-moz-transform:scale(.9,.9);-ms-transform:scale(.9,.9);-webkit-transform:scale(.9,.9);transform:scale(.9,.9)}
 
 to {
   opacity: .15;
@@ -169,7 +172,8 @@ to {
   -ms-transform: scale(.85,.85);
   -webkit-transform: scale(.85,.85);
   transform: scale(.85,.85)
-}}@-webkit-keyframes ytp-spinner-dot-fade{0%{opacity:.5;-moz-transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);transform:scale(1.2,1.2)}50%{opacity:.15;-moz-transform:scale(.9,.9);-ms-transform:scale(.9,.9);-webkit-transform:scale(.9,.9);transform:scale(.9,.9)}
+}}
+@-webkit-keyframes ytp-spinner-dot-fade{0%{opacity:.5;-moz-transform:scale(1.2,1.2);-ms-transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);transform:scale(1.2,1.2)}50%{opacity:.15;-moz-transform:scale(.9,.9);-ms-transform:scale(.9,.9);-webkit-transform:scale(.9,.9);transform:scale(.9,.9)}
 
 to {
   opacity: .15;
@@ -259,7 +263,15 @@ to {
   top: 50%;
   width: $yt_playbutton-width;
   height: $yt_playbutton-height;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 540px) {
+    $yt_playbutton-width: $yt_playbutton-width*0.7;
+    $yt_playbutton-height: $yt_playbutton-height*0.7;
+    width: $yt_playbutton-width;
+    height: $yt_playbutton-height;
+    margin-left: -($yt_playbutton-width/2);
+    margin-top: -($yt_playbutton-height/2);
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
     $yt_playbutton-width: $yt_playbutton-width*0.7;
     $yt_playbutton-height: $yt_playbutton-height*0.7;
     width: $yt_playbutton-width;
@@ -271,6 +283,9 @@ to {
   margin-left: -($yt_playbutton-width/2);
   margin-top: -($yt_playbutton-height/2);
   transition: opacity .25s cubic-bezier(0,0,0.2,1);
+
+  background: $yt_playbutton-bg;
+  background-size: contain;
 }
 
 .ytp-button:not([aria-disabled=true]):not([disabled]):not([aria-hidden=true]) {

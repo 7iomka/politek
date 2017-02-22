@@ -12,54 +12,54 @@ variants:
 context:
   pages:
   - title: Главная
-    url: /components/preview/home
+    url: home
   - title: Каталог
-    url: /components/preview/catalog
+    url: catalog
     subpages:
       - title: трубы и фитинги для внутренней канализации из пп
-        url: /components/preview/catalog-2
+        url: catalog-2
       - title: двухслойные трубы и фитинги для двухслойных трубопроводов
-        url: /components/preview/catalog-2
+        url: catalog-2
       - title: трубы и фитинги из пп для с улучшенным шумо-поглощенем
-        url: /components/preview/catalog-2
+        url: catalog-2
       - title: двухслойные трубопроводы повышенной жесткости из пнд
-        url: /components/preview/catalog-2
+        url: catalog-2
       - title: трубопроводы для водоснабжения из пнд
-        url: /components/preview/catalog-2
+        url: catalog-2
       - title: трубы и фитинги для горячего/холодного водоснабжения
-        url: /components/preview/catalog-2
+        url: catalog-2
       - title: компрессионные фитинги для холодного водоснабжения
-        url: /components/preview/catalog-2
+        url: catalog-2
   - title: О компании
-    url: /components/preview/about
+    url: about
     subpages:
       - title: О нас
-        url: /components/preview/about
+        url: about
       - title: Производство
-        url: /components/preview/production
+        url: production
       - title: Новости
-        url: /components/preview/news
+        url: news
       - title: Отзывы
-        url: /components/preview/testimonials
+        url: testimonials
   - title: Для партнеров
-    url: /components/preview/dlja-partnerov
+    url: dlja-partnerov
     subpages:
       - title: Рекламные и информационные материалы
-        url: /components/preview/promo
+        url: promo
       - title: Условия хранения продукции
-        url: /components/preview/terms
+        url: terms
       - title: Сертификация
-        url: /components/preview/certificates
+        url: certificates
   - title: Проектировщикам и монтажникам
-    url: /components/preview/certificates
+    url: certificates
     subpages:
       - title: Чертежи
-        url: /components/preview/certificates
+        url: certificates
       - title: Техническая информация
-        url: /components/preview/terms
+        url: terms
       - title: Снипы и госты
-        url: /components/preview/gosts
+        url: gosts
   - title: Карта дилеров
-    url: /components/preview/dealers
+    url: dealers
   - title: Контакты
-    url: /components/preview/contacts
+    url: contacts

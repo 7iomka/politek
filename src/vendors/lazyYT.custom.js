@@ -76,7 +76,7 @@
           //   innerHtml.push('<path d="m 26.96,13.67 18.37,9.62 -18.37,9.55 -0.00,-19.17 z" fill="#fff"></path>');
           //   innerHtml.push('<path d="M 45.02,23.46 45.32,23.28 26.96,13.67 43.32,24.34 45.02,23.46 z" fill="#ccc"></path>');
           // innerHtml.push('</svg>');
-          innerHtml.push('<img class="ytp-large-play-button-bg" src="/assets/images/YT_play_btn.png">');
+          // innerHtml.push('<img class="ytp-large-play-button-bg" src="/assets/images/YT_play_btn.png">');
           innerHtml.push('</button>'); // end of .ytp-large-play-button
 
           // innerHtml.push('<div class="ytp-spinner" data-layer="4">');

@@ -147,9 +147,9 @@ let webpackConfig = {
 
     devtool: "source-map", // enum
     watch: isDevelopment,
-  	watchOptions: {
-  		aggregateTimeout: 100
-  	},
+  	// watchOptions: {
+  	// 	aggregateTimeout: 100
+  	// },
     // enhance debugging by adding meta info for the browser devtools
     // source-map most detailed at the expense of build speed.
 
@@ -177,7 +177,13 @@ let webpackConfig = {
           "_": "underscore",
           "domready": "domready"
       }),
-      new UglifyJSPlugin()
+      new UglifyJSPlugin({
+        compress: !isDevelopment,
+        mangle: !isDevelopment,
+        beautify: isDevelopment,
+        sourceMap: isDevelopment,
+        
+      })
       //  new webpack.ResolverPlugin(new ComponentDirectoryPlugin(true)) // resolve require('components/demo') as components/demo/demo.js || index.js
     ],
     // list of additional plugins

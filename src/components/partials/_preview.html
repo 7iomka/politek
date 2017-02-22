@@ -1,10 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-gb" dir="ltr" class="no-js">
+<html lang="ru-ru" dir="ltr" class="no-js">
   <head>
     <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="//themes.googleusercontent.com"/>
-    <link rel="dns-prefetch" href="//cloud.24ways.org"/>
-    <link rel="dns-prefetch" href="//media.24ways.org"/>
      {# <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> #}
     {# <script>
       var docEl = document.documentElement;
@@ -29,28 +26,18 @@
     <link rel="shortcut icon" href="{{ '/assets/icons/icon.ico' | path }}" type="image/ico"/>
     <link rel="apple-touch-icon" href="{{ '/assets/icons/icon.png' | path }}" type="image/png"/>
     <link rel="mask-icon" href="{{ '/assets/icons/icon.svg' | path }}" color="{{ site.theme_color }}"/>
-    <link rel="author" href="/humans.txt"/>
     <link rel="manifest" href="/manifest.json"/>
-    <link rel="alternate" href="{{ site.feed }}" type="application/rss+xml"/>
     <link rel="stylesheet" href="{{ '/assets/styles/app.css' | path }}"/>
 
     <style>
-      :root {
-        --color-year: hsl({{ theme.year[11] }}, 100%, 16%);
-        --color-year--dark: hsl({{ theme.year[11] }}, 100%, 8%);
-      }
+
     </style>
 
     <meta charset="utf-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="viewport" content="width=device-width, initial-scale=0.80"/>
-    <meta name="twitter:site" content="@{{ site.handle }}"/>
-    <meta name="twitter:title" content="{{ site.title }}"/>
-    <meta name="twitter:description" content="{{ site.description }}"/>
-    <meta name="twitter:creator" content="@{{ site.handle }}"/>
-    <meta name="twitter:card" content="summary"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>{{ _target.context.title }} &#9670; 24 ways</title>
+    <title>{{ _target.context.title }}</title>
   </head>
 
   <body>
@@ -58,14 +45,7 @@
 
     {# <script src="assets//scripts/vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
     <script src="assets//scripts/vendors/jquery-migrate-3.0.0.js" charset="utf-8"></script> #}
-    <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/scripts/app.js' | path }}" charset="utf-8"></script>
-    <!--<script type="text/javascript">
-    console.log("$('.accordion').data()", $('.accordion').data());
-      $('.accordion').data().plugin_accordion.opts.onOpen = function(){ console.log('я раскрылся')}
-    </script>-->
   </body>
 </html>

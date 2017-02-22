@@ -3,19 +3,19 @@ context:
     title: Благодарственные письма
     mods: [filled_primary, thanks-letters]
   photoReviews:
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
-    - src: assets/images/testimonials/thumbs/demo-testimonial.png
-      link: 'assets/images/testimonials/demo-testimonial.png'
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png
+    - src: /assets/images/testimonials/thumbs/demo-testimonial.png
+      link: /assets/images/testimonials/demo-testimonial.png

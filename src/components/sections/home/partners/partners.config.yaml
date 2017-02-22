@@ -4,7 +4,7 @@ context:
     title: Наша продукция поставляется в крупные сети
   generalPartner:
     mods: [generalPartner]
-    icon: assets/images/partners/general.png
+    icon: /assets/images/partners/general.png
     label: <strong>Главный партнер</strong>
   partnersList:
     component: "list-item"
@@ -13,12 +13,12 @@ context:
       cols: col-6 col-sm-4
       rowClass: align-items-center partners-list
     listItems:
-      - icon: assets/images/partners/1.png
-      - icon: assets/images/partners/2.png
-      - icon: assets/images/partners/3.png
-      - icon: assets/images/partners/4.png
-      - icon: assets/images/partners/5.png
-      - icon: assets/images/partners/6.png
-      - icon: assets/images/partners/7.png
-      - icon: assets/images/partners/8.png
-      - icon: assets/images/partners/9.png
+      - icon: /assets/images/partners/1.png
+      - icon: /assets/images/partners/2.png
+      - icon: /assets/images/partners/3.png
+      - icon: /assets/images/partners/4.png
+      - icon: /assets/images/partners/5.png
+      - icon: /assets/images/partners/6.png
+      - icon: /assets/images/partners/7.png
+      - icon: /assets/images/partners/8.png
+      - icon: /assets/images/partners/9.png

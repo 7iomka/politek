@@ -1,7 +1,7 @@
 variants:
 - name: default
   context:
-    icon: assets/images/icons/benefits/1.png
+    icon: /assets/images/icons/benefits/1.png
     label: Более <strong>1 000 наименований</strong> в ассортименте
 - name: only-caption_extended
   context:
@@ -15,23 +15,23 @@ variants:
   context:
     mods: [product]
     handle: list-item--product
-    icon: assets/images/catalog/1.png
+    icon: /assets/images/catalog/1.png
     label: Трубы и фитинги 22
-    link: /product/link-to-product
-    priceListLink: /product/link-to-download-pricelist
+    link: product/link-to-product
+    priceListLink: product/link-to-download-pricelist
     priceLabel: " прайс"
 - name: product--without-pricelist
   context:
     mods: [product]
     handle: list-item--product
-    icon: assets/images/catalog/1.png
+    icon: /assets/images/catalog/1.png
     label: Трубы и фитинги 22
     link: /product/link-to-product
     priceListLink: false
 - name: news
   context:
     handle: list-item--news
-    icon: assets/images/news/thumbs/demo1.png
+    icon: /assets/images/news/thumbs/demo1.png
     title: Константин Хрюкин арестован за растрату миллиона долларов
     date: 18.04.2016
     anonce: Российский гроссмейстер заявил, что добиться такого результата против действующего чемпиона — уже подвиг. Но останавливаться на достигнутом он не собирается и приложит все усилия, чтобы победить.
@@ -41,7 +41,7 @@ variants:
   context:
     mods: [certificat]
     handle: list-item--certificat
-    icon: assets/images/catalog/1.png
+    icon: /assets/images/catalog/1.png
     label: Трубы и фитинги 22
     link: /product/link-to-product
     priceListLink: /product/link-to-download-pricelist

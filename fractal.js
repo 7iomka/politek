@@ -114,27 +114,27 @@ fractal.docs.set('path', paths.src + '/docs');
 mandelbrotCustom.addLoadPath(__dirname + '/mandelbrot-custom');
 
 // Web UI config
-// fractal.web.theme(mandelbrotCustom);
-const codemirrorPath = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.22.0';
-const themex = require('@frctl/mandelbrot')({
-  // for YAML context data editing
-  format: 'yaml',
-  scripts: [
-    `${codemirrorPath}/codemirror.min.js`,
-    `${codemirrorPath}/mode/yaml/yaml.min.js`,
-    'default',
-  ],
-  styles: [
-    `${codemirrorPath}/codemirror.min.css`,
-    'default',
-  ]
-});
+fractal.web.theme(mandelbrotCustom);
+// const codemirrorPath = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.22.0';
+// const themex = require('@frctl/mandelbrot')({
+//   // for YAML context data editing
+//   format: 'yaml',
+//   scripts: [
+//     `${codemirrorPath}/codemirror.min.js`,
+//     `${codemirrorPath}/mode/yaml/yaml.min.js`,
+//     'default',
+//   ],
+//   styles: [
+//     `${codemirrorPath}/codemirror.min.css`,
+//     'default',
+//   ]
+// });
 
-fractal.web.theme(themex);
-fractal.components.set('context.editable', true);
+// fractal.web.theme(themex);
+// fractal.components.set('context.editable', true);
 fractal.web.set('static.path', paths.static);
 fractal.web.set('builder.dest', paths.build);
-fractal.web.set('builder.urls.ext', null);
+fractal.web.set('builder.urls.ext', '.html');
 // fractal.web.set('server.syncOptions', {
 //     injectChanges: true,
 //     // proxy: 'localhost:3000', // localhost served url
@@ -206,7 +206,6 @@ function createComponent(args, done) {
   // finally full path to component dir
   const componentDir = `${correspondedDir}/${innerPageDir}${args.component}`;
 
-  console.log(args.options.section)
 
   // necessary files with data for component dir
   const componentFiles = [
@@ -216,7 +215,7 @@ function createComponent(args, done) {
     },
     {
       extension: '.html',
-      data: ''
+      data: '<div></div>'
     },
     {
       extension: '.js',
@@ -272,6 +271,16 @@ fractal.cli.command('render <component>', renderComponent,  {
         ['-o, --output <output-dir>', 'The directory to render the component into, relative to the CWD.'],
     ]
 });
+
+
+fractal.cli.command('get env', function () {
+  console.log('isDevelopment:', isDevelopment);
+  console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
+
+
+});
+
+
 
 
 // Export config

@@ -1,17 +1,17 @@
-// import { PhotoSwipe, PhotoSwipe_init } from 'vendors/photoswipe-init.js';
-
-module.exports = function(){
-
-$(function () {
-// console.log('initPhotoSwipeFromDOM:', initPhotoSwipeFromDOM)
+import { PhotoSwipe, PhotoSwipe_init } from 'vendors/photoswipe-init.js';
 
 
-});
 
-// if (!$('.product-group__item-photos').length) return;
-// $('.product-group__item').each(function () {
-//   var $self = $(this);
-//     PhotoSwipe_init($('.product-group__item-photos', $self));
-// })
+domready(function () {
+  exports.init = function () {
 
-}()
+    if (!$('.product-group__item-photos').length) return;
+
+    $('.product-group__item').each(function () {
+      var $self = $(this);
+      console.log(typeof $self.find('.product-group__item-photos')[0])
+      PhotoSwipe_init($self.find('.product-group__item-photos'));
+    });
+
+  }
+})
