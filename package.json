@@ -81,6 +81,7 @@
     "gulp-plumber": "^1.1.0",
     "gulplog": "^1.0.0",
     "gutil": "^1.6.4",
+    "jquery-validation": "^1.16.0",
     "jquery.mmenu": "^5.7.8",
     "mkpath": "^1.0.0",
     "node-sass": "^4.3.0",

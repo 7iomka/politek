@@ -1,0 +1,147 @@
+{% from "@modal-macro" import Modal, ActionModal %}
+<div class="site-modals">
+
+  <!-- Что мы делаем за 24 часа-->
+  {% call Modal(
+    {
+      id: 'working24',
+      mods: ['960'],
+      title: 'Что мы делаем за 24 часа'
+    })
+  -%}
+  Гарантированно изготавливаем заказы на стекла и зеркала прямоугольной формы в отрез или с полировкой
+  {%- endcall %}
+
+
+
+  <!-- Услуги -->
+  {% for service in services %}
+    {% call Modal(
+      {
+        id: 'service-' + loop.index,
+        mods: ['960'],
+        title: service.title,
+        wrapper: 'service-modal'
+      })
+    -%}
+    {{ service.description }}
+    {% if service.image %}
+      <figure class="img-responsive service-modal__figure">
+          <img src="{{ service.image | path }}" alt="{{ service.title }}" class="img-responsive__item service-modal__figure-item" />
+      </figure>
+    {% endif %}
+
+    {%- endcall %}
+  {% endfor %}
+
+
+    <!-- /********************************** Модальные окна действий (формы) *************************************/ -->
+
+    <!--Обратный звонок-->
+    {% set measureIcon = '/assets/images/icons/action-modals/measure.png' | path  %}
+    {% call ActionModal(
+      {
+        id: 'call-back',
+        mods: ['440'],
+        title: 'Обратный звонок',
+        icon: measureIcon,
+        wrapper: 'action-modal__content'
+      })
+    -%}
+      <div class="action-modal__annonce">Оставьте заявку и наш менеджер свяжется с Вами</div>
+      <form class="form">
+        <div class="form-group">
+          <label class="form-label" for="user_name--call-back">Имя:</label>
+          <input type="text" class="form-control" id="user_name--call-back" name="user_name--call-back" placeholder="Иван Иванов">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_phone--call-back">Телефон:</label>
+          <input type="text" class="form-control" id="user_phone--call-back" name="user_phone--call-back" placeholder="+7 987 654 32 10">
+
+        </div>
+        <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Оставить заявку</button>
+      </form>
+    {%- endcall %}
+
+    <!--Бесплатная консультация (вопрос менеджеру)-->
+    {% set measureIcon = '/assets/images/icons/action-modals/consult.png' | path  %}
+    {% call ActionModal(
+      {
+        id: 'action-consult',
+        mods: ['440'],
+        title: 'Бесплатная консультация',
+        icon: measureIcon,
+        wrapper: 'action-modal__content'
+      })
+    -%}
+      <div class="action-modal__annonce">Оставьте заявку и наш менеджер поможет Вам с выбором, расскажет все детали и нюансы</div>
+      <form class="form">
+        <div class="form-group">
+          <label class="form-label" for="user_name--consult">Имя:</label>
+          <input type="text" class="form-control" id="user_name--consult" name="user_name--consult" placeholder="Иван Иванов">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_phone--consult">Телефон:</label>
+          <input type="text" class="form-control" id="user_phone--consult" name="user_phone--consult" placeholder="+7 987 654 32 10">
+
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_phone--consult">Ваш вопрос:</label>
+          <textarea class="form-control" id="user_question--consult" name="user_question--consult" placeholder="Необязательное поле" rows="5" cols="40"></textarea>
+        </div>
+      <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Получить консультацию</button>
+      </form>
+    {%- endcall %}
+
+
+    <!-- Онлайн заказ -->
+    {% set measureIcon = '/assets/images/icons/action-modals/order.png' | path  %}
+    {% call ActionModal(
+      {
+        id: 'action-order',
+        mods: ['440'],
+        title: 'Онлайн заказ',
+        icon: measureIcon,
+        wrapper: 'action-modal__content'
+      })
+    -%}
+    <div class="primary-container">
+      <div class="action-modal__annonce">Оставьте свои контактные данные и наш менеджер свяжется с Вами для уточнения деталей заказа </div>
+      <form class="form">
+      <div class="form-group">
+        <label class="form-label" for="user_name--order">Имя:</label>
+        <input type="text" class="form-control" id="user_name--order" name="user_name--order" placeholder="Иван Иванов">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="user_phone--order">Телефон:</label>
+        <input type="text" class="form-control" id="user_phone--order" name="user_phone--order" placeholder="+7 987 654 32 10">
+
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="user_email--order">Email:</label>
+        <input type="text" class="form-control" id="user_email--order" name="user_email--order" placeholder="example@mail.ru">
+
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="user_comments--order">Комментарии:</label>
+        <textarea class="form-control" id="user_comments--order" name="user_comments--order" placeholder="Не обязательно" rows="5" cols="40"></textarea>
+      </div>
+      <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Сделать онлайн-заказ</button>
+    </form>
+    </div>
+    <div class="success-container" >
+        <div class="preloader action-modal__preloader"></div>
+        <div class="order-data" style="display: none;">
+          <div class="order-data__id">
+            Номер заказа: <span id="order-data__id">4661</span>
+          </div>
+          <p class="order-data__success-text">В ближайшее время наш менеджер свяжется с Вами для уточнения деталей заказа, после чего его можно будет оплатить и запустить в работу.</p>
+          <button class="c-button c-button--dark modal__button-close modal-close ">Вернуться на сайт</button>
+          <p class="order-data__success-text">Чтобы в следующий раз было легко и быстро найти нас - <a class="addToBookmark" href="javascript:;" onclick="AddToBookmark('http://стекло24.москва/')">добавьте наш сайт в избранное</a>. Спасибо!</p>
+        </div>
+      </div>
+    {%- endcall %}
+
+
+
+</div>

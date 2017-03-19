@@ -1,0 +1,34 @@
+// close button
+$fancybox-close-button__font-size: 5em;
+$fancybox-close-button__width: 1em;
+$fancybox-close-button__height: 1em;
+$fancybox-close-button__color: $base-color--secondary_dark;
+$fancybox-close-button__background: #fff;
+
+
+// default fancybox close button
+.fancybox-close-small {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 0;
+  margin: 0;
+  font-size: $fancybox-close-button__font-size;
+  width: $fancybox-close-button__width;
+  height: $fancybox-close-button__height;
+  font: #{$fancybox-close-button__font-size}/1 Arial,"Helvetica Neue",Helvetica,sans-serif;
+  color: $fancybox-close-button__color;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 50%;
+  border-width: 0;
+  cursor: pointer;
+  background: $fancybox-close-button__background;
+  transition: background .2s;
+  box-sizing: border-box;
+  z-index: 2;
+
+  &:focus {
+    outline: none
+  }
+}

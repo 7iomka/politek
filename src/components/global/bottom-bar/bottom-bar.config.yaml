@@ -5,4 +5,7 @@ context:
     customClassList: mr-3
   callbackBtn:
     label: Заказать звонок
-    customClassList: callbackBtn
+    customClassList: 'callbackBtn modal-link'
+    href: "javascript:;"
+    attrs:
+      'data-modal-target': "#call-back"

@@ -1,8 +1,8 @@
 ---
 hidden: true
-title: 24 ways front-end component library
+title: Politek project
 ---
-You are viewing the front-end component library for 24 ways.
+<!-- You are viewing the front-end component library for 24 ways.
 
 ### Component categories
 
@@ -11,4 +11,4 @@ You are viewing the front-end component library for 24 ways.
   * **Layout:** Components `l-*` concerned with macro layout
   * **Scopes:** Components `s-*` used to style scoped areas of content
   * **Utilities:** Components `u-*` with a single purpose and specific role
-  * **Templates:** Templates for particular page types
+  * **Templates:** Templates for particular page types -->

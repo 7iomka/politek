@@ -12,6 +12,11 @@
   import siteGallery from './components/common/_site-gallery/site-gallery.js';
   import productsGallery from './components/common/product-group-item/product-group-item.js';
 
+  // init modal-links && fancybox set-up
+	import modalActions from './components/global/modal/modal.js';
+	// ajax && validation for all siteModals
+	import siteModals from './components/partials/site-modals/site-modals.js';
+
 	import './components/common/accordion/accordion.js';
 	import './components/common/base-slider/base-slider.js';
 	import './components/common/button/button.js';
@@ -45,7 +50,9 @@
 domready(function () {
   const publicApi = {
     siteGallery: siteGallery.init(),
-    productsGallery: productsGallery.init()
+    productsGallery: productsGallery.init(),
+    modalActions: modalActions.init(),
+		siteModals: siteModals.init(), 
   }
 
   exports.publicApi =  {

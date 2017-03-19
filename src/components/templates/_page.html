@@ -10,5 +10,6 @@
     {% set siteFooterConfig = disableSetup | objAssign(siteFooterConfig) %}
   {% endif %}
 
+  {% render "@site-modals", siteFooterConfig, true %}
   {% render "@site-footer", siteFooterConfig, true %}
 </div>

@@ -1,0 +1,79 @@
+// ----------------------------------------------------------------------------
+// Service-modal
+// ----------------------------------------------------------------------------
+
+.service-modal {
+  $base: 1.8; // font-size of parent modal
+
+  &__attention {
+      margin-top: em-rel(2.3, $base);
+      padding: em-rel(2.2, $base);
+      background-color: $base-color--primary;
+      p {
+        margin-bottom: em-rel(1.9, $base);
+      }
+      ul {
+        font-weight: 500;
+        list-style: disc;
+        position: relative;
+        padding-left: em-rel(0.9, $base);
+        margin-left: em-rel(1.7, $base);
+        li {
+          &:not(:last-child) {
+            margin-bottom: 1em;
+          }
+        }
+      }
+  }
+
+  &__pdf-link {
+      // border-bottom: 1px solid rgb(234, 234, 234);
+      text-decoration: underline;
+      font-weight: bold;
+  }
+
+  &__figure {
+    margin-top: em-rel(2.5, $base);
+  }
+}
+
+
+// ----------------------------------------------------------------------------
+// Action-modal
+// ----------------------------------------------------------------------------
+
+.action-modal {
+  &__header {
+    text-align: center;
+    padding-bottom: 0.6em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+  &__figure-icon {
+    margin-bottom: 1.4em;
+  }
+  &__title {
+    padding-bottom: 0;
+    &:after {
+      content: none;
+    }
+  }
+  &__annonce {
+    font-size: 2em;
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: em-rel(3.1, 2);
+  }
+
+  &__body {
+    font-size: inherit;
+    padding: 2.4em 4em 4em;
+  }
+  &__content {
+    position: relative;
+  }
+
+  &__preloader {
+    z-index: 99;
+  }
+}
