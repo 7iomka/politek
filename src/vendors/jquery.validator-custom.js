@@ -1,26 +1,26 @@
 ;(function ($) {
     'use strict';
-    
-      $.each($.validator.methods, function (key, value) {
-          $.validator.methods[key] = function () {
-              var el = $(arguments[1]);
-              if (el.is('[placeholder]') && arguments[0] == el.attr('placeholder'))
-                  arguments[0] = '';
-              return value.apply(this, arguments);
-          };
-      });
 
-      /** Phone validation **/
-      $.validator.addMethod("usPhoneFormat", function (value, element) {
-          return this.optional(element) || /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(value);
-      }, "Введите номер телефона в правильном формате");
+      // $.each($.validator.methods, function (key, value) {
+      //     $.validator.methods[key] = function () {
+      //         var el = $(arguments[1]);
+      //         if (el.is('[placeholder]') && arguments[0] == el.attr('placeholder'))
+      //             arguments[0] = '';
+      //         return value.apply(this, arguments);
+      //     };
+      // });
+
+      // /** Phone validation **/
+      // $.validator.addMethod("usPhoneFormat", function (value, element) {
+      //     return this.optional(element) || /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(value);
+      // }, "Укажите корректный номер телефона");
 
 
       /** jQuery russian translation errors label **/
       $.extend($.validator.messages, {
               required: "Это поле необходимо заполнить",
               remote: "Исправьте это поле чтобы продолжить",
-              email: "Введите правильный email адрес.",
+              email: "Укажите корректный email",
               url: "Введите верный URL.",
               date: "Введите правильную дату.",
               dateISO: "Введите правильную дату (ISO).",

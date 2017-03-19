@@ -12,7 +12,6 @@ domready(function () {
         var $this = $(this),
             $form = $(this).find('.form'),
             $action_id = $this.attr('id');
-          console.log('vvv')
         // предотвращаем отправку формы
         $form.submit(function(e) {
             e.preventDefault();
@@ -21,7 +20,7 @@ domready(function () {
         var rules = {},
             messages = {};
 
-        var namespaces = ["user_name", "user_phone", "user_email"];
+        var namespaces = ["user_name", "user_phone", "user_email", "user_password"];
 
         $.each(namespaces, function(i, namespace) {
             var $form_elements = $form.find('input[name^="' + namespace + '"], textarea[name^="' + namespace + '"]');
@@ -35,21 +34,28 @@ domready(function () {
                         message = "Заполните Ваше имя";
                         break;
                     case "user_phone":
-                        message = "Не указан телефон";
+                        message = "Укажите телефон";
                         break;
                     case "user_email":
                         message = "Укажите корректный email";
+                        break;
+                    case "user_password":
+                        message = "Укажите пароль";
                         break;
                     default:
                         message = "Заполните данное поле";
                         break;
                 }
+
                 rules[elem_name] = {
                     required: true
                 };
-                if (namespace === 'user_phone') {
-                    // $('input[name^="' + value + '"]').mask("+7 (999) 999 99 99");
-                    rules[elem_name].usPhoneFormat = true;
+                // if (namespace === 'user_phone') {
+                //     // $('input[name^="' + value + '"]').mask("+7 (999) 999 99 99");
+                //     rules[elem_name].usPhoneFormat = true;
+                // }
+                if (namespace === 'user_email') {
+                    rules[elem_name].email = true;
                 }
                 messages[elem_name] = {
                     required: message
@@ -106,43 +112,27 @@ domready(function () {
         form_data.push({name: "task", value: task});
         form_data = $.param(form_data);
 
-        if (task === 'action-order') {
+        var modalVariables = {
+          $form,
+          $formModal,
+          $modalTitle,
+          $modalAnnonce,
+          $successContainer
+        };
 
-            sendOrder();
-            // return;
-        } else {
-
-            $.ajax({
-                url: localProxy + '/ajax.php',
-                type: 'POST',
-                data: form_data,
-
-                beforeSend: function(r) {
-                    $form.hide();
-                    $modalTitle.html('Отправка заявки...');
-                    $modalAnnonce.html('');
+        switch (task) {
+          case 'login':
+            loginActions(form_data, modalVariables);
+            break;
+          case 'register':
+            registerActions(form_data, modalVariables);
+            break;
+          case 'call-back':
+            callBackActions(form_data, modalVariables);
+        }
 
 
 
-                }
-            }).always(function(r) {
-
-            }).done(function(r) {
-                // alert('done');
-                $form.trigger('reset');
-                setTimeout(function() {
-                    $modalTitle.html('Благодарим!');
-                    $modalAnnonce.html('Ваша заявка успешно отправлена!');
-                }, 1000);
-
-            }).fail(function(request, textStatus, errorThrown) {
-                // alert('fail');
-                console.log(request.responseText);
-                console.log(textStatus);
-                console.log(errorThrown);
-            });
-
-        } // end else
 
     };
 

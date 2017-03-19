@@ -1,11 +1,10 @@
 
-.form-group {
-    display: flex;
-}
-
 /** temporary hardcode **/
 .form-group--with-addon {
-
+  &.form-group {
+    display: flex;
+    margin-bottom: 0;
+  }
   $form-group__border-color: palette(primary);
 
   // control
@@ -30,6 +29,9 @@
     vertical-align: top;
     border: 1px solid $form-group__border-color;
     height: $form-group__control-height;
+    padding: 0;
+    border-radius: 0;
+
   }
   /** addon **/
   .form-group-addon {

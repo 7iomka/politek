@@ -25,5 +25,9 @@
         text-align: right;
       };
   }
-
+  &__action-link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

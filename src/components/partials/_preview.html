@@ -46,5 +46,46 @@
     <script src="assets//scripts/vendors/jquery-migrate-3.0.0.js" charset="utf-8"></script> #}
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/scripts/app.js' | path }}" charset="utf-8"></script>
+    <!-- BACKAND ACTIONs FUNCTIONS -->
+    <script type="text/javascript">
+      function loginActions(form_data, variables) {
+        console.log(form_data, variables);
+        return;
+      }
+
+      function registerActions(form_data, variables) {
+        console.log(form_data, variables);
+        return;
+      }
+
+      function callBackActions(form_data, variables) {
+        $.ajax({
+            url: 'http://new.stekla.cc:8081/ajax.php',
+            type: 'POST',
+            data: form_data,
+
+            beforeSend: function(r) {
+                variables.$form.hide();
+                variables.$modalTitle.html('Отправка заявки...');
+                variables.$modalAnnonce.html('');
+            }
+        }).always(function(r) {
+
+        }).done(function(r) {
+            // alert('done');
+            variables.$form.trigger('reset');
+            setTimeout(function() {
+                variables.$modalTitle.html('Благодарим!');
+                variables.$modalAnnonce.html('Ваша заявка успешно отправлена!');
+            }, 1000);
+
+        }).fail(function(request, textStatus, errorThrown) {
+            // alert('fail');
+            console.log(request.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+        });
+      }
+    </script>
   </body>
 </html>

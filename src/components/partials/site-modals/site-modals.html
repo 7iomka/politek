@@ -37,8 +37,69 @@
 
     <!-- /********************************** Модальные окна действий (формы) *************************************/ -->
 
+    <!--Вход-->
+    {% set measureIcon = '/assets/images/icons/login.svg' | path  %}
+    {% call ActionModal(
+      {
+        id: 'login',
+        mods: ['440'],
+        title: 'Войти',
+        icon: measureIcon,
+        wrapper: 'action-modal__content'
+      })
+    -%}
+    <div class="action-modal__annonce"></div>
+      <form class="form">
+        <div class="form-group">
+          <label class="form-label" for="user_email--login">Email:</label>
+          <input type="text" class="form-control" id="user_email--login" name="user_email--login" placeholder="ivanov@mail.ru">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_password--login">Пароль:</label>
+          <input type="password" class="form-control" id="user_password--login" name="user_password--login" placeholder="введите пароль">
+
+        </div>
+        <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2" type="submit">Войти</button>
+      </form>
+        <div class="success-container"></div>
+    {%- endcall %}
+
+    <!--Регистрация -->
+    {% set measureIcon = '/assets/images/icons/register.svg' | path  %}
+    {% call ActionModal(
+      {
+        id: 'register',
+        mods: ['440'],
+        title: 'Зарегистрироваться',
+        icon: measureIcon,
+        wrapper: 'action-modal__content'
+      })
+    -%}
+    <div class="action-modal__annonce"></div>
+      <form class="form">
+        <div class="form-group">
+          <label class="form-label" for="user_name--register">Email:</label>
+          <input type="text" class="form-control" id="user_name--register" name="user_name--register" placeholder="Иван Иванов">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_email--register">Email:</label>
+          <input type="text" class="form-control" id="user_email--register" name="user_email--register" placeholder="ivanov@mail.ru">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_phone--register">Телефон:</label>
+          <input type="text" class="form-control" id="user_phone--register" name="user_phone--register" placeholder="+7 987 654 32 10">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="user_password--register">Пароль:</label>
+          <input type="password" class="form-control" id="user_password--register" name="user_password--register" placeholder="Желаемый пароль">
+        </div>
+        <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2" type="submit">создать аккаунт</button>
+      </form>
+        <div class="success-container"></div>
+    {%- endcall %}
+
     <!--Обратный звонок-->
-    {% set measureIcon = '/assets/images/icons/action-modals/measure.png' | path  %}
+    {% set measureIcon = '/assets/images/icons/call-back.svg' | path  %}
     {% call ActionModal(
       {
         id: 'call-back',
@@ -61,86 +122,10 @@
         </div>
         <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Оставить заявку</button>
       </form>
-    {%- endcall %}
-
-    <!--Бесплатная консультация (вопрос менеджеру)-->
-    {% set measureIcon = '/assets/images/icons/action-modals/consult.png' | path  %}
-    {% call ActionModal(
-      {
-        id: 'action-consult',
-        mods: ['440'],
-        title: 'Бесплатная консультация',
-        icon: measureIcon,
-        wrapper: 'action-modal__content'
-      })
-    -%}
-      <div class="action-modal__annonce">Оставьте заявку и наш менеджер поможет Вам с выбором, расскажет все детали и нюансы</div>
-      <form class="form">
-        <div class="form-group">
-          <label class="form-label" for="user_name--consult">Имя:</label>
-          <input type="text" class="form-control" id="user_name--consult" name="user_name--consult" placeholder="Иван Иванов">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="user_phone--consult">Телефон:</label>
-          <input type="text" class="form-control" id="user_phone--consult" name="user_phone--consult" placeholder="+7 987 654 32 10">
-
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="user_phone--consult">Ваш вопрос:</label>
-          <textarea class="form-control" id="user_question--consult" name="user_question--consult" placeholder="Необязательное поле" rows="5" cols="40"></textarea>
-        </div>
-      <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Получить консультацию</button>
-      </form>
+      <div class="success-container"></div>
     {%- endcall %}
 
 
-    <!-- Онлайн заказ -->
-    {% set measureIcon = '/assets/images/icons/action-modals/order.png' | path  %}
-    {% call ActionModal(
-      {
-        id: 'action-order',
-        mods: ['440'],
-        title: 'Онлайн заказ',
-        icon: measureIcon,
-        wrapper: 'action-modal__content'
-      })
-    -%}
-    <div class="primary-container">
-      <div class="action-modal__annonce">Оставьте свои контактные данные и наш менеджер свяжется с Вами для уточнения деталей заказа </div>
-      <form class="form">
-      <div class="form-group">
-        <label class="form-label" for="user_name--order">Имя:</label>
-        <input type="text" class="form-control" id="user_name--order" name="user_name--order" placeholder="Иван Иванов">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="user_phone--order">Телефон:</label>
-        <input type="text" class="form-control" id="user_phone--order" name="user_phone--order" placeholder="+7 987 654 32 10">
-
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="user_email--order">Email:</label>
-        <input type="text" class="form-control" id="user_email--order" name="user_email--order" placeholder="example@mail.ru">
-
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="user_comments--order">Комментарии:</label>
-        <textarea class="form-control" id="user_comments--order" name="user_comments--order" placeholder="Не обязательно" rows="5" cols="40"></textarea>
-      </div>
-      <button class="c-button c-button--primary form-button form-button--submit modal__button mt-2">Сделать онлайн-заказ</button>
-    </form>
-    </div>
-    <div class="success-container" >
-        <div class="preloader action-modal__preloader"></div>
-        <div class="order-data" style="display: none;">
-          <div class="order-data__id">
-            Номер заказа: <span id="order-data__id">4661</span>
-          </div>
-          <p class="order-data__success-text">В ближайшее время наш менеджер свяжется с Вами для уточнения деталей заказа, после чего его можно будет оплатить и запустить в работу.</p>
-          <button class="c-button c-button--dark modal__button-close modal-close ">Вернуться на сайт</button>
-          <p class="order-data__success-text">Чтобы в следующий раз было легко и быстро найти нас - <a class="addToBookmark" href="javascript:;" onclick="AddToBookmark('http://стекло24.москва/')">добавьте наш сайт в избранное</a>. Спасибо!</p>
-        </div>
-      </div>
-    {%- endcall %}
 
 
 
