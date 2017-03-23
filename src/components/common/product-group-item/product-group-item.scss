@@ -1,3 +1,4 @@
+$pg_parentClass: '.product-group__item';
 .product-group__item {
 
     background: #fbfbfb;
@@ -39,10 +40,13 @@
   /**
    * Advantages
    */
-  &-advantages {
+  &-advantages{
     margin-top: 25px;
     font-weight: bold;
   }
+  @at-root .product-group__item-description ul, .page-description ul {
+     @extend #{$pg_parentClass}-advantages;
+   }
   /**
    * single advantage
    */
@@ -60,6 +64,9 @@
       margin-right: 3px;
     }
   }
+    @at-root .product-group__item-description ul li, .page-description ul li {
+      @extend #{$pg_parentClass}-advantage;
+    }
 
   /**
    * pricetable container

@@ -1,40 +1,6 @@
 {% from "@modal-macro" import Modal, ActionModal %}
 <div class="site-modals">
 
-  <!-- Что мы делаем за 24 часа-->
-  {% call Modal(
-    {
-      id: 'working24',
-      mods: ['960'],
-      title: 'Что мы делаем за 24 часа'
-    })
-  -%}
-  Гарантированно изготавливаем заказы на стекла и зеркала прямоугольной формы в отрез или с полировкой
-  {%- endcall %}
-
-
-
-  <!-- Услуги -->
-  {% for service in services %}
-    {% call Modal(
-      {
-        id: 'service-' + loop.index,
-        mods: ['960'],
-        title: service.title,
-        wrapper: 'service-modal'
-      })
-    -%}
-    {{ service.description }}
-    {% if service.image %}
-      <figure class="img-responsive service-modal__figure">
-          <img src="{{ service.image | path }}" alt="{{ service.title }}" class="img-responsive__item service-modal__figure-item" />
-      </figure>
-    {% endif %}
-
-    {%- endcall %}
-  {% endfor %}
-
-
     <!-- /********************************** Модальные окна действий (формы) *************************************/ -->
 
     <!--Вход-->
@@ -124,9 +90,6 @@
       </form>
       <div class="success-container"></div>
     {%- endcall %}
-
-
-
 
 
 </div>
