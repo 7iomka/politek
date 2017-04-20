@@ -136,6 +136,9 @@
       background-color: white;
       font-size: 20px;
       text-align: center;
+      &:first-child {
+            white-space: normal!important;
+      }
       &.transparent {
         background: none;
         border: none;

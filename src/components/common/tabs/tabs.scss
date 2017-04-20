@@ -1,0 +1,63 @@
+// TABS
+.tabs {
+	padding-top: 50px;
+	margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+	width: 70%;
+	margin: 0 auto;
+	line-height: 1.5;
+	font-weight: 300;
+	color: #888;
+	-webkit-font-smoothing: antialiased;
+}
+
+.tabs__navigation {
+	display: table;
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+
+	&-item {
+		float: left;
+		line-height: 38px;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+	}
+
+	&-switcher {
+		background-color: #eff0f2;
+		border-bottom: 1px solid #fff;
+		color: #888;
+		font-weight: 500;
+		display: block;
+		letter-spacing: 0;
+		outline: none;
+		padding: 0 20px;
+		text-decoration: none;
+		transition: all 0.2s ease-in-out;
+		border-bottom: 2px solid $base-color--primary;
+    @at-root .current & {
+      color: #fff;
+    	background: $base-color--primary;
+    }
+	}
+}
+
+
+
+
+.tabs__item {
+	display: none;
+	padding: 30px 0;
+
+	&:first-child {
+    display: block;
+  }
+}
+
+
+// END TAB ~~~~~~~~~~~~~~~ (.)(.)
