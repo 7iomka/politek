@@ -1,24 +1,22 @@
+$tabs__bg-color: #e8e8e8;
+$tabs__current-bg-color: $base-color--primary;
+
 // TABS
 .tabs {
-	padding-top: 50px;
-	margin-bottom: 20px;
-	position: relative;
-	overflow: hidden;
-	background: #fff;
-	width: 70%;
-	margin: 0 auto;
-	line-height: 1.5;
-	font-weight: 300;
-	color: #888;
-	-webkit-font-smoothing: antialiased;
+	padding-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 .tabs__navigation {
-	display: table;
-	position: relative;
-	overflow: hidden;
-	margin: 0;
-	width: 100%;
+	    display: table;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
 
 	&-item {
 		float: left;
@@ -29,9 +27,9 @@
 	}
 
 	&-switcher {
-		background-color: #eff0f2;
+		background-color: $tabs__bg-color;
 		border-bottom: 1px solid #fff;
-		color: #888;
+		color: #000;
 		font-weight: 500;
 		display: block;
 		letter-spacing: 0;
@@ -39,10 +37,12 @@
 		padding: 0 20px;
 		text-decoration: none;
 		transition: all 0.2s ease-in-out;
-		border-bottom: 2px solid $base-color--primary;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
     @at-root .current & {
       color: #fff;
-    	background: $base-color--primary;
+    	background: $tabs__current-bg-color;
     }
 	}
 }
