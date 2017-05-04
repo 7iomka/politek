@@ -34,6 +34,26 @@
                 <div class="cart__total">к оплате 135 000 руб</div>
               </div>
             </div>
+            <div class="col-12 mt-4 ">
+              <div class="form-container">
+                <form id="form-reg" class="form" novalidate="novalidate">
+                        <div class="form-group">
+                          <label class="form-label" for="user_name--register">Имя:</label>
+                          <input type="text" class="form-control" id="user_name--register" name="user_name--register" placeholder="Иван Иванов">
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="user_email--register">Email:</label>
+                          <input type="text" class="form-control" id="user_email--register" name="user_email--register" placeholder="ivanov@mail.ru">
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="user_phone--register">Телефон:</label>
+                          <input type="text" class="form-control" id="user_phone--register" name="user_phone--register" placeholder="+7 987 654 32 10">
+                        </div>
+
+
+                  </form>
+                </div>
+              </div>
             <div class="col-12 mt-4 text-center">{% render "@button--secondary-big", orderBtn, true %}</div>
           </div>
         </div>
