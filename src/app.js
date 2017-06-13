@@ -21,7 +21,7 @@
 	import './components/common/base-slider/base-slider.js';
 	import './components/common/button/button.js';
 	import './components/common/calendar/calendar.js';
-	import './components/common/gallery-slider/gallery-slider.js';
+	import gallerySlider from './components/common/gallery-slider/gallery-slider.js';
 	import './components/common/goup/goup.js';
 	import './components/common/news-list/news-list.js';
 	import tabs from './components/common/tabs/tabs.js';
@@ -54,6 +54,7 @@ domready(function () {
     productsGallery: productsGallery.init(),
     modalActions: modalActions.init(),
 		siteModals: siteModals.init(),
+    gallerySlider: gallerySlider.init(),
     tabs: tabs.init()
   }
 

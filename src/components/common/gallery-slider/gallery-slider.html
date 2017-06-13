@@ -1,22 +1,38 @@
-<div class="gallery-slider">
-  {# gallery-scene #}
-  <div class="gallery-slider__scene swiper-container">
-    <div class="swiper-wrapper">
-      {% for slide in slides %}
-        <div class="swiper-slide gallery-slider__scene-item">
-          {% render "@img-responsive", {src: galleryPath+slide.url} %}
+<div class="gallery-slider {{ customClassList }}" id="about-gallery-slider">
+  <!--  slider body-->
+    <div class="gallery-slider__body">
+      <!--gallery-scene-->
+      <div class="gallery-slider__scene gallery-scene">
+        <!--gallery scene slider-->
+        <div class="gallery-scene__slider big-image-slider">
+          {% for slide in slides %}
+            <div class="gallery-scene__slide gallery-slide">
+              <div class="gallery-slide__image">
+                {# svg изображение схемы находится в папке c каждым номером и транспортируются галмпом в папку откуда инклудятся#}
+                {% set slideImageSrc = '/assets/images/about-slider/' + slide.url | path %}
+                {% render "@img-responsive", {
+                  src: slideImageSrc,
+                  customClassList: 'gallery-slide__image-source'
+                } %}
+
+              </div>
+
+            </div>
+          {% endfor %}
         </div>
-      {% endfor %}
+        <!--/gallery scene slider -->
+      </div>
+      <!--/gallery-scene-->
+
     </div>
-  </div>
-  {# gallery-thumbs #}
-  <div class="gallery-slider__thumbs swiper-container">
-    <div class="swiper-wrapper">
-      {% for slide in slides %}
-        <div class="swiper-slide gallery-slider__thumb">
-          {% render "@img-responsive", {src: thumbsPath+slide.url} %}
+      <!-- thumbs navigation -->
+    <div class="gallery-slider__nav">
+      <div class="gallery-slider__thumbs small-image-slider">
+        {% for slide in slides %}
+        <div class="gallery-slider__thumb gallery-thumb">
+          <img class="gallery-slider__thumb-image gallery-thumb__image" src="{{ '/assets/images/about-slider/thumbs/' + slide.url | path }}" alt="">
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
-  </div>
 </div>
