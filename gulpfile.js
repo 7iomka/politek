@@ -27,6 +27,8 @@ const gulpIf = require('gulp-if');
 const gulplog = require('gulplog');
 const gutil = require('gulp-util');
 
+const csso = require('gulp-csso');
+
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
@@ -156,7 +158,7 @@ function lintstyles() {
 // Styles
 function styles() {
   return gulp.src(paths.src + '/assets/styles/*.scss')
-    .pipe(sourcemaps.init())
+    .pipe(gulpIf(isDevelopment, sourcemaps.init()))
     .pipe(sassGlob())
     .pipe(sass({
       outputStyle: 'expanded',
@@ -173,7 +175,8 @@ function styles() {
       })
       ])
      )
-    .pipe(sourcemaps.write('./'))
+     .pipe(gulpIf(!isDevelopment, csso()))
+     .pipe(gulpIf(isDevelopment, sourcemaps.write('./')))
     .pipe(gulp.dest(paths.dest + '/assets/styles'));
     // .pipe(browserSync.stream({ match: '**/*.css' }));
 };
@@ -326,7 +329,7 @@ function customBuild(cb){
     const destdir = 'www/';
     fractal.components.load().then(() => {
         for (let item of fractal.components.flatten()) {
-        
+
             if (item.relViewPath.startsWith('templates')) {
               renderComponent({
                 component: `@${item.handle}`,

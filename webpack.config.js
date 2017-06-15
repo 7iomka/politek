@@ -25,12 +25,26 @@ const config = {
     plugins: {
       UglifyJSPlugin: {
         beautify: false,
-         mangle: {
-           screw_ie8: true,
-           keep_fnames: true
-         },
-         compress: {
-           screw_ie8: true
+         mangle: false,
+         compress:{
+           sequences     : true,  // join consecutive statemets with the “comma operator”
+            properties    : true,  // optimize property access: a["foo"] → a.foo
+            dead_code     : true,  // discard unreachable code
+            drop_debugger : true,  // discard “debugger” statements
+            unsafe        : false, // some unsafe optimizations (see below)
+            conditionals  : true,  // optimize if-s and conditional expressions
+            comparisons   : true,  // optimize comparisons
+            evaluate      : true,  // evaluate constant expressions
+            booleans      : true,  // optimize boolean expressions
+            loops         : true,  // optimize loops
+            unused        : false,  // drop unused variables/functions
+            hoist_funs    : false,  // hoist function declarations
+            hoist_vars    : false, // hoist variable declarations
+            if_return     : true,  // optimize if-s followed by return/continue
+            join_vars     : true,  // join var declarations
+            cascade       : true,  // try to cascade `right` into `left` in sequences
+            side_effects  : false,  // drop side-effect-free statements
+            warnings      : false,  // warn about potentially dangerous optimizations/code
          },
          comments: false,
          sourceMap: false,
@@ -213,7 +227,7 @@ let webpackConfig = {
       }),
       new UglifyJSPlugin(
         config[curEnv].plugins.UglifyJSPlugin
-      ),
+      )
       //  new webpack.ResolverPlugin(new ComponentDirectoryPlugin(true)) // resolve require('components/demo') as components/demo/demo.js || index.js
     ],
     // list of additional plugins

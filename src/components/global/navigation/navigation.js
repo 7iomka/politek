@@ -2,6 +2,7 @@ var mmenu = require('vendors/jquery.mmenu.all.min.js');
 // var jqueryMmenu = require("jquery.mmenu");
 module.exports = function () {
 
+  $(function () {
     $.fn.navigationToggler = function() {
         return this.each(function() {
             // Do something to each element here.
@@ -22,11 +23,6 @@ module.exports = function () {
         });
 
     };
-
-
-
-  $(function () {
-
     if($('.navigation--mobile').length) {
       $('.navigation--mobile').mmenu({
       	extensions		: ['theme-dark', 'effect-menu-slide', 'pagedim-black' ],
